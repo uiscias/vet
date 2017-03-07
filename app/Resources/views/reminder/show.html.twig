@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Reminder</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ reminder.id }}</td>
+            </tr>
+            <tr>
+                <th>Created</th>
+                <td>{% if reminder.created %}{{ reminder.created|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Updated</th>
+                <td>{% if reminder.updated %}{{ reminder.updated|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Reminderdatetime</th>
+                <td>{% if reminder.reminderDateTime %}{{ reminder.reminderDateTime|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Enabled</th>
+                <td>{% if reminder.enabled %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Media</th>
+                <td>{{ reminder.media }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ reminder.title }}</td>
+            </tr>
+            <tr>
+                <th>Note</th>
+                <td>{{ reminder.note }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('reminder_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('reminder_edit', { 'id': reminder.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

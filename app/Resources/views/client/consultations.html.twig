@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<br />
+<div style="width:900px;text-align:center;align-items: center">
+    <h2>Consultations de {{ client.firstName }} {{ client.lastName }}</h2>
+<p>
+    {{ client.address }}&nbsp;{{ client.cP }} - {{ client.city }} <br />
+    Tel: {{ client.phone }} Mail: {{ client.eMail }}
+</p>
+    <hr />
+    <h3>23/07/2016 - Chat : douleurs abdominales</h3>
+    <p>
+        Le chat a de nouveau mal au ventre
+        Lorem Ipsum Dolor Para
+    </p>
+    <p> <a href="{{ path('client_index') }}">Edit</a> </p>
+
+    <h3>17/07/2016 - Chat : douleurs abdominales</h3>
+    <p>
+        Examen du ventre
+        Prise de sang
+
+        Le chat reste en observation 1jours
+    </p>
+    <p> <a href="{{ path('client_index') }}">Edit</a> </p>
+
+
+    <ul>
+        <li>
+            <a href="{{ path('client_index') }}">Retour à la liste des patients</a>
+        </li>
+
+        <li>
+            <a href="{{ path('consultation_new', {'client': client.id}) }}">Nouvelle Consultation</a>
+            {#{{ form_start(delete_form) }}#}
+                {#<input type="submit" value="Nouvelle Consultation">#}
+            {#{{ form_end(delete_form) }}#}
+        </li>
+    </ul>
+</div>
+{% endblock %}

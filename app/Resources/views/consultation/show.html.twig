@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Consultation</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ consultation.id }}</td>
+            </tr>
+            <tr>
+                <th>Created</th>
+                <td>{% if consultation.created %}{{ consultation.created|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Updated</th>
+                <td>{% if consultation.updated %}{{ consultation.updated|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Hasdebts</th>
+                <td>{% if consultation.hasDebts %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Debtvalueforthisconsultation</th>
+                <td>{{ consultation.debtValueForThisConsultation }}</td>
+            </tr>
+            <tr>
+                <th>Notes</th>
+                <td>{{ consultation.notes }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('client_consultations', { 'id': consultation.client.id }) }}">Retour à la liste des consultations</a>
+        </li>
+        <li>
+            <a href="{{ path('consultation_edit', { 'id': consultation.id }) }}">Editer la consultation</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Supprimer">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

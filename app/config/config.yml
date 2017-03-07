@@ -34,11 +34,13 @@ framework:
     php_errors:
         log: true
 
+
 # Twig Configuration
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
-
+    form_themes:
+        - bootstrap_3_layout.html.twig
 # Doctrine Configuration
 doctrine:
     dbal:
@@ -68,3 +70,20 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+
+assetic:
+    debug:          '%kernel.debug%'
+    use_controller: '%kernel.debug%'
+    filters:
+        cssrewrite: ~
+stof_doctrine_extensions:
+    default_locale: en_US
+    orm:
+        default:
+            tree: true
+            timestampable: true # not needed: listeners are not enabled by default
+sensio_framework_extra:
+    request:
+        converters: true
+        auto_convert: true

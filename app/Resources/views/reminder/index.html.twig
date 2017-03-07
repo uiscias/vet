@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Reminders list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Created</th>
+                <th>Updated</th>
+                <th>Reminderdatetime</th>
+                <th>Enabled</th>
+                <th>Media</th>
+                <th>Title</th>
+                <th>Note</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for reminder in reminders %}
+            <tr>
+                <td><a href="{{ path('reminder_show', { 'id': reminder.id }) }}">{{ reminder.id }}</a></td>
+                <td>{% if reminder.created %}{{ reminder.created|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if reminder.updated %}{{ reminder.updated|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if reminder.reminderDateTime %}{{ reminder.reminderDateTime|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if reminder.enabled %}Yes{% else %}No{% endif %}</td>
+                <td>{{ reminder.media }}</td>
+                <td>{{ reminder.title }}</td>
+                <td>{{ reminder.note }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('reminder_show', { 'id': reminder.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('reminder_edit', { 'id': reminder.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('reminder_new') }}">Create a new reminder</a>
+        </li>
+    </ul>
+{% endblock %}

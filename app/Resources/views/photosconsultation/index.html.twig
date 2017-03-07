@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Photosconsultations list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for photosConsultation in photosConsultations %}
+            <tr>
+                <td><a href="{{ path('photosconsultation_show', { 'id': photosConsultation.id }) }}">{{ photosConsultation.id }}</a></td>
+                <td>{{ photosConsultation.titre }}</td>
+                <td>{{ photosConsultation.description }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('photosconsultation_show', { 'id': photosConsultation.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('photosconsultation_edit', { 'id': photosConsultation.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('photosconsultation_new') }}">Create a new photosConsultation</a>
+        </li>
+    </ul>
+{% endblock %}
