@@ -7,6 +7,7 @@ imports:
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: en
+    photos_consultation_directory: '%kernel.root_dir%/../web/uploads/photos'
 
 framework:
     #esi:             ~
@@ -34,6 +35,17 @@ framework:
     php_errors:
         log: true
 
+vich_uploader:
+    db_driver: orm
+    twig: true
+    mappings:
+        file:
+            uri_prefix:         assets/media/attachments
+            upload_destination: '%kernel.root_dir%/../web/assets/media/attachments'
+            namer:              vich_uploader.namer_uniqid
+            inject_on_load:     true
+            delete_on_update:   false
+            delete_on_remove:   true
 
 # Twig Configuration
 twig:
@@ -41,6 +53,9 @@ twig:
     strict_variables: "%kernel.debug%"
     form_themes:
         - bootstrap_3_layout.html.twig
+    globals:
+        photos_consultation_directory: 'http://127.0.0.1/vet/web/assets/media/attachments/'
+
 # Doctrine Configuration
 doctrine:
     dbal:

@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<br />
+    <br />
 <div style="width:900px;text-align:center;align-items: center">
     <h2>Consultations de {{ client.firstName }} {{ client.lastName }}</h2>
 <p>
@@ -9,21 +9,24 @@
     Tel: {{ client.phone }} Mail: {{ client.eMail }}
 </p>
     <hr />
-    <h3>23/07/2016 - Chat : douleurs abdominales</h3>
-    <p>
-        Le chat a de nouveau mal au ventre
-        Lorem Ipsum Dolor Para
-    </p>
-    <p> <a href="{{ path('client_index') }}">Edit</a> </p>
 
-    <h3>17/07/2016 - Chat : douleurs abdominales</h3>
-    <p>
-        Examen du ventre
-        Prise de sang
+    {% for consultation in consultations %}
+    <h3>{{ consultation.created|date('d/m/Y')  }}&nbsp;-&nbsp;{{ consultation.titre|e }}</h3>
+        <p>
+            {{ consultation.notes|e }}
+        </p>
+        <p>
+        {%  for photo in consultation.photosConsultation %}
+            <img src="{{ photos_consultation_directory }}/{{ photo.link }}" height="100" alt="{{ photo.link }}">&nbsp;&nbsp;
+        {% endfor %}
+        </p>
+        <a href="{{ path('consultation_edit', {'id': consultation.id}) }}">Editer cette consultation</a>
+        <br /><br />
 
-        Le chat reste en observation 1jours
-    </p>
-    <p> <a href="{{ path('client_index') }}">Edit</a> </p>
+    {% else %}
+    <h3>Il n'y a pas de consultation enregistrée pour ce client.</h3>
+    {% endfor %}
+
 
 
     <ul>

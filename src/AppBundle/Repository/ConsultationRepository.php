@@ -3,6 +3,7 @@
 namespace AppBundle\Repository;
 
 use AppBundle\Entity\Client;
+use AppBundle\Entity\Consultation;
 
 /**
  * ConsultationRepository
@@ -14,22 +15,29 @@ class ConsultationRepository extends \Doctrine\ORM\EntityRepository
 {
 
     /**
-     * Find village by its slug and slug of its district
+     * Find consultation by its client
      *
      * @param Client $Client
      *
-     * @return Village|null
+     * @return Consultation|null
      */
-    public function findByClientIDs($client)
+    public function findConsultationByClientIDs($client)
     {
         $qb = $this->createQueryBuilder('v');
 
-        return $qb->join('v.client', 'd')
-            ->where($qb->expr()->eq('v.id', ':clientID'))
+/*        return $qb->join('v.consultation', 'd')
+            ->where($qb->expr()->eq('v.client', ':clientID'))
             ->setParameters([
                 'clientID' => $client
             ])
             ->getQuery()
-            ->getOneOrNullResult();
+            ->getOneOrNullResult();*/
+
+
+        return $this->getEntityManager()
+            ->createQuery(
+                'SELECT p FROM AppBundle:Consultation p where p.client = '. $client .'ORDER BY p.created ASC'
+            )
+            ->getResult();
     }
 }

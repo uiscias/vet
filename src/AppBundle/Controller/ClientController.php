@@ -74,7 +74,7 @@ class ClientController extends Controller
     }
 
     /**
-     * Finds and displays a client entity.
+     * Finds and displays client's consultations.
      *
      * @Route("/{id}/consultations", name="client_consultations")
      * @Method("GET")
@@ -83,8 +83,12 @@ class ClientController extends Controller
     {
         $deleteForm = $this->createDeleteForm($client);
 
+        $em = $this->getDoctrine()->getManager();
+        $consultations = $em->getRepository('AppBundle:Consultation')->findConsultationByClientIDs($client->getId());
+
         return $this->render('client/consultations.html.twig', array(
             'client' => $client,
+            'consultations' => $consultations,
             'delete_form' => $deleteForm->createView(),
         ));
     }

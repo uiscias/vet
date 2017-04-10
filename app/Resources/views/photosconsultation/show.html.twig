@@ -17,12 +17,16 @@
                 <th>Description</th>
                 <td>{{ photosConsultation.description }}</td>
             </tr>
+            <tr>
+                <th>Photo</th>
+                <td><img src="{{ photos_consultation_directory }}/{{ photosConsultation.link }}" height="300" alt="{{ photosConsultation.link }}"> </td>
+            </tr>
         </tbody>
     </table>
 
     <ul>
         <li>
-            <a href="{{ path('photosconsultation_index') }}">Back to the list</a>
+            <a href="{{ path('consultation_edit', {'id': photosConsultation.consultation.id }) }}">Retour à la consultation</a>
         </li>
         <li>
             <a href="{{ path('photosconsultation_edit', { 'id': photosConsultation.id }) }}">Edit</a>

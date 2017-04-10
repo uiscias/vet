@@ -385,4 +385,8 @@ class Client
     {
         return $this->updated;
     }
+
+    public function __toString(){
+        return (string)'' . $this->getFirstName() . ' ' . $this->getLastName();
+    }
 }

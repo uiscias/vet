@@ -6,7 +6,8 @@ use AppBundle\Entity\Client;
 use AppBundle\Entity\Consultation;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Consultation controller.
@@ -43,17 +44,33 @@ class ConsultationController extends Controller
 
         $consultation = new Consultation();
         $consultation->setClient($client);
-        $form = $this->createForm('AppBundle\Form\ConsultationType', $consultation);
+//        $form = $this->createForm('AppBundle\Form\ConsultationType', $consultation);
+        $form = $this->get('form.factory')->create(ConsultationType::class, $consultation);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+//        if ($form->isSubmitted() && $form->isValid()) {
+        if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
+            dump($consultation);
             $em = $this->getDoctrine()->getManager();
+            $consultation->setClient($client);
             $em->persist($consultation);
-            $em->flush($consultation);
+            $em->flush();
+
+            $request->getSession()->getFlashBag()->add('oprationEmail', " votre email a été bien envoyé");
 
             return $this->redirectToRoute('consultation_show', array('id' => $consultation->getId()));
         }
 
+
+
+/*            $em = $this->getDoctrine()->getManager();
+            $em->persist($consultation);
+            $em->flush($consultation);
+
+            return $this->redirectToRoute('consultation_show', array('id' => $consultation->getId()));
+
+        }
+*/
         return $this->render('consultation/new.html.twig', array(
             'consultation' => $consultation,
             'form' => $form->createView(),
@@ -66,7 +83,7 @@ class ConsultationController extends Controller
      * @Route("/{id}", name="consultation_show")
      * @Method("GET")
      */
-    public function showAction(Consultation $consultation, Consultation $consultation)
+    public function showAction(Consultation $consultation)
     {
         $deleteForm = $this->createDeleteForm($consultation);
 

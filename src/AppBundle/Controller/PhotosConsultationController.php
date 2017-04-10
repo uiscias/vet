@@ -37,20 +37,36 @@ class PhotosConsultationController extends Controller
     /**
      * Creates a new photosConsultation entity.
      *
-     * @Route("/{consultation_id}/new", name="photosconsultation_new")
+     * @Route("/{consultation}/new", name="photosconsultation_new")
      * @Method({"GET", "POST"})
      */
-    public function newAction(Request $request, Consultation $consultation)
+    public function newAction(Request $request, \AppBundle\Entity\Consultation $consultation)
     {
         $photosConsultation = new Photosconsultation();
-        $photosConsultation.setConsultation($consultation);
+        $photosConsultation->setConsultation($consultation);
         $form = $this->createForm('AppBundle\Form\PhotosConsultationType', $photosConsultation);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            dump($photosConsultation);
+            $photosConsultation->setConsultation($consultation);
             $em->persist($photosConsultation);
             $em->flush($photosConsultation);
+
+
+            // Generate a unique name for the file before saving it
+            //$fileName = md5(uniqid()).'.'.$file->guessExtension();
+
+            // Move the file to the directory where brochures are stored
+            /*$file->move(
+                $this->getParameter('brochures_directory'),
+                $fileName
+            );*/
+
+            // Update the 'brochure' property to store the PDF file name
+            // instead of its contents
+            //$product->setBrochure($fileName);
 
             return $this->redirectToRoute('photosconsultation_show', array('id' => $photosConsultation->getId()));
         }

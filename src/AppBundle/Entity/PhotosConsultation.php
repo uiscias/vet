@@ -4,12 +4,16 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use AppBundle\Entity\Consultation;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * PhotosConsultation
  *
  * @ORM\Table(name="photos_consultation")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\PhotosConsultationRepository")
+ * @Vich\Uploadable
  */
 class PhotosConsultation
 {
@@ -24,10 +28,25 @@ class PhotosConsultation
 
     /**
      * Many Photos for One Consultation.
-     * @ORM\ManyToOne(targetEntity="Consultation")
+     * @ORM\ManyToOne(targetEntity="Consultation", inversedBy="photosConsultation")
      * @ORM\JoinColumn(name="consultation_id", referencedColumnName="id")
      */
     private $consultation;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="link", type="string", length=255)
+     */
+    private $link;
+
+    /**
+     * @var File
+     *
+     * @Vich\UploadableField(mapping="file", fileNameProperty="link")
+     * @Assert\File(maxSize = "5M", mimeTypes={"image/png", "image/jpeg", "image/pjpeg"} )
+     */
+    private $file;
 
     /**
      * @var string
@@ -128,7 +147,52 @@ class PhotosConsultation
     }
 
     public function __toString(){
-        return (string) $this->getId() + ' ' + $this->getTitre();
+        return (string) $this->getId() . ' ' . $this->getTitre();
+    }
+
+    /**
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $file
+     *
+     * @return File
+     */
+    public function setFile(File $file = null) {
+        $this->file = $file;
+        if($file){
+//            $this->uploadAt = new \DateTime();
+        }
+        return $this;
+    }
+
+    /**
+     * @return File|null
+     */
+    public function getFile() {
+        return $this->file;
+    }
+
+
+    /**
+     * Set link
+     *
+     * @param string $link
+     *
+     * @return PhotosConsultation
+     */
+    public function setLink($link)
+    {
+        $this->link = $link;
+
+        return $this;
+    }
+
+    /**
+     * Get link
+     *
+     * @return string
+     */
+    public function getLink()
+    {
+        return $this->link;
     }
 
 }

@@ -3,22 +3,163 @@
 {% block body %}
     <h1>Consultation edit</h1>
 
-    {{ form_start(edit_form) }}
+
+
+
+
+
+
+    {#
+        {{ form_start(edit_form) }}
+
+        {{ form_row(form.titre) }}
+
         {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
+
+
+            {% form_theme form _self %}
+
+            {% block _product_name_widget %}
+                <div class="text_widget">
+                    {{ block('form_widget_simple') }}
+                </div>
+            {% endblock %}
+
+            {{ form_widget(form.name) }}
+
+
+
+    #}
+    <div>
+        {% form_theme edit_form _self %}
+        {{ form_start(edit_form) }}
+        {{ form_widget(edit_form.titre) }}
+
+
+        {{ form_label(edit_form.debtValueForThisConsultation) }}
+        {{ form_errors(edit_form.debtValueForThisConsultation) }}
+        {{ form_widget(edit_form.debtValueForThisConsultation) }}
+
+        {{ form_label(edit_form.notes) }}
+        {{ form_errors(edit_form.notes) }}
+        {{ form_widget(edit_form.notes) }}
+
+
+        <h3>Photos</h3>
+
+        <div class="actions">
+            <a class="add-photo" href='#'>Ajouter une nouvelle photo</a>
+        </div>
+
+        <ul class="tags">
+            <div id="SSSSdiv-photos" data-prototype="{{ form_widget(edit_form.photosConsultation.vars.prototype)|e }}">
+            <div id="div-photos" data-prototype="
+                {% filter escape %}
+                    {{ include('consultation/photoPrototype.html.twig', { 'form': edit_form.photosConsultation.vars.prototype }) }}
+                {% endfilter %}">
+
+
+
+
+            {# iterate over each existing tag and render its only field: name #}
+            {% for photo in edit_form.photosConsultation %}
+                <div>
+                {{ form_row(photo.titre) }}
+                {{ form_row(photo.description) }}
+                {{ form_row(photo.file) }}
+                <a class="remove-photo" href="#">Supprimer cette photo</a>
+                </div>
+            {% endfor %}
+
+            </div>
+
+        </ul>
+
+
+    {{ form_widget(edit_form.save, { 'label': 'Sauvegarder'}) }}
+
     {{ form_end(edit_form) }}
 
+
+
+<br /><br />
     <ul>
         <li>
-            <a href="{{ path('consultation_index') }}">Retour à la liste des consultations</a>
+            <a href="{{ path('client_consultations', { 'id': consultation.client.id } ) }}">Retour à la liste des consultations</a>
         </li>
         <li>
-            <a href="{{ path('consultation_index') }}">Ajouter une photo</a>
+            <a href="{{ path('photosconsultation_new', { 'consultation': consultation.id} ) }}">Ajouter une photo</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input type="submit" value="Supprimer la consultation">
             {{ form_end(delete_form) }}
         </li>
     </ul>
+
+
+    <script type="text/javascript">
+
+        // keep track of how many email fields have been rendered
+        var photoCount = '{{ edit_form.photosConsultation|length }}';
+
+        $(document).ready(function(){
+            $('.link-delete').on('click', function() {
+                var p = $(this).parent();
+                $(p).remove();
+                return false;
+            });
+            $('.remove-photo').click(function(e) {
+                e.preventDefault();
+                var p = $(this).parent();
+                $(p).remove();
+                return false;
+            });
+
+            $('.add-photo').click(function(e){
+                e.preventDefault();
+                var photosList = jQuery('#div-photos');
+
+                // grab the prototype template
+                var newWidget = photosList.attr('data-prototype');
+                // replace the "__name__" used in the id and name of the prototype
+                // with a number that's unique to your emails
+                // end name attribute looks like name="contact[emails][2]"
+                newWidget = newWidget.replace(/__name__/g, photoCount);
+                photoCount++;
+
+                // create a new list element and add it to the list
+                var newLi = jQuery('<div></div>').html(newWidget);
+                newLi.appendTo(photosList);
+
+
+                // Get the ul that holds the collection of tags
+                var $collectionHolder = $('div.div-photos');
+
+                // add a delete link to all of the existing tag form li elements
+                $collectionHolder.find('<div></div>').each(function() {
+                    addTagFormDeleteLink($(this));
+                });
+
+
+                return false;
+            });
+
+        });
+
+            function addTagFormDeleteLink() {
+                var $removeFormA = $('<a href="#">Supprimer cette photo</a>');
+                $tagFormLi.append($removeFormA);
+
+                $removeFormA.on('click', function(e) {
+                    // prevent the link from creating a "#" on the URL
+                    e.preventDefault();
+
+                    // remove the li for the tag form
+                    $tagFormLi.remove();
+                });
+            }
+    </script>
+
+
 {% endblock %}

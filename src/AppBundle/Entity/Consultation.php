@@ -4,6 +4,7 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\Validator\Constraints as Assert;
 use AppBundle\Entity\Client;
 
 /**
@@ -67,6 +68,19 @@ class Consultation
      */
     private $notes;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="Titre", type="string", length=255, nullable=true)
+     */
+    private $titre;
+
+
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\PhotosConsultation", mappedBy="consultation", cascade={"persist", "remove"})
+     * @Assert\Valid()
+     */
+    private $photosConsultation;
 
     /**
      * Get id
@@ -79,6 +93,59 @@ class Consultation
     }
 
     /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->photosConsultation = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add photo
+     *
+     * @param PhotosConsultation $photoConsultation
+     *
+     * @return Consultation
+     */
+    public function addPhotosConsultation(\AppBundle\Entity\PhotosConsultation $photosConsultation)
+    {
+        $this->photosConsultation->add($photosConsultation);
+
+        $photosConsultation->setConsultation($this);
+
+        // $this->attachments[] = $attachment;
+
+        return $this;
+    }
+
+
+    /**
+     * Remove photo
+     *
+     * @param PhotosConsultation $photoConsultation
+     */
+    public function removePhotosConsultation(\AppBundle\Entity\PhotosConsultation $photosConsultation)
+    {
+        $this->photosConsultation->removeElement($photosConsultation);
+    }
+
+    public function setPhotosConsultation(Array $photosConsultation){
+        $this->photosConsultation = $photosConsultation;
+
+    }
+
+    /**
+     * Get PhotosConsultation
+     *
+     * @return \Doctrine\Common\Collections\ArrayCollection()
+     */
+    public function getPhotosConsultation()
+    {
+        return $this->photosConsultation;
+    }
+
+
+    /**
      * Set dateOfConsultation
      *
      * @param \DateTime $dateOfConsultation
@@ -87,7 +154,7 @@ class Consultation
      */
     public function setDateOfConsultation($dateOfConsultation)
     {
-        $this->dateOfConsultation = $dateOfConsultation;
+        $this->created = $dateOfConsultation;
 
         return $this;
     }
@@ -99,7 +166,7 @@ class Consultation
      */
     public function getDateOfConsultation()
     {
-        return $this->dateOfConsultation;
+        return $this->created;
     }
 
     /**
@@ -124,6 +191,30 @@ class Consultation
     public function getHasDebts()
     {
         return $this->hasDebts;
+    }
+
+    /**
+     * Set titre
+     *
+     * @param string $titre
+     *
+     * @return Consultation
+     */
+    public function setTitre($titre)
+    {
+        $this->titre = $titre;
+
+        return $this;
+    }
+
+    /**
+     * Get titre
+     *
+     * @return string
+     */
+    public function getTitre()
+    {
+        return $this->titre;
     }
 
     /**
@@ -199,7 +290,7 @@ class Consultation
     }
 
     public function __toString(){
-        return (string)'' + $this->getDateOfConsultation() + ' - ' + $this->getClient();
+        return (string) ($this->getDateOfConsultation()->format('d/m/Y H:i') . ' - ' . $this->getClient()->getFirstName() . ' ' . $this->getClient()->getLastName());
     }
 
     /**
@@ -249,4 +340,7 @@ class Consultation
     {
         return $this->updated;
     }
+
+
+
 }
