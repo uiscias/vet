@@ -1,11 +1,12 @@
-<div>
-<!-- customize as you wish -->
+{% block file_widget %}
+    {% spaceless %}
+        <td>teeeeeeeeeeeeest{% set type = type|default('file') %}
+            <input type="{{ type }}" {{ block('widget_attributes') }} />
+        </td>
+    {% endspaceless %}
+{% endblock file_widget %}
 
-    {{ form_widget(edit_form.photosConsultation.vars.prototype)|e }}
-
-    {{ form_widget(form) }}qqq
-{{ form_row(form.titre) }}
-{{ form_row(form.description) }}
-{{ form_row(form.file) }}
+{{  form_row(edit_form.photosConsultation.vars.prototype.titre) }}
+{{  form_row(edit_form.photosConsultation.vars.prototype.description) }}
+{{  form_row(edit_form.photosConsultation.vars.prototype.file) }}
 <a class="remove-photo" href="#">Supprimer cette photo</a>
-</div>

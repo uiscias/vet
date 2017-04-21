@@ -4,36 +4,12 @@
     <option name="FILTER_RESOLVED_ITEMS" value="false" />
   </component>
   <component name="ChangeListManager">
-    <list id="cde5f2e6-3084-4c70-be19-7df0875b1383" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vet.iml" afterPath="$PROJECT_DIR$/.idea/vet.iml" />
+    <list default="true" id="0b08efba-6ad8-40cc-ad3d-7deef6ced86c" name="Implementing Picture Upload" comment="Implementing Picture Upload&#10;consultation edit and basic structure&#10;&#10;Add and Remove Photo Consultation is still buggy">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/AppKernel.php" afterPath="$PROJECT_DIR$/app/AppKernel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/client/consultations.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/client/consultations.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/consultation/edit.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/consultation/edit.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/consultation/show.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/consultation/show.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/photosconsultation/show.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/photosconsultation/show.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/ClientController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/ClientController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/ConsultationController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/ConsultationController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/PhotosConsultationController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/PhotosConsultationController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Client.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Client.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Consultation.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Consultation.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/PhotosConsultation.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/PhotosConsultation.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Form/ConsultationType.php" afterPath="$PROJECT_DIR$/src/AppBundle/Form/ConsultationType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Form/PhotosConsultationType.php" afterPath="$PROJECT_DIR$/src/AppBundle/Form/PhotosConsultationType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/ConsultationRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/ConsultationRepository.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/consultation/photoPrototype.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/consultation/photoPrototype.html.twig" />
     </list>
-    <list default="true" id="0b08efba-6ad8-40cc-ad3d-7deef6ced86c" name="Implementing Picture Upload" comment="Implementing Picture Upload&#10;consultation edit and basic structure&#10;&#10;Add and Remove Photo Consultation is still buggy" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <file path="$PROJECT_DIR$/app/Resources/views/consultation/edit.html.twig" ignored="false" />
-    <file path="$PROJECT_DIR$/src/AppBundle/Entity/PhotosConsultation.php" ignored="false" />
-    <file path="$PROJECT_DIR$/app/Resources/views/client/consultations.html.twig" ignored="false" />
-    <file path="$PROJECT_DIR$/app/Resources/views/photosconsultation/show.html.twig" ignored="false" />
-    <file path="$PROJECT_DIR$/app/config/config.yml" ignored="false" />
-    <file path="$PROJECT_DIR$/src/AppBundle/Form/ConsultationType.php" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +50,7 @@
       <file leaf-file-name="PhotosConsultationController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PhotosConsultationController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
+            <state relative-caret-position="1287">
               <caret line="39" column="65" lean-forward="false" selection-start-line="39" selection-start-column="43" selection-end-line="39" selection-end-column="65" />
               <folding>
                 <element signature="e#40#74#0#PHP" expanded="true" />
@@ -86,7 +62,7 @@
       <file leaf-file-name="ConsultationType.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/ConsultationType.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="746">
+            <state relative-caret-position="957">
               <caret line="39" column="14" lean-forward="false" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
               <folding />
             </state>
@@ -96,8 +72,8 @@
       <file leaf-file-name="PhotosConsultation.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/PhotosConsultation.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1386">
-              <caret line="46" column="89" lean-forward="false" selection-start-line="46" selection-start-column="89" selection-end-line="46" selection-end-column="89" />
+            <state relative-caret-position="66">
+              <caret line="48" column="17" lean-forward="false" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -106,7 +82,7 @@
       <file leaf-file-name="PhotosConsultationType.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/PhotosConsultationType.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143">
+            <state relative-caret-position="594">
               <caret line="18" column="24" lean-forward="false" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="24" />
               <folding>
                 <element signature="e#34#74#0#PHP" expanded="true" />
@@ -135,24 +111,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="edit.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/consultation/edit.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="44" column="42" lean-forward="false" selection-start-line="44" selection-start-column="42" selection-end-line="44" selection-end-column="42" />
+            <state relative-caret-position="1523">
+              <caret line="129" column="38" lean-forward="false" selection-start-line="129" selection-start-column="38" selection-end-line="129" selection-end-column="38" />
               <folding>
-                <element signature="e#2120#2140#0#Twig" expanded="true" />
-                <element signature="e#2279#2301#0#Twig" expanded="true" />
+                <element signature="e#1281#1318#0#Twig" expanded="true" />
+                <element signature="e#2008#2028#0#Twig" expanded="true" />
+                <element signature="e#2167#2189#0#Twig" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="photoPrototype.html.twig" pinned="false" current-in-tab="false">
+      <file leaf-file-name="photoPrototype.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/consultation/photoPrototype.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+            <state relative-caret-position="99">
+              <caret line="3" column="64" lean-forward="false" selection-start-line="3" selection-start-column="47" selection-end-line="3" selection-end-column="64" />
               <folding />
             </state>
           </provider>
@@ -161,7 +138,7 @@
       <file leaf-file-name="ConsultationController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ConsultationController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1188">
+            <state relative-caret-position="830">
               <caret line="135" column="9" lean-forward="false" selection-start-line="135" selection-start-column="9" selection-end-line="135" selection-end-column="9" />
               <folding>
                 <element signature="e#40#68#0#PHP" expanded="true" />
@@ -175,10 +152,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="231">
               <caret line="7" column="44" lean-forward="false" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
-              <folding>
-                <element signature="e#12#26#0#Twig" expanded="false" />
-                <element signature="e#284#308#0#Twig" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -459,6 +433,42 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vet" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vet" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="twig" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="twig" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -901,7 +911,7 @@
   <component name="TaskManager">
     <task id="Default" summary="Default task">
       <branch name="master" repository="C:\wamp64\www\vet" original="true" />
-      <changelist id="cde5f2e6-3084-4c70-be19-7df0875b1383" name="Default" comment="" />
+      <changelist id="" name="Default" comment="" />
       <created>1488200618925</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -914,25 +924,33 @@
       <workItem from="1489051992694" duration="747000" />
       <workItem from="1490194305612" duration="109772000" />
     </task>
-    <task active="true" id="LOCAL-00001" summary="Implementing Picture Upload">
+    <task id="LOCAL-00001" summary="Implementing Picture Upload">
       <branch name="master" repository="C:\wamp64\www\vet" />
       <changelist id="0b08efba-6ad8-40cc-ad3d-7deef6ced86c" name="Implementing Picture Upload" comment="" />
       <created>1489053823196</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1490876260542</updated>
+      <updated>1491834262908</updated>
       <workItem from="1489053851928" duration="6000" />
       <workItem from="1490876260650" />
     </task>
-    <task id="LOCAL-00003" summary="Implementing Picture Upload&#10;consultation edit and basic structure&#10;&#10;Add and Remove Photo Consultation is still buggy">
+    <task active="true" id="LOCAL-00003" summary="Implementing Picture Upload&#10;consultation edit and basic structure&#10;&#10;Add and Remove Photo Consultation is still buggy">
       <created>1491833739413</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1491833739413</updated>
+      <updated>1491834263213</updated>
+      <workItem from="1491834263845" />
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Implementing Picture Upload&#10;consultation edit and basic structure&#10;&#10;Add and Remove Photo Consultation is still buggy">
+      <created>1491834108172</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1491834108172</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <option name="clearContext" value="false" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
@@ -976,12 +994,12 @@
     <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936507" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3478836" sideWeight="0.501462" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3478836" sideWeight="0.501462" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31281406" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3478836" sideWeight="0.49853802" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294979" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20796783" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20796783" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21031746" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967836" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294979" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1044,6 +1062,8 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <option name="SHOW_FILE_HISTORY_DETAILS" value="false" />
     <MESSAGE value="Implementing Picture Upload&#10;consultation edit and basic structure&#10;&#10;Add and Remove Photo Consultation is still buggy" />
     <option name="LAST_COMMIT_MESSAGE" value="Implementing Picture Upload&#10;consultation edit and basic structure&#10;&#10;Add and Remove Photo Consultation is still buggy" />
@@ -1445,45 +1465,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PhotosConsultationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="39" column="65" lean-forward="false" selection-start-line="39" selection-start-column="43" selection-end-line="39" selection-end-column="65" />
-          <folding>
-            <element signature="e#40#74#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/photosconsultation/edit.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="7" column="44" lean-forward="false" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="false" />
-            <element signature="e#284#308#0#Twig" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/PhotosConsultationType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="18" column="24" lean-forward="false" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="24" />
-          <folding>
-            <element signature="e#34#74#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/ConsultationType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="746">
-          <caret line="39" column="14" lean-forward="false" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="429">
@@ -1492,21 +1473,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ConsultationController.php">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PhotosConsultationController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1188">
-          <caret line="135" column="9" lean-forward="false" selection-start-line="135" selection-start-column="9" selection-end-line="135" selection-end-column="9" />
+        <state relative-caret-position="1287">
+          <caret line="39" column="65" lean-forward="false" selection-start-line="39" selection-start-column="43" selection-end-line="39" selection-end-column="65" />
           <folding>
-            <element signature="e#40#68#0#PHP" expanded="true" />
+            <element signature="e#40#74#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/consultation/show.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/ConsultationType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="4" column="10" lean-forward="false" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="71" />
+        <state relative-caret-position="957">
+          <caret line="39" column="14" lean-forward="false" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/PhotosConsultationType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="18" column="24" lean-forward="false" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="24" />
+          <folding>
+            <element signature="e#34#74#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1518,30 +1509,57 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/PhotosConsultation.php">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/consultation/show.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1386">
-          <caret line="46" column="89" lean-forward="false" selection-start-line="46" selection-start-column="89" selection-end-line="46" selection-end-column="89" />
+        <state relative-caret-position="132">
+          <caret line="4" column="10" lean-forward="false" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="71" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/consultation/photoPrototype.html.twig">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/photosconsultation/edit.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        <state relative-caret-position="231">
+          <caret line="7" column="44" lean-forward="false" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ConsultationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="830">
+          <caret line="135" column="9" lean-forward="false" selection-start-line="135" selection-start-column="9" selection-end-line="135" selection-end-column="9" />
+          <folding>
+            <element signature="e#40#68#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/PhotosConsultation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="48" column="17" lean-forward="false" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/consultation/edit.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="44" column="42" lean-forward="false" selection-start-line="44" selection-start-column="42" selection-end-line="44" selection-end-column="42" />
+        <state relative-caret-position="1523">
+          <caret line="129" column="38" lean-forward="false" selection-start-line="129" selection-start-column="38" selection-end-line="129" selection-end-column="38" />
           <folding>
-            <element signature="e#2120#2140#0#Twig" expanded="true" />
-            <element signature="e#2279#2301#0#Twig" expanded="true" />
+            <element signature="e#1281#1318#0#Twig" expanded="true" />
+            <element signature="e#2008#2028#0#Twig" expanded="true" />
+            <element signature="e#2167#2189#0#Twig" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/consultation/photoPrototype.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="3" column="64" lean-forward="false" selection-start-line="3" selection-start-column="47" selection-end-line="3" selection-end-column="64" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -51,13 +51,12 @@
             <a class="add-photo" href='#'>Ajouter une nouvelle photo</a>
         </div>
 
-        <ul class="tags">
-            <div id="SSSSdiv-photos" data-prototype="{{ form_widget(edit_form.photosConsultation.vars.prototype)|e }}">
+        <ul>
+            <div id="SSSSdiv-photos" data-prototype="">
             <div id="div-photos" data-prototype="
                 {% filter escape %}
-                    {{ include('consultation/photoPrototype.html.twig', { 'form': edit_form.photosConsultation.vars.prototype }) }}
+                    {% include 'consultation/photoPrototype.html.twig' with {form : edit_form} %}
                 {% endfilter %}">
-
 
 
 
@@ -131,6 +130,13 @@
                 // create a new list element and add it to the list
                 var newLi = jQuery('<div></div>').html(newWidget);
                 newLi.appendTo(photosList);
+
+                $('.remove-photo').click(function(e) {
+                    e.preventDefault();
+                    var p = $(this).parent();
+                    $(p).remove();
+                    return false;
+                });
 
 
                 // Get the ul that holds the collection of tags
