@@ -8,6 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Consultation controller.
@@ -104,10 +105,32 @@ class ConsultationController extends Controller
         $deleteForm = $this->createDeleteForm($consultation);
         $editForm = $this->createForm('AppBundle\Form\ConsultationType', $consultation);
         $editForm->handleRequest($request);
+        $consultationOriginale = $this->getDoctrine()->getManager()->getRepository('AppBundle:Consultation')->find($consultation);
+
+        $originalPhotos = new \Doctrine\Common\Collections\ArrayCollection();
+        // Create an ArrayCollection of the current PhotoConsultation objects in the database
+        foreach ($consultationOriginale ->getPhotosConsultation() as $photo) {
+            $originalPhotos->add($photo);
+        }
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
 
+            // remove the relationship between the tag and the Task
+            foreach ($originalPhotos as $photo) {
+                if (false === $consultation->getPhotosConsultation()->contains($photo)) {
+                    die('yes!');
+                    // remove the PhotosConsultation from the Consultation
+                    $consultation->removePhotosConsultation($photo);
+                    $photo->setConsultation(null);
+                    $this->getDoctrine()->getManager()->persist($photo);
+                    // if you wanted to delete the Tag entirely, you can also do that
+                    // $em->remove($tag); TBC
+                }else{
+
+                }
+            }
+            $this->getDoctrine()->getManager()->persist($consultation);
+            $this->getDoctrine()->getManager()->flush();
             return $this->redirectToRoute('consultation_edit', array('id' => $consultation->getId()));
         }
 

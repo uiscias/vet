@@ -33,6 +33,7 @@ class ConsultationType extends AbstractType
                 'entry_type' => PhotosConsultationType::class,
                 'allow_add' => true,
                 'allow_delete' => true,
+                'delete_empty' => true,
                 'by_reference' => false,
                 'prototype' => true,
                 'required' => false,

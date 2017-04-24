@@ -77,7 +77,7 @@ class Consultation
 
 
     /**
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\PhotosConsultation", mappedBy="consultation", cascade={"persist", "remove"})
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\PhotosConsultation", mappedBy="consultation", cascade={"all"},orphanRemoval=true)
      * @Assert\Valid()
      */
     private $photosConsultation;

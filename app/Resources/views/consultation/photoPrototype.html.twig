@@ -1,10 +1,4 @@
-{% block file_widget %}
-    {% spaceless %}
-        <td>teeeeeeeeeeeeest{% set type = type|default('file') %}
-            <input type="{{ type }}" {{ block('widget_attributes') }} />
-        </td>
-    {% endspaceless %}
-{% endblock file_widget %}
+
 
 {{  form_row(edit_form.photosConsultation.vars.prototype.titre) }}
 {{  form_row(edit_form.photosConsultation.vars.prototype.description) }}

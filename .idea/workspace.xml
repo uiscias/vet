@@ -4,10 +4,14 @@
     <option name="FILTER_RESOLVED_ITEMS" value="false" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b08efba-6ad8-40cc-ad3d-7deef6ced86c" name="Implementing Picture Upload" comment="Implementing Picture Upload&#10;consultation edit and basic structure&#10;&#10;Add and Remove Photo Consultation is still buggy">
+    <list default="true" id="0b08efba-6ad8-40cc-ad3d-7deef6ced86c" name="Implementing Picture Upload" comment="Implementing Picture Upload&#10;consultation edit and basic structure&#10;&#10;Add and Remove photo consultation has been corrected.&#10;Upload button need to be updated to an html5 entity that permit to directly take a picture">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/media/attachments/58fe5caa22b23.jpg" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/media/attachments/58dcd76ae28e2.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/consultation/edit.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/consultation/edit.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/consultation/photoPrototype.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/consultation/photoPrototype.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/ConsultationController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/ConsultationController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Consultation.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Consultation.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Form/ConsultationType.php" afterPath="$PROJECT_DIR$/src/AppBundle/Form/ConsultationType.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -47,23 +51,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name="PhotosConsultationController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PhotosConsultationController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1287">
-              <caret line="39" column="65" lean-forward="false" selection-start-line="39" selection-start-column="43" selection-end-line="39" selection-end-column="65" />
-              <folding>
-                <element signature="e#40#74#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ConsultationType.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/ConsultationType.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="957">
-              <caret line="39" column="14" lean-forward="false" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
+            <state relative-caret-position="401">
+              <caret line="35" column="39" lean-forward="false" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -72,30 +64,28 @@
       <file leaf-file-name="PhotosConsultation.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/PhotosConsultation.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
+            <state relative-caret-position="-2569">
               <caret line="48" column="17" lean-forward="false" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PhotosConsultationType.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/PhotosConsultationType.php">
+      <file leaf-file-name="Consultation.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Consultation.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="18" column="24" lean-forward="false" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="24" />
-              <folding>
-                <element signature="e#34#74#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="510">
+              <caret line="79" column="133" lean-forward="false" selection-start-line="79" selection-start-column="133" selection-end-line="79" selection-end-column="133" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Consultation.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Consultation.php">
+      <file leaf-file-name="PhotosConsultationController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PhotosConsultationController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="19" />
+            <state relative-caret-position="876">
+              <caret line="39" column="65" lean-forward="false" selection-start-line="39" selection-start-column="43" selection-end-line="39" selection-end-column="65" />
               <folding />
             </state>
           </provider>
@@ -114,22 +104,28 @@
       <file leaf-file-name="edit.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/consultation/edit.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1523">
+            <state relative-caret-position="4257">
               <caret line="129" column="38" lean-forward="false" selection-start-line="129" selection-start-column="38" selection-end-line="129" selection-end-column="38" />
-              <folding>
-                <element signature="e#1281#1318#0#Twig" expanded="true" />
-                <element signature="e#2008#2028#0#Twig" expanded="true" />
-                <element signature="e#2167#2189#0#Twig" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="photoPrototype.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="photoPrototype.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/consultation/photoPrototype.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
-              <caret line="3" column="64" lean-forward="false" selection-start-line="3" selection-start-column="47" selection-end-line="3" selection-end-column="64" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -138,10 +134,12 @@
       <file leaf-file-name="ConsultationController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ConsultationController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="830">
-              <caret line="135" column="9" lean-forward="false" selection-start-line="135" selection-start-column="9" selection-end-line="135" selection-end-column="9" />
+            <state relative-caret-position="627">
+              <caret line="123" column="50" lean-forward="false" selection-start-line="123" selection-start-column="50" selection-end-line="123" selection-end-column="50" />
               <folding>
                 <element signature="e#40#68#0#PHP" expanded="true" />
+                <element signature="e#760#784#1#PHP" expanded="true" />
+                <element signature="e#3454#3478#1#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -182,6 +180,7 @@
       <find>dateOfConsultation</find>
       <find>input</find>
       <find>remove</find>
+      <find>array</find>
     </findStrings>
   </component>
   <component name="FrameworkRootSettings" enabled="false" />
@@ -197,9 +196,6 @@
         <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.txt" root0="SKIP_INSPECTION" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -221,19 +217,19 @@
         <option value="$PROJECT_DIR$/app/Resources/views/consultation/show.html.twig" />
         <option value="$PROJECT_DIR$/app/AppKernel.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Client.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/ConsultationController.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Consultation.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Form/PhotosConsultationType.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/PhotosConsultationController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/PhotosConsultation.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/photosconsultation/show.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/client/consultations.html.twig" />
         <option value="$PROJECT_DIR$/app/config/config.yml" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Form/ConsultationType.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/consultation/photoPrototype.html.twig.html" />
         <option value="$PROJECT_DIR$/app/Resources/views/consultation/edit.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/consultation/photoPrototype.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Form/ConsultationType.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/ConsultationController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Consultation.php" />
       </list>
     </option>
   </component>
@@ -325,24 +321,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" />
-              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DB Consoles" />
-              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyRootNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="05f1187b-2c5b-4b5d-9f0c-3c50b9440408" />
-              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyPsiNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -433,42 +411,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vet" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vet" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vet" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vet" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vendor" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="twig" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="twig" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -752,6 +694,24 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DB Consoles" />
+              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="05f1187b-2c5b-4b5d-9f0c-3c50b9440408" />
+              <option name="myItemType" value="com.intellij.ide.scratch.ScratchProjectViewPane$MyPsiNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -870,6 +830,8 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.grunt" factoryName="Grunt.js">
+      <node-interpreter value="project" />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
@@ -911,7 +873,6 @@
   <component name="TaskManager">
     <task id="Default" summary="Default task">
       <branch name="master" repository="C:\wamp64\www\vet" original="true" />
-      <changelist id="" name="Default" comment="" />
       <created>1488200618925</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -942,6 +903,8 @@
       <option name="project" value="LOCAL" />
       <updated>1491834263213</updated>
       <workItem from="1491834263845" />
+      <workItem from="1492973540736" />
+      <workItem from="1493056087495" />
     </task>
     <task id="LOCAL-00004" summary="Implementing Picture Upload&#10;consultation edit and basic structure&#10;&#10;Add and Remove Photo Consultation is still buggy">
       <created>1491834108172</created>
@@ -950,7 +913,14 @@
       <option name="project" value="LOCAL" />
       <updated>1491834108172</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Implementing Picture Upload&#10;consultation edit and basic structure&#10;&#10;Add and Remove photo consultation has been corrected.&#10;Upload button need to be updated to an html5 entity that permit to directly take a picture">
+      <created>1492760426824</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1492760426825</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <option name="clearContext" value="false" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
@@ -993,26 +963,26 @@
     <frame x="-13" y="-13" width="2762" height="1770" extended-state="6" />
     <editor active="false" />
     <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20796783" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936507" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3478836" sideWeight="0.501462" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31281406" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3478836" sideWeight="0.49853802" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294979" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20796783" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21031746" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967836" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294979" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3478836" sideWeight="0.49853802" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Time Tracking" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1878655" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294979" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31281406" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21031746" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294979" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936507" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1066,7 +1036,8 @@
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="SHOW_FILE_HISTORY_DETAILS" value="false" />
     <MESSAGE value="Implementing Picture Upload&#10;consultation edit and basic structure&#10;&#10;Add and Remove Photo Consultation is still buggy" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implementing Picture Upload&#10;consultation edit and basic structure&#10;&#10;Add and Remove Photo Consultation is still buggy" />
+    <MESSAGE value="Implementing Picture Upload&#10;consultation edit and basic structure&#10;&#10;Add and Remove photo consultation has been corrected.&#10;Upload button need to be updated to an html5 entity that permit to directly take a picture" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementing Picture Upload&#10;consultation edit and basic structure&#10;&#10;Add and Remove photo consultation has been corrected.&#10;Upload button need to be updated to an html5 entity that permit to directly take a picture" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1085,21 +1056,11 @@
     </PATH>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/consultation/edit.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="15" column="48" lean-forward="false" selection-start-line="15" selection-start-column="48" selection-end-line="15" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PhotosConsultationController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#40#74#0#PHP" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1107,14 +1068,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1518">
           <caret line="46" column="92" lean-forward="false" selection-start-line="46" selection-start-column="37" selection-end-line="46" selection-end-column="92" />
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="false" />
-            <element signature="e#738#749#0#Twig" expanded="false" />
-            <element signature="e#1534#1545#0#Twig" expanded="false" />
-            <element signature="e#1697#1717#0#Twig" expanded="false" />
-            <element signature="e#1868#1879#0#Twig" expanded="false" />
-            <element signature="e#2128#2138#0#Twig" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1124,6 +1077,8 @@
           <caret line="73" column="44" lean-forward="false" selection-start-line="73" selection-start-column="44" selection-end-line="73" selection-end-column="44" />
           <folding>
             <element signature="e#40#68#0#PHP" expanded="true" />
+            <element signature="e#760#784#1#PHP" expanded="true" />
+            <element signature="e#3454#3478#1#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1132,11 +1087,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1419">
           <caret line="43" column="53" lean-forward="false" selection-start-line="43" selection-start-column="53" selection-end-line="43" selection-end-column="53" />
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="false" />
-            <element signature="e#1186#1206#0#Twig" expanded="false" />
-            <element signature="e#1344#1361#0#Twig" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1145,17 +1096,7 @@
         <state relative-caret-position="4917">
           <caret line="152" column="0" lean-forward="false" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
           <folding>
-            <element signature="e#40#68#0#PHP" expanded="false" />
             <element signature="e#639#657#1#PHP" expanded="false" />
-            <element signature="e#701#725#0#PHP" expanded="false" />
-            <element signature="e#1341#1354#0#PHP" expanded="false" />
-            <element signature="e#1430#1452#0#PHP" expanded="false" />
-            <element signature="e#1826#1849#0#PHP" expanded="false" />
-            <element signature="e#2444#2476#0#PHP" expanded="false" />
-            <element signature="e#3214#3227#0#PHP" expanded="false" />
-            <element signature="e#3303#3326#0#PHP" expanded="false" />
-            <element signature="e#4010#4024#1#PHP" expanded="false" />
-            <element signature="e#4358#4373#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1172,9 +1113,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3564">
           <caret line="109" column="6" lean-forward="false" selection-start-line="109" selection-start-column="6" selection-end-line="109" selection-end-column="6" />
-          <folding>
-            <element signature="e#36#68#0#PHP" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1182,7 +1121,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1419">
           <caret line="43" column="76" lean-forward="false" selection-start-line="43" selection-start-column="76" selection-end-line="43" selection-end-column="76" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1288,7 +1226,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1296,7 +1233,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1304,7 +1240,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="6" column="23" lean-forward="false" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1325,9 +1260,10 @@
           </nodes>
           <notes />
           <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="194.0" y="179.5" />
+          <settings layout="Hierarchic Group" zoom="1.0" x="194.0" y="180.0" />
           <SelectedNodes />
           <Categories />
+          <SCOPE>All</SCOPE>
           <VISIBILITY>private</VISIBILITY>
         </state>
       </provider>
@@ -1336,10 +1272,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="12" column="83" lean-forward="false" selection-start-line="12" selection-start-column="83" selection-end-line="12" selection-end-column="83" />
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="false" />
-            <element signature="e#269#289#0#Twig" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1347,12 +1279,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1419">
           <caret line="43" column="76" lean-forward="false" selection-start-line="43" selection-start-column="76" selection-end-line="43" selection-end-column="76" />
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="false" />
-            <element signature="e#527#544#0#Twig" expanded="false" />
-            <element signature="e#1159#1176#0#Twig" expanded="false" />
-            <element signature="e#1324#1341#0#Twig" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1360,14 +1286,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="858">
           <caret line="46" column="89" lean-forward="false" selection-start-line="46" selection-start-column="89" selection-end-line="46" selection-end-column="89" />
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="false" />
-            <element signature="e#738#749#0#Twig" expanded="false" />
-            <element signature="e#1534#1545#0#Twig" expanded="false" />
-            <element signature="e#1697#1717#0#Twig" expanded="false" />
-            <element signature="e#1868#1879#0#Twig" expanded="false" />
-            <element signature="e#2128#2138#0#Twig" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1417,12 +1335,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
           <caret line="21" column="152" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="152" />
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="false" />
-            <element signature="e#784#801#0#Twig" expanded="false" />
-            <element signature="e#939#962#0#Twig" expanded="false" />
-            <marker date="1490883380180" expanded="true" signature="32:1211" ph="{% block body ...%}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1430,14 +1342,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="759">
           <caret line="23" column="20" lean-forward="false" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="false" />
-            <element signature="e#732#738#0#HTML" expanded="true" />
-            <element signature="e#738#744#0#HTML" expanded="true" />
-            <element signature="e#805#822#0#Twig" expanded="false" />
-            <element signature="e#1063#1075#0#Twig" expanded="false" />
-            <element signature="e#1175#1191#0#Twig" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1461,7 +1365,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2427">
           <caret line="2701" column="9" lean-forward="false" selection-start-line="2701" selection-start-column="4" selection-end-line="2701" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1469,43 +1372,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="429">
           <caret line="13" column="86" lean-forward="false" selection-start-line="13" selection-start-column="77" selection-end-line="13" selection-end-column="86" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PhotosConsultationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1287">
-          <caret line="39" column="65" lean-forward="false" selection-start-line="39" selection-start-column="43" selection-end-line="39" selection-end-column="65" />
-          <folding>
-            <element signature="e#40#74#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/ConsultationType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="957">
-          <caret line="39" column="14" lean-forward="false" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/PhotosConsultationType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
+        <state relative-caret-position="495">
           <caret line="18" column="24" lean-forward="false" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="24" />
           <folding>
-            <element signature="e#34#74#0#PHP" expanded="true" />
+            <element signature="e#34#74#0#PHP" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Consultation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1525,40 +1401,70 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ConsultationController.php">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/consultation/edit.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="830">
-          <caret line="135" column="9" lean-forward="false" selection-start-line="135" selection-start-column="9" selection-end-line="135" selection-end-column="9" />
-          <folding>
-            <element signature="e#40#68#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="4257">
+          <caret line="129" column="38" lean-forward="false" selection-start-line="129" selection-start-column="38" selection-end-line="129" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/ConsultationType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="35" column="39" lean-forward="false" selection-start-line="35" selection-start-column="39" selection-end-line="35" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/PhotosConsultation.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
+        <state relative-caret-position="-2569">
           <caret line="48" column="17" lean-forward="false" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/consultation/edit.html.twig">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/consultation/photoPrototype.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1523">
-          <caret line="129" column="38" lean-forward="false" selection-start-line="129" selection-start-column="38" selection-end-line="129" selection-end-column="38" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PhotosConsultationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="876">
+          <caret line="39" column="65" lean-forward="false" selection-start-line="39" selection-start-column="43" selection-end-line="39" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ConsultationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="627">
+          <caret line="123" column="50" lean-forward="false" selection-start-line="123" selection-start-column="50" selection-end-line="123" selection-end-column="50" />
           <folding>
-            <element signature="e#1281#1318#0#Twig" expanded="true" />
-            <element signature="e#2008#2028#0#Twig" expanded="true" />
-            <element signature="e#2167#2189#0#Twig" expanded="true" />
+            <element signature="e#40#68#0#PHP" expanded="true" />
+            <element signature="e#760#784#1#PHP" expanded="true" />
+            <element signature="e#3454#3478#1#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/consultation/photoPrototype.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Consultation.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="3" column="64" lean-forward="false" selection-start-line="3" selection-start-column="47" selection-end-line="3" selection-end-column="64" />
+        <state relative-caret-position="510">
+          <caret line="79" column="133" lean-forward="false" selection-start-line="79" selection-start-column="133" selection-end-line="79" selection-end-column="133" />
           <folding />
         </state>
       </provider>
