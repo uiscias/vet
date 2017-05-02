@@ -1,16 +1,14 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<h1>Consultation edit</h1>
+<h2>Editoin d'une consultation</h2>
 {#
     {{ form_start(edit_form) }}
 
-    {{ form_row(form.titre) }}
-
     {{ form_widget(edit_form) }}
-
-
         {% form_theme form _self %}
+
+
 
         {% block _product_name_widget %}
             <div class="text_widget">
@@ -24,8 +22,10 @@
 <div>
     {% form_theme edit_form _self %}
     {{ form_start(edit_form) }}
-    {{ form_widget(edit_form.titre) }}
 
+    {{ form_label(edit_form.titre) }}
+    {{ form_errors(edit_form.titre) }}
+    {{ form_widget(edit_form.titre) }}
 
     {{ form_label(edit_form.debtValueForThisConsultation) }}
     {{ form_errors(edit_form.debtValueForThisConsultation) }}
@@ -60,8 +60,8 @@
                         {{ form_row(photo.description) }}
                         {{ form_row(photo.file) }}
                         #}
-
-                        <img src="{{ photos_consultation_directory }}/{{ photo.vars.value.link }}" height="100" alt="{{ photo.vars.value.link }}">&nbsp;&nbsp;
+                        <a class="image-link" href="{{ photos_consultation_directory }}/{{ photo.vars.value.link }}" data-lightbox="{{ photo.vars.value.link }}"><img class="example-image" src="{{ photos_consultation_directory }}/{{ photo.vars.value.link }}" alt="{{ photo.vars.value.link }}" height="130"/></a>
+                       &nbsp;
                         {{ form_row(photo.datafile) }}
                         <a class="remove-photo" href="#">Supprimer cette photo</a>
 
@@ -101,11 +101,7 @@
         var photoCount = '{{ edit_form.photosConsultation|length }}';
 
         $(document).ready(function(){
-            $('.link-delete').on('click', function() {
-                var p = $(this).parent();
-                $(p).remove();
-                return false;
-            });
+
             $('.remove-photo').click(function(e) {
                 e.preventDefault();
                 var p = $(this).parent();
@@ -151,134 +147,6 @@
 
         });
 
-/*        function addTagFormDeleteLink() {
-            var $removeFormA = $('<a href="#">Supprimer cette photo</a>');
-            $tagFormLi.append($removeFormA);
-
-            $removeFormA.on('click', function(e) {
-                // prevent the link from creating a "#" on the URL
-                e.preventDefault();
-
-                // remove the li for the tag form
-                $tagFormLi.remove();
-            });
-        }
-*/
-
-
-        //////////////////////////////////////////////////////////////
-        /////////////////////////picture part/////////////////////////
-        //////////////////////////////////////////////////////////////
-        // Grab elements, create settings, etc.
-        //----------------------------------------------------------------------
-        //  Here we list all media devices, in order to choose between
-        //  the front and the back camera.
-        //      videoDevices[0] : Front Camera
-        //      videoDevices[1] : Back Camera
-        //  I used an array to save the devices ID
-        //  which i get using devices.forEach()
-        //  Then set the video resolution.
-        //----------------------------------------------------------------------
-        navigator.mediaDevices.enumerateDevices().then(devices => {
-            var currentNode, ni;
-        var videoDevices = [0,0];
-        var videoDeviceIndex = 0;
-        devices.forEach(function(device) {
-            console.log(device.kind + ": " + device.label + " id = " + device.deviceId);
-            if (device.kind == "videoinput") {
-                videoDevices[videoDeviceIndex++] =  device.deviceId;
-            }
-        });
-        var constraints =  {width: { min: 1024, ideal: 1280, max: 1920 },
-            height: { min: 776, ideal: 720, max: 1080 },
-            deviceId: { exact: videoDevices[1]  }
-        };
-        return navigator.mediaDevices.getUserMedia({ video: constraints });
-
-        })
-        .then(stream => {
-            if (window.webkitURL) {
-            ni = document.createNodeIterator(document.documentElement, NodeFilter.SHOW_ELEMENT, function(node){
-                return node.classList.contains('video') ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
-            });
-            while(currentNode = ni.nextNode()) {
-                currentNode.src = window.webkitURL.createObjectURL(stream);
-                localMediaStream = stream;
-            }
-//                video.src = window.webkitURL.createObjectURL(stream);
-//                localMediaStream = stream;
-        } else if (video.mozSrcObject !== undefined) {
-            ni = document.createNodeIterator(document.documentElement, NodeFilter.SHOW_ELEMENT, function(node){
-                return node.classList.contains('video') ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
-            });
-            while(currentNode = ni.nextNode()) {
-                currentNode.mozSrcObject = stream;
-            }
-            // video.mozSrcObject = stream;
-        } else if (video.srcObject !== undefined) {
-            ni = document.createNodeIterator(document.documentElement, NodeFilter.SHOW_ELEMENT, function(node){
-                return node.classList.contains('video') ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
-            });
-            while(currentNode = ni.nextNode()) {
-                currentNode.srcObject = stream;
-            }
-//                video.srcObject = stream;
-
-        } else {
-            ni = document.createNodeIterator(document.documentElement, NodeFilter.SHOW_ELEMENT, function(node){
-                return node.classList.contains('video') ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
-            });
-            while(currentNode = ni.nextNode()) {
-                currentNode.src = stream;
-            }
-        }
-        })
-        .catch(e => console.error(e));
-
-        /*
-
-         */
-        $('.video').click(function(e) {
-            var id = this.id;
-            var idCanvas = (id.substring(0, id.length - 5)) + 'canvas';
-            var idDataFile = (id.substring(0, id.length - 5));
-
-            var canvas = document.getElementById(idCanvas);
-            var context = canvas.getContext('2d');
-            var video = document.getElementById(id);
-
-
-            context.drawImage(video, 0, 0, 640, 480);
-            var image = canvas.toDataURL("image/png");
-
-            document.getElementById(idDataFile).value = image;
-            alert(document.getElementById(idDataFile).value );
-
-            return false;
-        });
-
-        function dataURItoBlob(dataURI) {
-            // convert base64/URLEncoded data component to raw binary data held in a string
-            var byteString;
-            if (dataURI.split(',')[0].indexOf('base64') >= 0)
-                byteString = atob(dataURI.split(',')[1]);
-            else
-                byteString = unescape(dataURI.split(',')[1]);
-            // separate out the mime component
-            var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0];
-            // write the bytes of the string to a typed array
-            var ia = new Uint8Array(byteString.length);
-            for (var i = 0; i < byteString.length; i++) {
-                ia[i] = byteString.charCodeAt(i);
-            }
-            return new Blob([ia], {type:mimeString});
-        }
-        // Converts canvas to an image
-        function convertCanvasToImage(canvas) {
-            var image = new Image();
-            image.src = canvas.toDataURL("image/png");
-            return image;
-        }
 
     </script>
 

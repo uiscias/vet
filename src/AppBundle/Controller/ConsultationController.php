@@ -45,13 +45,33 @@ class ConsultationController extends Controller
 
         $consultation = new Consultation();
         $consultation->setClient($client);
-        $form = $this->createForm('AppBundle\Form\ConsultationType', $consultation);
+        $editForm = $this->createForm('AppBundle\Form\ConsultationType', $consultation);
 //        $form = $this->get('form.factory')->create(ConsultationType::class, $consultation);
-        $form->handleRequest($request);
+//        $editForm->handleRequest($request);
 
 //        if ($form->isSubmitted() && $form->isValid()) {
-        if ($request->isMethod('POST') && $form->handleRequest($request)->isValid()) {
-            dump($consultation);
+        if ($request->isMethod('POST') && $editForm->handleRequest($request)->isValid()) {
+            foreach ($consultation->getPhotosConsultation() as $photo){
+                $datafile = $photo->getDatafile();
+                if (isset($datafile)){
+                    $filteredData=substr($datafile, strpos($datafile, ",")+1);
+                    $unencodedData=base64_decode($filteredData);
+                    $name = str_replace(" ", "", md5(uniqid()) . $photo . '.png');
+                    $photo->setLink($name);
+                    $upload_path = $this->getParameter('photos_consultation_directory');
+                    $fp = fopen( $upload_path . '/' . $name, 'wb' );
+                    fwrite( $fp, $unencodedData);
+                    fclose( $fp );
+                    $this->getDoctrine()->getManager()->persist($photo);
+
+                }
+            }
+            if($consultation->getDebtValueForThisConsultation() > 0){
+                $consultation->setHasDebts(true);
+            }else{
+                $consultation->setHasDebts(false);
+            }
+//            dump($consultation);
             $em = $this->getDoctrine()->getManager();
             $consultation->setClient($client);
             $em->persist($consultation);
@@ -59,7 +79,8 @@ class ConsultationController extends Controller
 
             $request->getSession()->getFlashBag()->add('oprationEmail', " votre email a été bien envoyé");
 
-            return $this->redirectToRoute('consultation_show', array('id' => $consultation->getId()));
+//            return $this->redirectToRoute('consultation_show', array('id' => $consultation->getId()));
+            return $this->redirectToRoute('consultation_edit', array('id' => $consultation->getId()));
         }
 
 
@@ -74,7 +95,7 @@ class ConsultationController extends Controller
 */
         return $this->render('consultation/new.html.twig', array(
             'consultation' => $consultation,
-            'form' => $form->createView(),
+            'edit_form' => $editForm->createView(),
         ));
     }
 

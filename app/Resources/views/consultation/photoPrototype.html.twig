@@ -20,6 +20,19 @@ $('.remove-photo').click(function(e) {
     return false;
 });
 
+
+//////////////////////////////////////////////////////////////
+/////////////////////////picture part/////////////////////////
+//////////////////////////////////////////////////////////////
+// Grab elements, create settings, etc.
+//----------------------------------------------------------------------
+//  Here we list all media devices, in order to choose between
+//  the front and the back camera.
+//      videoDevices[0] : Front Camera
+//      videoDevices[1] : Back Camera
+//  I used an array to save the devices ID
+//  which i get using devices.forEach()
+//  Then set the video resolution.
 //----------------------------------------------------------------------
 navigator.mediaDevices.enumerateDevices().then(devices => {
     var currentNode, ni;
@@ -88,16 +101,24 @@ $('.video').click(function(e) {
     var canvas = document.getElementById(idCanvas);
     var context = canvas.getContext('2d');
     var video = document.getElementById(id);
+    var canvasData = document.createElement('canvas');
+    canvasData.width  = 1224;
+    canvasData.height = 768;
+    canvasData.visible = false;
+
+    var contextData = canvasData.getContext('2d');
 
 
     context.drawImage(video, 0, 0, 640, 480);
-    var image = canvas.toDataURL("image/png");
+    contextData.drawImage(video, 0, 0, 1224, 768);
+    var image = canvasData.toDataURL("image/png");
 
     document.getElementById(idDataFile).value = image;
     alert(document.getElementById(idDataFile).value );
 
     return false;
 });
+
 
 
 </script>

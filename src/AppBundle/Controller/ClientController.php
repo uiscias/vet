@@ -84,7 +84,7 @@ class ClientController extends Controller
         $deleteForm = $this->createDeleteForm($client);
 
         $em = $this->getDoctrine()->getManager();
-        $consultations = $em->getRepository('AppBundle:Consultation')->findConsultationByClientIDs($client->getId());
+        $consultations = $em->getRepository('AppBundle:Consultation')->findBy(array('client' => $client->getId()), array('id' => 'DESC') );
 
         return $this->render('client/consultations.html.twig', array(
             'client' => $client,

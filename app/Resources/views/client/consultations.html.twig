@@ -17,7 +17,7 @@
         </p>
         <p>
         {%  for photo in consultation.photosConsultation %}
-            <img src="{{ photos_consultation_directory }}/{{ photo.link }}" height="100" alt="{{ photo.link }}">&nbsp;&nbsp;
+            <a class="image-link" href="{{ photos_consultation_directory }}/{{ photo.link }}" data-lightbox="{{ consultation.created|date('d/m/Y')  }}&nbsp;-&nbsp;{{ consultation.titre|e }}"><img class="example-image" src="{{ photos_consultation_directory }}/{{ photo.link }}" alt="{{ photo.link }}" height="130"/></a>
         {% endfor %}
         </p>
         <a href="{{ path('consultation_edit', {'id': consultation.id}) }}">Editer cette consultation</a>
