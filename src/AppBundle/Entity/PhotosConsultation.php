@@ -62,6 +62,34 @@ class PhotosConsultation
      */
     private $description;
 
+    /**
+     * @var string
+     */
+    private $datafile;
+
+    /**
+     * Get dataFile
+     *
+     * @return String
+     */
+    public function getDatafile()
+    {
+        return $this->datafile;
+    }
+
+    /**
+     * Set datafile
+     *
+     * @param string $datafile
+     *
+     * @return PhotosConsultation
+     */
+    public function setDatafile($datafile)
+    {
+        $this->datafile = $datafile;
+
+        return $this;
+    }
 
 
     /**

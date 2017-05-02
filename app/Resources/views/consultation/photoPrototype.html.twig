@@ -1,6 +1,103 @@
 
 
-{{  form_row(edit_form.photosConsultation.vars.prototype.titre) }}
-{{  form_row(edit_form.photosConsultation.vars.prototype.description) }}
-{{  form_row(edit_form.photosConsultation.vars.prototype.file) }}
+{#
+    {{  form_row(edit_form.photosConsultation.vars.prototype.titre) }}
+    {{  form_row(edit_form.photosConsultation.vars.prototype.description) }}
+#}
+<video  id="{{ edit_form.photosConsultation.vars.prototype.datafile.vars.id }}video" class="video" width="320" height="240" autoplay></video><br />
+<canvas id="{{ edit_form.photosConsultation.vars.prototype.datafile.vars.id }}canvas" class="canvas" width="640" height="480"></canvas><br />
+
+{{  form_row(edit_form.photosConsultation.vars.prototype.datafile) }}
 <a class="remove-photo" href="#">Supprimer cette photo</a>
+
+
+<script type="text/javascript">
+
+$('.remove-photo').click(function(e) {
+    e.preventDefault();
+    var p = $(this).parent();
+    $(p).remove();
+    return false;
+});
+
+//----------------------------------------------------------------------
+navigator.mediaDevices.enumerateDevices().then(devices => {
+    var currentNode, ni;
+var videoDevices = [0,0];
+var videoDeviceIndex = 0;
+devices.forEach(function(device) {
+    console.log(device.kind + ": " + device.label + " id = " + device.deviceId);
+    if (device.kind == "videoinput") {
+        videoDevices[videoDeviceIndex++] =  device.deviceId;
+    }
+});
+var constraints =  {width: { min: 1024, ideal: 1280, max: 1920 },
+    height: { min: 776, ideal: 720, max: 1080 },
+    deviceId: { exact: videoDevices[1]  }
+};
+return navigator.mediaDevices.getUserMedia({ video: constraints });
+
+})
+.then(stream => {
+    if (window.webkitURL) {
+    ni = document.createNodeIterator(document.documentElement, NodeFilter.SHOW_ELEMENT, function(node){
+        return node.classList.contains('video') ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+    });
+    while(currentNode = ni.nextNode()) {
+        currentNode.src = window.webkitURL.createObjectURL(stream);
+        localMediaStream = stream;
+    }
+//                video.src = window.webkitURL.createObjectURL(stream);
+//                localMediaStream = stream;
+} else if (video.mozSrcObject !== undefined) {
+    ni = document.createNodeIterator(document.documentElement, NodeFilter.SHOW_ELEMENT, function(node){
+        return node.classList.contains('video') ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+    });
+    while(currentNode = ni.nextNode()) {
+        currentNode.mozSrcObject = stream;
+    }
+    // video.mozSrcObject = stream;
+} else if (video.srcObject !== undefined) {
+    ni = document.createNodeIterator(document.documentElement, NodeFilter.SHOW_ELEMENT, function(node){
+        return node.classList.contains('video') ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+    });
+    while(currentNode = ni.nextNode()) {
+        currentNode.srcObject = stream;
+    }
+//                video.srcObject = stream;
+
+} else {
+    ni = document.createNodeIterator(document.documentElement, NodeFilter.SHOW_ELEMENT, function(node){
+        return node.classList.contains('video') ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
+    });
+    while(currentNode = ni.nextNode()) {
+        currentNode.src = stream;
+    }
+}
+})
+.catch(e => console.error(e));
+
+/*
+
+ */
+$('.video').click(function(e) {
+    var id = this.id;
+    var idCanvas = (id.substring(0, id.length - 5)) + 'canvas';
+    var idDataFile = (id.substring(0, id.length - 5));
+
+    var canvas = document.getElementById(idCanvas);
+    var context = canvas.getContext('2d');
+    var video = document.getElementById(id);
+
+
+    context.drawImage(video, 0, 0, 640, 480);
+    var image = canvas.toDataURL("image/png");
+
+    document.getElementById(idDataFile).value = image;
+    alert(document.getElementById(idDataFile).value );
+
+    return false;
+});
+
+
+</script>

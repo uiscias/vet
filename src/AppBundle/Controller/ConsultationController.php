@@ -45,8 +45,8 @@ class ConsultationController extends Controller
 
         $consultation = new Consultation();
         $consultation->setClient($client);
-//        $form = $this->createForm('AppBundle\Form\ConsultationType', $consultation);
-        $form = $this->get('form.factory')->create(ConsultationType::class, $consultation);
+        $form = $this->createForm('AppBundle\Form\ConsultationType', $consultation);
+//        $form = $this->get('form.factory')->create(ConsultationType::class, $consultation);
         $form->handleRequest($request);
 
 //        if ($form->isSubmitted() && $form->isValid()) {
@@ -104,7 +104,6 @@ class ConsultationController extends Controller
     {
         $deleteForm = $this->createDeleteForm($consultation);
         $editForm = $this->createForm('AppBundle\Form\ConsultationType', $consultation);
-        $editForm->handleRequest($request);
         $consultationOriginale = $this->getDoctrine()->getManager()->getRepository('AppBundle:Consultation')->find($consultation);
 
         $originalPhotos = new \Doctrine\Common\Collections\ArrayCollection();
@@ -112,13 +111,29 @@ class ConsultationController extends Controller
         foreach ($consultationOriginale ->getPhotosConsultation() as $photo) {
             $originalPhotos->add($photo);
         }
+        $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
+
+            foreach ($consultation->getPhotosConsultation() as $photo){
+                $datafile = $photo->getDatafile();
+                if (isset($datafile)){
+                    $filteredData=substr($datafile, strpos($datafile, ",")+1);
+                    $unencodedData=base64_decode($filteredData);
+                    $name = str_replace(" ", "", md5(uniqid()) . $photo . '.png');
+                    $photo->setLink($name);
+                    $upload_path = $this->getParameter('photos_consultation_directory');
+                    $fp = fopen( $upload_path . '/' . $name, 'wb' );
+                    fwrite( $fp, $unencodedData);
+                    fclose( $fp );
+                    $this->getDoctrine()->getManager()->persist($photo);
+
+                }
+            }
 
             // remove the relationship between the tag and the Task
             foreach ($originalPhotos as $photo) {
                 if (false === $consultation->getPhotosConsultation()->contains($photo)) {
-                    die('yes!');
                     // remove the PhotosConsultation from the Consultation
                     $consultation->removePhotosConsultation($photo);
                     $photo->setConsultation(null);
@@ -129,6 +144,22 @@ class ConsultationController extends Controller
 
                 }
             }
+
+       /*
+        * $data = $_POST['data'];
+        * $file = md5(uniqid()) . '.png';
+        * $uri =  substr($data,strpos($data,",") 1);
+
+        // save to file
+        file_put_contents($file, base64_decode($uri));
+
+        // return the filename
+        echo json_encode($file);
+
+        */
+
+
+
             $this->getDoctrine()->getManager()->persist($consultation);
             $this->getDoctrine()->getManager()->flush();
             return $this->redirectToRoute('consultation_edit', array('id' => $consultation->getId()));
