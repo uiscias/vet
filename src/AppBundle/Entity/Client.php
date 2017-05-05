@@ -6,6 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use AppBundle\Entity\Animal;
 
 
 /**
@@ -25,6 +26,12 @@ class Client
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Animal", mappedBy="client", cascade={"all"},orphanRemoval=true)
+     * @Assert\Valid()
+     */
+    private $animals;
 
     /**
      * @var \DateTime $created
@@ -111,6 +118,55 @@ class Client
      */
     private $eMail;
 
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->animals = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add animal
+     *
+     * @param Animal $animal
+     *
+     * @return Animal
+     */
+    public function addAnimal(\AppBundle\Entity\Animal $animal)
+    {
+        $this->animals->add($animal);
+
+        $animal->setConsultation($this);
+
+        return $this;
+    }
+
+
+    /**
+     * Remove animal
+     *
+     * @param Animal $animal
+     */
+    public function removeAnimal(\AppBundle\Entity\Animal $animal)
+    {
+        $this->animals->removeElement($animal);
+    }
+
+    public function setPhotosConsultation(Array $animals){
+        $this->animals = $animals;
+
+    }
+
+    /**
+     * Get animals
+     *
+     * @return \Doctrine\Common\Collections\ArrayCollection()
+     */
+    public function getAnimals()
+    {
+        return $this->animals;
+    }
 
     /**
      * Get id
