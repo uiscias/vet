@@ -58,6 +58,29 @@
         </tbody>
     </table>
 
+    <h2>Animaux</h2>
+
+    <table>
+        <tbody>
+
+    {% for animal in client.animals %}
+        <h4>{{ animal.name  }}&nbsp;-&nbsp;({{ animal.species }} - {% if animal.isAlive == false %} <span style="color:red; "><B> D&eacute;c&eacute;d&eacute;</B></span>{% else %} Naissance: {{ animal.year }} {% endif %} )</h4>
+        <h5>Notes</h5>
+        <p>
+            {{ animal.notes|e }}
+        </p>
+        <h5>Vaccination</h5>
+        <p>
+            {{ animal.vaccination|e }}
+        </p>
+
+        <!-- <a href="{{ path('consultation_edit', {'id': client.id}) }}">Editer cette consultation</a> !-->
+        <br /><br />
+
+    {% else %}
+        <h3>Il n'y a pas d'animaux enregistrés pour ce client.</h3>
+    {% endfor %}
+
     <ul>
         <li>
             <a href="{{ path('client_index') }}">Back to the list</a>
