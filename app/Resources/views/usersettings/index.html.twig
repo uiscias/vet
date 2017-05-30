@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Usersettings list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Reminderinterval</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for userSetting in userSettings %}
+            <tr>
+                <td><a href="{{ path('usersettings_show', { 'id': userSetting.id }) }}">{{ userSetting.id }}</a></td>
+                <td>{{ userSetting.reminderInterval }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('usersettings_show', { 'id': userSetting.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('usersettings_edit', { 'id': userSetting.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('usersettings_new') }}">Create a new userSetting</a>
+        </li>
+    </ul>
+{% endblock %}
