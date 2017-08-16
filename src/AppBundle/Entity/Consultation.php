@@ -82,6 +82,13 @@ class Consultation
      */
     private $photosConsultation;
 
+
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Reminder", mappedBy="consultation", cascade={"all"},orphanRemoval=true)
+     * @Assert\Valid()
+     */
+    private $reminders;
+
     /**
      * Get id
      *
@@ -98,6 +105,49 @@ class Consultation
     public function __construct()
     {
         $this->photosConsultation = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->reminders = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add reminder
+     *
+     * @param Reminder $reminder
+     *
+     * @return Reminder
+     */
+    public function addReminder(\AppBundle\Entity\Reminder $reminder)
+    {
+        $this->reminders->add($reminder);
+        $reminder->setConsultation($this);
+
+        // $this->attachments[] = $attachment;
+
+        return $this;
+    }
+
+
+    /**
+     * Remove reminder
+     *
+     * @param Reminder $reminder
+     */
+    public function removeReminder(\AppBundle\Entity\Reminder $reminder)
+    {
+        $this->reminders->removeElement($reminder);
+    }
+
+    public function setReminders(Array $reminders){
+        $this->reminders = $reminders;
+    }
+
+    /**
+     * Get Reminders
+     *
+     * @return \Doctrine\Common\Collections\ArrayCollection()
+     */
+    public function getReminders()
+    {
+        return $this->reminders;
     }
 
     /**
@@ -341,6 +391,32 @@ class Consultation
         return $this->updated;
     }
 
+    /**
+     * Vaccination Done
+     *
+     * @return boolean
+     */
+    public function vaccinationDone(Animal $animal){
+        foreach($this->reminders as $reminder){
+            if ($animal->getId() == $reminder->getAnimal()->getId() && $reminder->getEnabled()){
+                return true;
+            }
+        }
+        return false;
+    }
 
+    /**
+     * Get vaccination Reminder for animal
+     *
+     * @return Reminder
+     */
+    public function getReminder(Animal $animal){
+        foreach($this->reminders as $reminder){
+            if ($animal->getId() == $reminder->getAnimal()->getId() ){
+                return $reminder;
+            }
+        }
+        return false;
+    }
 
 }

@@ -24,11 +24,16 @@ class UserSettings
     /**
      * @var int
      *
-     * @ORM\Column(name="ReminderInterval", type="integer", nullable=true)
+     * @ORM\Column(name="ReminderInterval", type="integer", nullable=false)
      */
     private $reminderInterval;
 
-
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="reminderMessage", type="string", length=255, nullable=false)
+     */
+    private $reminderMessage;
 
 
     /**
@@ -39,6 +44,30 @@ class UserSettings
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Set reminderMessage
+     *
+     * @param String $reminderMessage
+     *
+     * @return UserSettings
+     */
+    public function setReminderMessage($reminderMessage)
+    {
+        $this->reminderMessage = $reminderMessage;
+
+        return $this;
+    }
+
+    /**
+     * Get reminderMessage
+     *
+     * @return String
+     */
+    public function getReminderMessage()
+    {
+        return $this->reminderMessage;
     }
 
     /**
@@ -64,5 +93,6 @@ class UserSettings
     {
         return $this->reminderInterval;
     }
+
 }
 
