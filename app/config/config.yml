@@ -2,6 +2,7 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
+#    - { resource: admin.yml }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
@@ -10,6 +11,7 @@ parameters:
     photos_consultation_directory: '%kernel.root_dir%/../web/assets/media/attachments'
 
 framework:
+    translator: { fallbacks: ["%locale%"] }
     #esi:             ~
     #translator:      { fallbacks: ["%locale%"] }
     secret:          "%secret%"
@@ -34,6 +36,15 @@ framework:
     assets: ~
     php_errors:
         log: true
+
+#sonata_block:
+    # https://symfony.com/doc/current/bundles/SonataAdminBundle/reference/installation.html
+#    default_contexts: [cms]
+#    blocks:
+
+        # enable the SonataAdminBundle block
+#        sonata.admin.block.admin_list:
+#            contexts:   [admin]
 
 vich_uploader:
     db_driver: orm

@@ -9,6 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 /**
  * Consultation controller.
@@ -42,6 +43,12 @@ class ConsultationController extends Controller
      */
     public function newAction(Request $request, Client $client)
     {
+        if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
+            throw $this->createAccessDeniedException();
+        }
+        if ($this->getUser()) {
+            $user = $this->getUser()->getUsername();
+        }
 
         $consultation = new Consultation();
         $consultation->setClient($client);
@@ -65,6 +72,7 @@ class ConsultationController extends Controller
                     $this->getDoctrine()->getManager()->persist($photo);
 
                 }
+                $consultation->getClient()->setLastConsultationToNow();
             }
             if($consultation->getDebtValueForThisConsultation() > 0){
                 $consultation->setHasDebts(true);
@@ -107,6 +115,15 @@ class ConsultationController extends Controller
      */
     public function showAction(Consultation $consultation)
     {
+        if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
+            throw $this->createAccessDeniedException();
+        }
+        if ($this->getUser()) {
+            $user = $this->getUser()->getUsername();
+        }
+
+
+
         $deleteForm = $this->createDeleteForm($consultation);
 
         return $this->render('consultation/show.html.twig', array(
@@ -123,6 +140,13 @@ class ConsultationController extends Controller
      */
     public function editAction(Request $request, Consultation $consultation)
     {
+        if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
+            throw $this->createAccessDeniedException();
+        }
+        if ($this->getUser()) {
+            $user = $this->getUser()->getUsername();
+        }
+
         $deleteForm = $this->createDeleteForm($consultation);
         $editForm = $this->createForm('AppBundle\Form\ConsultationType', $consultation);
         $consultationOriginale = $this->getDoctrine()->getManager()->getRepository('AppBundle:Consultation')->find($consultation);
@@ -136,8 +160,11 @@ class ConsultationController extends Controller
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
 
+            $consultation->getClient()->setLastConsultationToNow();
+
             foreach ($consultation->getPhotosConsultation() as $photo){
                 $datafile = $photo->getDatafile();
+
                 if (isset($datafile)){
                     $filteredData=substr($datafile, strpos($datafile, ",")+1);
                     $unencodedData=base64_decode($filteredData);
@@ -225,6 +252,11 @@ class ConsultationController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('consultation_delete', array('id' => $consultation->getId())))
             ->setMethod('DELETE')
+            ->add('deleteButton', 'Symfony\Component\Form\Extension\Core\Type\SubmitType', array('label' => 'Supprimer la consultation',
+                'attr' => array(
+                    'onclick' => 'return confirm("Etes vous certain de vouloir supprimer cette consultation ?")',
+                    'class' => 'btn btn-del'
+                )))
             ->getForm()
         ;
     }

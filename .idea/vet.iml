@@ -3,6 +3,7 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/vendor/behat/transliterator" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/cocur/slugify" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/annotations" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/cache" />
@@ -19,10 +20,10 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/incenteev/composer-parameter-handler" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/jdorn/sql-formatter" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/jms/metadata" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/knplabs/knp-menu" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/knplabs/knp-menu-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/kriswallsmith/assetic" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/monolog/monolog" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/ocramius/package-versions" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/ocramius/proxy-manager" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/paragonie/random_compat" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/cache" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/log" />
@@ -30,6 +31,13 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/sensio/framework-extra-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/sensio/generator-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/sensiolabs/security-checker" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/sonata-project/admin-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/sonata-project/block-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/sonata-project/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/sonata-project/core-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/sonata-project/datagrid-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/sonata-project/exporter" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/stof/doctrine-extensions-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/swiftmailer/swiftmailer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/assetic-bundle" />
@@ -41,12 +49,12 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-php56" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-php70" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-util" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/security-acl" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/swiftmailer-bundle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/symfony" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/twig/extensions" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/twig/twig" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/vich/uploader-bundle" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/zendframework/zend-code" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/zendframework/zend-eventmanager" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -81,6 +89,7 @@
         <CLASSES>
           <root url="file://$MODULE_DIR$/../../bin/php/php7.0.10" />
           <root url="file://$MODULE_DIR$/vendor/behat/transliterator" />
+          <root url="file://$MODULE_DIR$/vendor/cocur/slugify" />
           <root url="file://$MODULE_DIR$/vendor/composer" />
           <root url="file://$MODULE_DIR$/vendor/doctrine/annotations" />
           <root url="file://$MODULE_DIR$/vendor/doctrine/cache" />
@@ -97,10 +106,10 @@
           <root url="file://$MODULE_DIR$/vendor/incenteev/composer-parameter-handler" />
           <root url="file://$MODULE_DIR$/vendor/jdorn/sql-formatter" />
           <root url="file://$MODULE_DIR$/vendor/jms/metadata" />
+          <root url="file://$MODULE_DIR$/vendor/knplabs/knp-menu" />
+          <root url="file://$MODULE_DIR$/vendor/knplabs/knp-menu-bundle" />
           <root url="file://$MODULE_DIR$/vendor/kriswallsmith/assetic" />
           <root url="file://$MODULE_DIR$/vendor/monolog/monolog" />
-          <root url="file://$MODULE_DIR$/vendor/ocramius/package-versions" />
-          <root url="file://$MODULE_DIR$/vendor/ocramius/proxy-manager" />
           <root url="file://$MODULE_DIR$/vendor/paragonie/random_compat" />
           <root url="file://$MODULE_DIR$/vendor/psr/cache" />
           <root url="file://$MODULE_DIR$/vendor/psr/log" />
@@ -108,6 +117,13 @@
           <root url="file://$MODULE_DIR$/vendor/sensio/framework-extra-bundle" />
           <root url="file://$MODULE_DIR$/vendor/sensio/generator-bundle" />
           <root url="file://$MODULE_DIR$/vendor/sensiolabs/security-checker" />
+          <root url="file://$MODULE_DIR$/vendor/sonata-project/admin-bundle" />
+          <root url="file://$MODULE_DIR$/vendor/sonata-project/block-bundle" />
+          <root url="file://$MODULE_DIR$/vendor/sonata-project/cache" />
+          <root url="file://$MODULE_DIR$/vendor/sonata-project/core-bundle" />
+          <root url="file://$MODULE_DIR$/vendor/sonata-project/datagrid-bundle" />
+          <root url="file://$MODULE_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle" />
+          <root url="file://$MODULE_DIR$/vendor/sonata-project/exporter" />
           <root url="file://$MODULE_DIR$/vendor/stof/doctrine-extensions-bundle" />
           <root url="file://$MODULE_DIR$/vendor/swiftmailer/swiftmailer" />
           <root url="file://$MODULE_DIR$/vendor/symfony/assetic-bundle" />
@@ -119,16 +135,17 @@
           <root url="file://$MODULE_DIR$/vendor/symfony/polyfill-php56" />
           <root url="file://$MODULE_DIR$/vendor/symfony/polyfill-php70" />
           <root url="file://$MODULE_DIR$/vendor/symfony/polyfill-util" />
+          <root url="file://$MODULE_DIR$/vendor/symfony/security-acl" />
           <root url="file://$MODULE_DIR$/vendor/symfony/swiftmailer-bundle" />
           <root url="file://$MODULE_DIR$/vendor/symfony/symfony" />
+          <root url="file://$MODULE_DIR$/vendor/twig/extensions" />
           <root url="file://$MODULE_DIR$/vendor/twig/twig" />
           <root url="file://$MODULE_DIR$/vendor/vich/uploader-bundle" />
-          <root url="file://$MODULE_DIR$/vendor/zendframework/zend-code" />
-          <root url="file://$MODULE_DIR$/vendor/zendframework/zend-eventmanager" />
         </CLASSES>
         <SOURCES>
           <root url="file://$MODULE_DIR$/../../bin/php/php7.0.10" />
           <root url="file://$MODULE_DIR$/vendor/behat/transliterator" />
+          <root url="file://$MODULE_DIR$/vendor/cocur/slugify" />
           <root url="file://$MODULE_DIR$/vendor/composer" />
           <root url="file://$MODULE_DIR$/vendor/doctrine/annotations" />
           <root url="file://$MODULE_DIR$/vendor/doctrine/cache" />
@@ -145,10 +162,10 @@
           <root url="file://$MODULE_DIR$/vendor/incenteev/composer-parameter-handler" />
           <root url="file://$MODULE_DIR$/vendor/jdorn/sql-formatter" />
           <root url="file://$MODULE_DIR$/vendor/jms/metadata" />
+          <root url="file://$MODULE_DIR$/vendor/knplabs/knp-menu" />
+          <root url="file://$MODULE_DIR$/vendor/knplabs/knp-menu-bundle" />
           <root url="file://$MODULE_DIR$/vendor/kriswallsmith/assetic" />
           <root url="file://$MODULE_DIR$/vendor/monolog/monolog" />
-          <root url="file://$MODULE_DIR$/vendor/ocramius/package-versions" />
-          <root url="file://$MODULE_DIR$/vendor/ocramius/proxy-manager" />
           <root url="file://$MODULE_DIR$/vendor/paragonie/random_compat" />
           <root url="file://$MODULE_DIR$/vendor/psr/cache" />
           <root url="file://$MODULE_DIR$/vendor/psr/log" />
@@ -156,6 +173,13 @@
           <root url="file://$MODULE_DIR$/vendor/sensio/framework-extra-bundle" />
           <root url="file://$MODULE_DIR$/vendor/sensio/generator-bundle" />
           <root url="file://$MODULE_DIR$/vendor/sensiolabs/security-checker" />
+          <root url="file://$MODULE_DIR$/vendor/sonata-project/admin-bundle" />
+          <root url="file://$MODULE_DIR$/vendor/sonata-project/block-bundle" />
+          <root url="file://$MODULE_DIR$/vendor/sonata-project/cache" />
+          <root url="file://$MODULE_DIR$/vendor/sonata-project/core-bundle" />
+          <root url="file://$MODULE_DIR$/vendor/sonata-project/datagrid-bundle" />
+          <root url="file://$MODULE_DIR$/vendor/sonata-project/doctrine-orm-admin-bundle" />
+          <root url="file://$MODULE_DIR$/vendor/sonata-project/exporter" />
           <root url="file://$MODULE_DIR$/vendor/stof/doctrine-extensions-bundle" />
           <root url="file://$MODULE_DIR$/vendor/swiftmailer/swiftmailer" />
           <root url="file://$MODULE_DIR$/vendor/symfony/assetic-bundle" />
@@ -167,12 +191,12 @@
           <root url="file://$MODULE_DIR$/vendor/symfony/polyfill-php56" />
           <root url="file://$MODULE_DIR$/vendor/symfony/polyfill-php70" />
           <root url="file://$MODULE_DIR$/vendor/symfony/polyfill-util" />
+          <root url="file://$MODULE_DIR$/vendor/symfony/security-acl" />
           <root url="file://$MODULE_DIR$/vendor/symfony/swiftmailer-bundle" />
           <root url="file://$MODULE_DIR$/vendor/symfony/symfony" />
+          <root url="file://$MODULE_DIR$/vendor/twig/extensions" />
           <root url="file://$MODULE_DIR$/vendor/twig/twig" />
           <root url="file://$MODULE_DIR$/vendor/vich/uploader-bundle" />
-          <root url="file://$MODULE_DIR$/vendor/zendframework/zend-code" />
-          <root url="file://$MODULE_DIR$/vendor/zendframework/zend-eventmanager" />
         </SOURCES>
       </library>
     </orderEntry>

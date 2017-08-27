@@ -1,24 +1,169 @@
-{% extends 'base.html.twig' %}
+{% extends 'baseTmpl.html.twig' %}
 
 {% block body %}
 <br />
-<div style="width:600px;align:center">
-    <h1>Client edit</h1>
-
+<div style="width:80%;align:center">
+    {% form_theme edit_form _self %}
     {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
-    {{ form_end(edit_form) }}
+
+    <h1>Edition de la fiche client de {{ client.firstName  }} {{ client.lastName }}</h1>
+<br />
+    {{ form_label(edit_form.firstName) }}
+    {{ form_errors(edit_form.firstName) }}
+    {{ form_widget(edit_form.firstName) }}
+
+    {{ form_label(edit_form.lastName) }}
+    {{ form_errors(edit_form.lastName) }}
+    {{ form_widget(edit_form.lastName) }}
+
+    {{ form_label(edit_form.address) }}
+    {{ form_errors(edit_form.address) }}
+    {{ form_widget(edit_form.address) }}
+
+    {{ form_label(edit_form.city) }}
+    {{ form_errors(edit_form.city) }}
+    {{ form_widget(edit_form.city) }}
+
+    {{ form_label(edit_form.cP) }}
+    {{ form_errors(edit_form.cP) }}
+    {{ form_widget(edit_form.cP) }}
+
+    {{ form_label(edit_form.eMail) }}
+    {{ form_errors(edit_form.eMail) }}
+    {{ form_widget(edit_form.eMail) }}
+
+    {{ form_label(edit_form.phone) }}
+    {{ form_errors(edit_form.phone) }}
+    {{ form_widget(edit_form.phone) }}
+
+    {{ form_label(edit_form.phone2) }}
+    {{ form_errors(edit_form.phone2) }}
+    {{ form_widget(edit_form.phone2) }}
+
+    {{ form_label(edit_form.contactPreferences) }}
+    {{ form_errors(edit_form.contactPreferences) }}
+    {{ form_widget(edit_form.contactPreferences) }}
+
+    <br />
+
+    <h3>Animaux</h3>
+
+    <div class="actions">
+        <a class="btn btn-appoint add-animal" href='#'><i class="fa fa-plus-square-o" aria-hidden="true"></i>
+            Ajouter un nouvel animal</a><br /><br />
+    </div>
 
     <ul>
+            <div id="div-animals" data-prototype="
+                {% filter escape %}
+                    {% include 'client/animalPrototype.html.twig' with {form : edit_form} %}
+                {% endfilter %}">
+
+
+
+                {# iterate over each existing tag and render its only field: name #}
+                {% for animal in edit_form.animals %}
+                    <div>
+
+                        {#
+                        {{ form_row(photo.titre) }}
+                        {{ form_row(photo.description) }}
+                        {{ form_row(photo.file) }}
+                        #}
+
+                        &nbsp;
+                        {{ form_row(animal.species) }}
+                        {{ form_row(animal.year) }}
+                        {{ form_row(animal.name) }}
+                        {{ form_row(animal.notes) }}
+                        {{ form_row(animal.isAlive) }}
+                        {{ form_row(animal.vaccination) }}
+
+                        <br/><a class="btn btn-del remove-animal" href="#" onclick="return confirm('Voulez vous vraiment supprimer cet animal??')">Supprimer cet animal</a>
+
+                    </div>
+                {% endfor %}
+
+            </div>
+
+    </ul>
+
+
+    {{ form_widget(edit_form.save, { 'label': 'Sauvegarder', 'class': 'btn btn-appoint'}) }}
+
+    {{ form_end(edit_form) }}
+
+
+
+    <br /><br /><hr />
+    <ul>
         <li>
-            <a href="{{ path('client_index') }}">Back to the list</a>
+            <a class="btn btn-appoint" href="{{ path('client_index') }}">Retour à la liste des clients</a>
         </li>
+
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+<!--            <input type="submit" class="btn-del" value="Supprimer le client"> !-->
             {{ form_end(delete_form) }}
         </li>
     </ul>
-</div>
-{% endblock %}
+
+
+    <script type="text/javascript">
+
+        // keep track of how many email fields have been rendered
+        var animalCount = '{{ edit_form.animals|length }}';
+
+        $(document).ready(function(){
+
+            $('.remove-animal').click(function(e) {
+                e.preventDefault();
+                var p = $(this).parent();
+                $(p).remove();
+                return false;
+            });
+
+            $('.add-animal').click(function(e){
+                e.preventDefault();
+                var animalsList = jQuery('#div-animals');
+
+                // grab the prototype template
+                var newWidget = animalsList.attr('data-prototype');
+                // replace the "__name__" used in the id and name of the prototype
+                // with a number that's unique to your emails
+                // end name attribute looks like name="contact[emails][2]"
+                newWidget = newWidget.replace(/__name__/g, animalCount);
+                animalCount++;
+
+                // create a new list element and add it to the list
+                var newLi = jQuery('<div></div>').html(newWidget);
+                newLi.appendTo(animalsList);
+                animalsList.css('display','block');
+
+                $('.remove-animal').click(function(e) {
+                    e.preventDefault();
+                    var p = $(this).parent();
+                    $(p).remove();
+                    return false;
+                });
+
+
+                // Get the ul that holds the collection of tags
+                var $collectionHolder = $('div.div-animals');
+
+                // add a delete link to all of the existing tag form li elements
+                $collectionHolder.find('<div></div>').each(function() {
+                    addTagFormDeleteLink($(this));
+                });
+
+
+                return false;
+            });
+
+        });
+
+
+    </script>
+
+
+    {% endblock %}

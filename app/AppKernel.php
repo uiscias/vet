@@ -5,6 +5,12 @@ use Symfony\Component\Config\Loader\LoaderInterface;
 
 class AppKernel extends Kernel
 {
+    public function init()
+    {
+        date_default_timezone_set('Europe/Paris');
+        parent::init();
+    }
+
     public function registerBundles()
     {
         $bundles = [
@@ -19,6 +25,19 @@ class AppKernel extends Kernel
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Vich\UploaderBundle\VichUploaderBundle(),
+
+
+
+            // Add your dependencies
+//            new Sonata\CoreBundle\SonataCoreBundle(),
+//            new Sonata\BlockBundle\SonataBlockBundle(),
+//            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+            // If you haven't already, add the storage bundle
+            // This example uses SonataDoctrineORMAdmin but
+            // it works the same with the alternatives
+//            new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
+            // Then add SonataAdminBundle
+//            new Sonata\AdminBundle\SonataAdminBundle(),
 
         ];
 

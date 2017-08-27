@@ -1,0 +1,20 @@
+
+{{  form_row(edit_form.animals.vars.prototype.species) }}
+{{  form_row(edit_form.animals.vars.prototype.name) }}
+{{  form_row(edit_form.animals.vars.prototype.year) }}
+{{  form_row(edit_form.animals.vars.prototype.notes) }}
+{{  form_row(edit_form.animals.vars.prototype.isAlive) }}
+{{  form_row(edit_form.animals.vars.prototype.vaccination) }}
+
+<a class="remove-animal btn-del" href="#">Supprimer cet animal</a>
+
+
+<script type="text/javascript">
+
+    $('.remove-animal').click(function(e) {
+        e.preventDefault();
+        var p = $(this).parent();
+        $(p).remove();
+        return false;
+    });
+</script>
