@@ -6,14 +6,11 @@ namespace AppBundle\Form;
 //use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 //use Symfony\Component\Form\FormBuilderInterface;
 //use Symfony\Component\OptionsResolver\OptionsResolver;
-use AppBundle\Entity\Client;
-use Symfony\Component\Validator\Constraints\Choice;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -27,8 +24,8 @@ class ConsultationType extends AbstractType
     {
         $builder
             ->add('titre')
-            ->add('debtValueForThisConsultation')
-            ->add('notes')
+            ->add('debtValueForThisConsultation', TextType::class, array('label' => 'Créance pour la consultation'))
+            ->add('notes', TextareaType::class, Array('attr' => array('rows' => '7')))
             ->add('photosConsultation', CollectionType::class, array(
                 'entry_type' => PhotosConsultationType::class,
                 'allow_add' => true,
@@ -41,7 +38,7 @@ class ConsultationType extends AbstractType
             ))
 
             ->add('save', SubmitType::class, array(
-                'attr' => array('class' => 'button')))
+                'attr' => array('class' => 'button btn btn-appoint')))
 
     ;
     }

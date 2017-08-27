@@ -1,23 +1,8 @@
-{% extends 'base.html.twig' %}
+{% extends 'baseTmpl.html.twig' %}
 
 {% block body %}
 <h2>Editoin d'une consultation</h2>
-{#
-    {{ form_start(edit_form) }}
-
-    {{ form_widget(edit_form) }}
-        {% form_theme form _self %}
-
-
-
-        {% block _product_name_widget %}
-            <div class="text_widget">
-                {{ block('form_widget_simple') }}
-            </div>
-        {% endblock %}
-
-        {{ form_widget(form.name) }}
-#}
+<br/>
 
 <div>
     {% form_theme edit_form _self %}
@@ -35,11 +20,12 @@
     {{ form_errors(edit_form.notes) }}
     {{ form_widget(edit_form.notes) }}
 
+    <br />
 
     <h3>Photos</h3>
-
+<br />
     <div class="actions">
-        <a class="add-photo" href='#'>Ajouter une nouvelle photo</a>
+        <a class="add-photo btn-appoints" href='#'>Ajouter une nouvelle photo</a><br /><br />
     </div>
 
     <ul>
@@ -63,7 +49,7 @@
                         <a class="image-link" href="{{ photos_consultation_directory }}/{{ photo.vars.value.link }}" data-lightbox="{{ photo.vars.value.link }}"><img class="example-image" src="{{ photos_consultation_directory }}/{{ photo.vars.value.link }}" alt="{{ photo.vars.value.link }}" height="130"/></a>
                        &nbsp;
                         {{ form_row(photo.datafile) }}
-                        <a class="remove-photo" href="#">Supprimer cette photo</a>
+                        <br/><br/><a class="remove-photo btn-dels" href="#" style="align=center;">Supprimer cette photo</a><br/><br/>
 
                     </div>
                 {% endfor %}
@@ -72,6 +58,37 @@
 
     </ul>
 
+    <div>
+        <h3>Vaccination (rappels) </h3>
+        <ul>
+        {% for animal in consultation.client.animals %}
+            {% if animal.isAlive == true %}
+                {% if consultation.vaccinationDone(animal) == false %}
+                    <li>
+                        <div class="squaredFour" id="vaccination_{{ animal.id }}">
+                            <div> {{ animal.name  }}&nbsp;-&nbsp;({{ animal.species }} - {% if animal.isAlive == false %} <span style="color:red; "><B> D&eacute;c&eacute;d&eacute;</B></span>{% else %} Naissance: {{ animal.year }} {% endif %} ) </div>
+                            <div>
+                                <input type="checkbox" value="None" id="vaccin_{{ animal.id }}" name="vaccin_{{ animal.id }}" class="vaccinCheckboxe"/>
+                                <label for="vaccin_{{ animal.id }}">Vaccination effectuée lors de la consultation</label>
+                            </div>
+                        </div>
+                    </li>
+                {% else %}
+                    <li>
+                        <div class="squaredFour" id="vaccination_{{ animal.id }}">
+                            <div> {{ animal.name  }}&nbsp;-&nbsp;({{ animal.species }} - {% if animal.isAlive == false %} <span style="color:red; "><B> D&eacute;c&eacute;d&eacute;</B></span>{% else %} Naissance: {{ animal.year }} {% endif %} ) </div>
+                            <div>
+                                <input type="hidden" id="reminderID" value="{{ consultation.getReminder(animal).id }}" name="reminderID" />
+                                Vaccination effectuée lors de la consultation  <a href="#" class="remove-vaccin-reminder btn-dels"> Supprimer le rappel</a>
+                            </div>
+                        </div>
+                    </li>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+        </ul>
+    </div>
+<br />
 
     {{ form_widget(edit_form.save, { 'label': 'Sauvegarder'}) }}
 
@@ -79,23 +96,84 @@
 
 
 
-    <br /><br />
+    <br /><hr /><br />
     <ul>
         <li>
-            <a href="{{ path('client_consultations', { 'id': consultation.client.id } ) }}">Retour à la liste des consultations</a>
+            <a href="{{ path('client_consultations', { 'id': consultation.client.id } ) }}" class="btn btn-appoint"><i class="fa fa-arrow-left"></i>&nbsp;Retour à la liste des consultations</a>
         </li>
-        <li>
-            <a href="{{ path('photosconsultation_new', { 'consultation': consultation.id} ) }}">Ajouter une photo</a>
+<!--        <li>
+            <a href="{{ path('photosconsultation_new', { 'consultation': consultation.id} ) }}" class="btn btn-appoint"><i class="fa fa-plus-circle"></i>&nbsp;Ajouter une photo</a>
         </li>
+!-->
         <li>
             {{ form_start(delete_form) }}
-            <input type="submit" value="Supprimer la consultation">
+<!--             <input type="submit" value="Supprimer la consultation"> !-->
+
             {{ form_end(delete_form) }}
         </li>
     </ul>
 
 
     <script type="text/javascript">
+        $('.vaccinCheckboxe').click(function(e) {
+            $(this).prop("disabled", this.checked);
+            var id = this.id;
+            var idAnimal = (id.substring(7, id.length));
+
+            var obj = {
+                animal: idAnimal,
+                client: {{ consultation.client.id }},
+                consultation: {{ consultation.id }}
+            };
+
+            $.ajax({
+                type: "POST",
+                url: "{{ path('reminder_vaccin_new_ajax')}}",
+                contentType: 'application/json; charset=UTF-8',
+                data: JSON.stringify(obj),
+                cache: false,
+                success: function(data){
+                    //  $('#index_ecran_contenu').html(data);
+                    $(this).prop("disabled", this.checked);
+
+
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown)
+                {
+                    alert('Error : ' + errorThrown);
+                    $(this).prop("enabled", true);
+                    $(this).prop("checked", false);
+                }
+
+            });
+
+
+        });
+
+        function sendRemoveReminderByAjax(reminderID){
+            var obj = {
+                reminder: reminderID
+            };
+
+            $.ajax({
+                type: "POST",
+                url: "{{ path('reminder_vaccin_remove_ajax')}}",
+                contentType: 'application/json; charset=UTF-8',
+                data: JSON.stringify(obj),
+                cache: false,
+                success: function(data){
+                    //  $('#index_ecran_contenu').html(data);
+                    alert('Le rappel a bien été supprimé.');
+
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown)
+                {
+                    alert('Error : ' + errorThrown);
+                }
+
+            });
+        }
+
 
         // keep track of how many email fields have been rendered
         var photoCount = '{{ edit_form.photosConsultation|length }}';
@@ -107,6 +185,15 @@
                 var p = $(this).parent();
                 $(p).remove();
                 return false;
+            });
+
+            $('.remove-vaccin-reminder').click(function(e) {
+                e.preventDefault();
+                var p = $(this).parent().find("input");
+                if ($(p).val() > 0) {
+                    sendRemoveReminderByAjax($(p).val());
+                    return $(this).parent().remove();
+                }
             });
 
             $('.add-photo').click(function(e){
