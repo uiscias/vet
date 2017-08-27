@@ -4,30 +4,6 @@
     <option name="FILTER_RESOLVED_ITEMS" value="false" />
   </component>
   <component name="ChangeListManager">
-    <list id="890c3b87-0563-4632-bf42-fff3e7a4f0d3" name="Add and manage Reminder for Vaccination" comment="Add and manage Reminder for Vaccination">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/images/bg-banner.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/images/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/Emails/reminder_vaccin.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/baseTmpl.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/baselogin.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/security/changePassword.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Form/PasswordType.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/css/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/js/custom.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/js/jquery.easing.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/fonts/FontAwesome.otf" afterPath="$PROJECT_DIR$/web/assets/fonts/FontAwesome.otf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/fonts/fontawesome-webfont.eot" afterPath="$PROJECT_DIR$/web/assets/fonts/fontawesome-webfont.eot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/fonts/fontawesome-webfont.ttf" afterPath="$PROJECT_DIR$/web/assets/fonts/fontawesome-webfont.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/fonts/fontawesome-webfont.woff" afterPath="$PROJECT_DIR$/web/assets/fonts/fontawesome-webfont.woff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/fonts/fontawesome-webfont.woff2" afterPath="$PROJECT_DIR$/web/assets/fonts/fontawesome-webfont.woff2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/client/consultations.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/client/consultations.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/client/new.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/client/new.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/consultation/new.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/consultation/new.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/consultation/photoPrototype.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/consultation/photoPrototype.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/reminder/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/reminder/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/security/login.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/security/login.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/fonts/fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/web/assets/fonts/fontawesome-webfont.svg" />
-    </list>
     <list id="2b56fbc6-9bed-44b3-9076-520209eb6370" name="Add user Search and pagination" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/client/animalPrototype.html.twig" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/ClientSearch.php" />
@@ -56,9 +32,6 @@
     <file path="$PROJECT_DIR$/app/AppKernel.php" ignored="false" />
     <file path="$PROJECT_DIR$/app/config/config.yml" ignored="false" />
     <file path="$PROJECT_DIR$/app/Resources/views/client/animalPrototype.html.twig" ignored="false" />
-    <file path="$PROJECT_DIR$/src/AppBundle/Form/PasswordType.php" ignored="false" />
-    <file path="$PROJECT_DIR$/web/assets/css/style.css" ignored="false" />
-    <file path="$PROJECT_DIR$/app/Resources/views/client/consultations.html.twig" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -1078,7 +1051,7 @@
       <branch name="master" repository="C:\wamp64\www\vet" />
       <branch name="master" repository="C:\wamp64\www\vet" original="true" />
       <branch name="master" repository="C:\wamp64\www\vet" original="true" />
-      <changelist id="890c3b87-0563-4632-bf42-fff3e7a4f0d3" name="Add and manage Reminder for Vaccination" comment="" />
+      <changelist id="" name="Add and manage Reminder for Vaccination" comment="" />
       <created>1493757352656</created>
       <option name="number" value="00011" />
       <option name="presentableId" value="LOCAL-00011" />
@@ -1152,7 +1125,7 @@
       <option name="presentableId" value="LOCAL-00018" />
       <option name="project" value="LOCAL" />
       <updated>1503851846763</updated>
-      <workItem from="1503851847607" duration="1974000" />
+      <workItem from="1503851847607" duration="2007000" />
     </task>
     <task id="LOCAL-00019" summary="GUI">
       <created>1503853650134</created>
@@ -1189,7 +1162,21 @@
       <option name="project" value="LOCAL" />
       <updated>1503853810871</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="GUI">
+      <created>1503853826829</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1503853826829</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Add and manage Reminder for Vaccination">
+      <created>1503853841789</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1503853841789</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <option name="clearContext" value="false" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
@@ -1214,7 +1201,7 @@
   </component>
   <component name="TimeTrackingManager">
     <option name="enabled" value="true" />
-    <option name="totallyTimeSpent" value="376006000" />
+    <option name="totallyTimeSpent" value="376039000" />
     <option name="showClosedTasks" value="false" />
     <option name="showSpentTimeFromLastPost" value="true" />
   </component>
@@ -1288,12 +1275,12 @@
     <MESSAGE value="Implementing Picture Upload&#10;consultation edit and basic structure&#10;&#10;Upload is done for the consultation edit_form ! At least !&#10;(to be adapted for a new consultation)&#10;" />
     <MESSAGE value="Implementing Picture Upload&#10;consultation edit and basic structure&#10;&#10;Photo upload and Light Box have been implemented" />
     <MESSAGE value="Add &quot;Animal&quot; entity and views&#10;&#10;Set multi-Users design" />
-    <MESSAGE value="Add and manage Reminder for Vaccination" />
     <MESSAGE value="Implementing Picture Upload&#10;consultation edit and basic structure&#10;&#10;Photo upload and Light Box have been implemented&#10;&#10;Gui implementation" />
     <MESSAGE value="Implement Multi-User Application" />
-    <MESSAGE value="GUI" />
     <MESSAGE value="Add &quot;Animal&quot; entity" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add &quot;Animal&quot; entity" />
+    <MESSAGE value="GUI" />
+    <MESSAGE value="Add and manage Reminder for Vaccination" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add and manage Reminder for Vaccination" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
