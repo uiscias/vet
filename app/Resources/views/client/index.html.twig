@@ -1,65 +1,104 @@
-{% extends 'base.html.twig' %}
+{% extends 'baseTmpl.html.twig' %}
 
 {% block body %}
-    <br />
-    <div style="width:600px;align:center">
-    <h1>Clients list</h1>
 
-    <table>
+
+    {% if is_granted('ROLE_ADMIN') %}
+        <h5><b>! Admin Logged In !</b></h5>
+    {% endif %}
+
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+<!--        http://symfony.com/legacy/doc/jobeet/1_4/en/07?orm=Doctrine#chapter_07_list_pagination
+
+        <p>Username: {{ app.user.username }}</p>
+!-->
+    {% endif %}
+    {{ form_start(searchForm) }}
+    <h4>Rechercher un client par Nom, Prénom, Téléphone ou Mail</h4>
+    {{ form_widget(searchForm.searchField) }}
+    <input type="submit" value="Rechercher !" class="btn btn-appoint" />
+    {{ form_end(searchForm) }}
+    <hr />
+
+
+<!--
+        <br />
+
+    <h2>Liste des clients</h2><br />
+
+    <table align="center">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Created</th>
-                <th>Updated</th>
-                <th>Firstname</th>
-                <th>Lastname</th>
-                <th>Address</th>
-                <th>Cp</th>
-                <th>City</th>
-                <th>Phone</th>
-                <th>Phone2</th>
-                <th>Nationalnumber</th>
+                <th>Nom</th>
+                <th>Addresse</th>
+                <th>Ville</th>
+                <th>T&eacute;l&eacute;phone</th>
                 <th>Email</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
-        {% for client in clients %}
+
+
+
             <tr>
-                <td><a href="{{ path('client_show', { 'id': client.id }) }}">{{ client.id }}</a></td>
-                <td>{% if client.created %}{{ client.created|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{% if client.updated %}{{ client.updated|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{{ client.firstName }}</td>
-                <td>{{ client.lastName }}</td>
-                <td>{{ client.address }}</td>
-                <td>{{ client.cP }}</td>
-                <td>{{ client.city }}</td>
-                <td>{{ client.phone }}</td>
-                <td>{{ client.phone2 }}</td>
-                <td>{{ client.nationalNumber }}</td>
-                <td>{{ client.eMail }}</td>
+                <td><a href=" path('client_show', { 'id': client.id }) }}"> client.firstName }}  client.lastName }}</a></td>
+                <td> client.address }}</td>
+                <td> client.city }}</td>
+                <td> client.phone }}</td>
+                <td> client.eMail }}</td>
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('client_show', { 'id': client.id }) }}">Details Client</a>
+                            <a href="  path('client_show', { 'id': client.id }) }}">Details Client</a>
                         </li>
                         <li>
-                            <a href="{{ path('client_consultations', { 'id': client.id }) }}">Consultations</a>
+                            <a href="{ path('client_consultations', { 'id': client.id }) }}">Consultations</a>
                         </li>
                         <li>
-                            <a href="{{ path('client_edit', { 'id': client.id }) }}">Editer le client</a>
+                            <a href=" path('client_edit', { 'id': client.id }) }}">Editer le client</a>
                         </li>
                     </ul>
                 </td>
             </tr>
-        {% endfor %}
+
+
+
         </tbody>
     </table>
+!-->
 
-    <ul>
-        <li>
-            <a href="{{ path('client_new') }}">Create a new client</a>
-        </li>
-    </ul>
+
+        <section id="doctor-team" class="section-padding" style="text-align: center; ">
+            <div class="container" style="text-align: center; ">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="ser-title">Liste des clients</h2><br />
+                        <hr class="botm-line" style="width: 50%; margin: 0 auto;">
+                    </div><br /><br /><br />
+                    {% for client in clients %}
+                    <div class="col-md-3 col-sm-3 col-xs-6">
+                        <div class="thumbnail">
+                            <div class="caption">
+                                <h3><a href="{{ path('client_consultations', { 'id': client.id }) }}">{{ client.firstName }} {{ client.lastName }}</a></h3>
+                                <p>{{ client.address }} <br /> {{ client.city }}</p>
+                                <ul class="list-inline">
+                                    <li><a href="mailto:{{ client.eMail }}"><i class="fa fa-envelope"></i></a></li>
+                                    <li><a href="tel:{{ client.phone }}"><i class="fa fa-phone"></i>{{ client.phone }}</a></li>
+                                </ul>
+                                <ul class="list-inline">
+                                    <li><a href="{{ path('client_show', { 'id': client.id }) }}"><i class="fa fa-eye"></i></a></li>
+                                    <li><a href="{{ path('client_edit', { 'id': client.id }) }}"><i class="fa fa-pencil-square-o"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </section>
+        <!--/ doctor team-->
+            <a href="{{ path('client_new') }}" class="btn btn-appoint">Create a new client</a>
     </div>
 {% endblock %}

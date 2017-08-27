@@ -7,12 +7,14 @@ use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use AppBundle\Entity\Animal;
-
+use Doctrine\ORM\Mapping\Indexes;
+use DateTime;
 
 /**
  * Client
  *
  * @ORM\Table(name="client")
+ * @ORM\Table(indexes={@ORM\Index(name="last_consultation_idx", columns={"last_consultation"}), @ORM\Index(name="associated_username_idx", columns={"associated_username"}), @ORM\Index(name="FirstName_idx", columns={"FirstName"}), @ORM\Index(name="LastName_idx", columns={"LastName"}), @ORM\Index(name="Phone_idx", columns={"Phone"}), @ORM\Index(name="Phone2_idx", columns={"Phone2"}) })
  * @UniqueEntity(fields="eMail", message="Email already taken")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\ClientRepository")
  */
@@ -26,6 +28,12 @@ class Client
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+
+    /**
+     * @Assert\NotBlank()
+     * @ORM\Column(type="string", length=64)
+     */
+    private $associatedUsername;
 
     /**
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Animal", mappedBy="client", cascade={"all"},orphanRemoval=true)
@@ -49,11 +57,18 @@ class Client
      */
     private $updated;
 
+    /**
+     * @var \DateTime $lastConsultation
+     *
+     * @ORM\Column(name="last_consultation", type="datetime")
+     */
+    private $lastConsultation;
+
 
     /**
      * @var string
      *
-     * @ORM\Column(name="FirstName", type="string", length=255)
+     * @ORM\Column(name="FirstName", type="string", length=64)
      * @Assert\NotBlank()
      */
     private $firstName;
@@ -62,7 +77,7 @@ class Client
      * @var string
      *
      * @Assert\NotBlank()
-     * @ORM\Column(name="LastName", type="string", length=255)
+     * @ORM\Column(name="LastName", type="string", length=64)
      */
     private $lastName;
 
@@ -76,7 +91,7 @@ class Client
     /**
      * @var string
      *
-     * @ORM\Column(name="CP", type="string", length=6, nullable=true)
+     * @ORM\Column(name="CP", type="string", length=8, nullable=true)
      */
     private $cP;
 
@@ -90,14 +105,14 @@ class Client
     /**
      * @var string
      *
-     * @ORM\Column(name="Phone", type="string", length=255, nullable=true)
+     * @ORM\Column(name="Phone", type="string", length=32, nullable=true)
      */
     private $phone;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="Phone2", type="string", length=255, nullable=true)
+     * @ORM\Column(name="Phone2", type="string", length=32, nullable=true)
      */
     private $phone2;
 
@@ -111,12 +126,19 @@ class Client
     /**
      * @var string
      *
-     * @ORM\Column(name="EMail", type="string", length=255, nullable=true, unique=true)
+     * @ORM\Column(name="EMail", type="string", length=255, unique=true)
      * @Assert\NotBlank()
      * @Assert\Email()
-
      */
     private $eMail;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="contact_preferences", type="string", length=255)
+     * @Assert\NotBlank()
+     */
+    private $contactPreferences;
 
     /**
      * Constructor
@@ -137,7 +159,7 @@ class Client
     {
         $this->animals->add($animal);
 
-        $animal->setConsultation($this);
+        $animal->setClient($this);
 
         return $this;
     }
@@ -158,6 +180,21 @@ class Client
 
     }
 
+    public function getConsultationWithDebt(){
+
+
+    }
+
+    /**
+     * Get animal
+     *
+     * @return \Doctrine\Common\Collections\ArrayCollection()
+     */
+    public function getAnimal()
+    {
+        return $this->animals;
+    }
+
     /**
      * Get animals
      *
@@ -176,6 +213,17 @@ class Client
     public function getId()
     {
         return $this->id;
+    }
+
+    public function getAssociatedUsername()
+    {
+        return $this->associatedUsername;
+    }
+
+    public function setAssociatedUsername($associatedUsername)
+    {
+        $this->associatedUsername = $associatedUsername;
+        return $this;
     }
 
     /**
@@ -395,6 +443,30 @@ class Client
     }
 
     /**
+     * Set contactPreferences
+     *
+     * @param string $contactPreferences
+     *
+     * @return Client
+     */
+    public function setContactPreferences($contactPreferences)
+    {
+        $this->contactPreferences = $contactPreferences;
+
+        return $this;
+    }
+
+    /**
+     * Get contactPreferences
+     *
+     * @return string
+     */
+    public function getContactPreferences()
+    {
+        return $this->contactPreferences;
+    }
+
+    /**
      * Set created
      *
      * @param \DateTime $created
@@ -441,6 +513,77 @@ class Client
     {
         return $this->updated;
     }
+
+
+    /**
+     * Set lastConsultation
+     *
+     * @param \DateTime $lastConsultation
+     *
+     * @return Client
+     */
+    public function setLastConsultation($lastConsultation)
+    {
+        $this->lastConsultation = $lastConsultation;
+
+        return $this;
+    }
+
+    /**
+     * Set lastConsultation to now
+     *
+     * @return Client
+     */
+    public function setLastConsultationToNow()
+    {
+        $lastConsultation = new DateTime();
+        $this->lastConsultation = $lastConsultation;
+
+        return $this;
+    }
+
+    /**
+     * Get lastConsultation
+     *
+     * @return \DateTime
+     */
+    public function getLastConsultation()
+    {
+        return $this->lastConsultation;
+    }
+
+    /**
+     * Set animal
+     *
+     * @param Array $animals
+     * @return Client
+     */
+    public function setAnimals(Array $animals){
+        $this->animals= $animals;
+        return $this;
+    }
+
+    /**
+     * Set animal
+     *
+     * @param Array $animals
+     * @return Client
+     */
+    public function setAnimal(Array $animals){
+        $this->animals= $animals;
+        return $this;
+    }
+
+    /**
+     * Get PhotosConsultation
+     *
+     * @return \Doctrine\Common\Collections\ArrayCollection()
+     */
+    public function getPhotosConsultation()
+    {
+        return $this->photosConsultation;
+    }
+
 
     public function __toString(){
         return (string)'' . $this->getFirstName() . ' ' . $this->getLastName();

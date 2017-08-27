@@ -3,9 +3,17 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Client;
+use AppBundle\Entity\ClientSearch;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+
+/**
+ * @Security("has_role('ROLE_ADMIN')")
+ */
 
 /**
  * Client controller.
@@ -18,16 +26,62 @@ class ClientController extends Controller
      * Lists all client entities.
      *
      * @Route("/", name="client_index")
-     * @Method("GET")
+     * @Method({"GET", "POST"})
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
-        $em = $this->getDoctrine()->getManager();
+        // The second parameter is used to specify on what object the role is tested.
+//        $this->denyAccessUnlessGranted('ROLE_USER', null, 'Unable to access this page!');
 
-        $clients = $em->getRepository('AppBundle:Client')->findAll();
+        // the above is a shortcut for this
+     //   $user = $this->get('security.token_storage')->getToken()->getUser();
+
+// yay! Use this to see if the user is logged in
+            if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
+                throw $this->createAccessDeniedException();
+            }
+            if ($this->getUser()) {
+                $user = $this->getUser()->getUsername();
+            }
+
+        $repository = $this->getDoctrine()
+            ->getRepository('AppBundle:Client');
+
+
+        $clientSearch = new ClientSearch();
+        $searchForm = $this->createForm('AppBundle\Form\ClientSearchType', $clientSearch);
+        $searchForm->handleRequest($request);
+
+        if ($searchForm->isSubmitted() && $searchForm->isValid()) {
+
+            $clientSearch = $clientSearch->getSearchField();
+            $query = $repository->createQueryBuilder('c')
+                ->where('c.associatedUsername = :username')
+                ->andWhere('c.firstName LIKE :searchElem OR c.lastName LIKE :searchElem OR c.phone LIKE :searchElem OR c.phone2 LIKE :searchElem OR c.eMail LIKE :searchElem')
+                ->setParameter('username', $user)
+                ->setParameter('searchElem', '%'.$clientSearch.'%')
+                ->orderBy('c.lastConsultation', 'DESC')
+                ->setMaxResults(250)
+                ->getQuery();
+
+            $clients = $query->getResult();
+
+        }else{
+            $query = $repository->createQueryBuilder('c')
+                ->where('c.associatedUsername = :username')
+                ->setParameter('username', $user)
+                ->orderBy('c.lastConsultation', 'DESC')
+                ->setMaxResults(50)
+                ->getQuery();
+
+            $clients = $query->getResult();
+        }
+
+
 
         return $this->render('client/index.html.twig', array(
             'clients' => $clients,
+            'searchForm' => $searchForm->createView(),
         ));
     }
 
@@ -39,12 +93,21 @@ class ClientController extends Controller
      */
     public function newAction(Request $request)
     {
+        if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
+            throw $this->createAccessDeniedException();
+        }
+        if ($this->getUser()) {
+            $user = $this->getUser()->getUsername();
+        }
+
         $client = new Client();
+        $client->setAssociatedUsername($user);
         $form = $this->createForm('AppBundle\Form\ClientType', $client);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $client->setLastConsultationToNow();
             $em->persist($client);
             $em->flush($client);
 
@@ -81,10 +144,21 @@ class ClientController extends Controller
      */
     public function consultationsAction(Client $client)
     {
+        if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
+            throw $this->createAccessDeniedException();
+        }
+        if ($this->getUser()) {
+            $user = $this->getUser()->getUsername();
+        }
+        if ($client->getAssociatedUsername() != $user) {
+            throw $this->createAccessDeniedException();
+        }
+
         $deleteForm = $this->createDeleteForm($client);
 
         $em = $this->getDoctrine()->getManager();
         $consultations = $em->getRepository('AppBundle:Consultation')->findBy(array('client' => $client->getId()), array('id' => 'DESC') );
+
 
         return $this->render('client/consultations.html.twig', array(
             'client' => $client,
@@ -103,11 +177,48 @@ class ClientController extends Controller
     {
         $deleteForm = $this->createDeleteForm($client);
         $editForm = $this->createForm('AppBundle\Form\ClientType', $client);
+        $clientOriginal = $this->getDoctrine()->getManager()->getRepository('AppBundle:Client')->find($client);
+
+        $originalAnimals = new \Doctrine\Common\Collections\ArrayCollection();
+
+        foreach ($clientOriginal->getAnimals() as $animal) {
+            $originalAnimals->add($animal);
+        }
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
+            // remove the relationship between the tag and the Task
+            foreach ($originalAnimals as $animal) {
+
+                if (false === $client->getAnimals()->contains($animal)) {
+                    // remove the PhotosConsultation from the Consultation
+                    $client->removeAnimal($animal);
+                    $animal->setClient(null);
+                    $this->getDoctrine()->getManager()->persist($animal);
+                }else{
+
+                }
+            }
+
+            /*
+             * $data = $_POST['data'];
+             * $file = md5(uniqid()) . '.png';
+             * $uri =  substr($data,strpos($data,",") 1);
+
+             // save to file
+             file_put_contents($file, base64_decode($uri));
+
+             // return the filename
+             echo json_encode($file);
+
+             */
+
+
+
+            $this->getDoctrine()->getManager()->persist($client);
+            $this->getDoctrine()->getManager()->flush();
             return $this->redirectToRoute('client_edit', array('id' => $client->getId()));
         }
 
@@ -150,6 +261,11 @@ class ClientController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('client_delete', array('id' => $client->getId())))
             ->setMethod('DELETE')
+            ->add('deleteButton', 'Symfony\Component\Form\Extension\Core\Type\SubmitType', array('label' => 'Supprimer le client',
+                'attr' => array(
+                    'onclick' => 'return confirm("Etes vous certain de vouloir supprimer le client ?")',
+                    'class' => 'btn btn-del'
+                )))
             ->getForm()
         ;
     }

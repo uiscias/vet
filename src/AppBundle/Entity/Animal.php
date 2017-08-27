@@ -2,8 +2,10 @@
 
 namespace AppBundle\Entity;
 
+use AppBundle\Controller\AnimalController;
 use Doctrine\ORM\Mapping as ORM;
 use AppBundle\Entity\Client;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * Animal
@@ -24,7 +26,7 @@ class Animal
 
     /**
      * Many Animal for One Client.
-     * @ORM\ManyToOne(targetEntity="Client", inversedBy="animalsClient")
+     * @ORM\ManyToOne(targetEntity="Client", inversedBy="animals")
      * @ORM\JoinColumn(name="client_id", referencedColumnName="id")
      */
     private $client;
@@ -317,7 +319,18 @@ class Animal
     }
 
     public function __toString(){
-        return (string)'' . $this->getName();
+        $tostring = $this->name;
+        $tostring .= ' (';
+        $tostring .= $this->species;
+        $tostring .= ' - Naissance ';
+        $tostring .= $this->year;
+        $tostring .= ')';
+        return (string) $tostring;
     }
+
+    public function getString(){
+        return (string) ($this->getName() . ' (' . $this->getSpecies() . ')') ?: '?';
+    }
+
 }
 
