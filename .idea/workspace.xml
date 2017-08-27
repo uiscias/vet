@@ -4,31 +4,6 @@
     <option name="FILTER_RESOLVED_ITEMS" value="false" />
   </component>
   <component name="ChangeListManager">
-    <list id="9e395b06-9d01-4b46-bf9c-667b9e57ecc4" name="Add &quot;Animal&quot; entity (an management)" comment="Add &quot;Animal&quot; entity">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/images/Preloader_21.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/images/Preloader_7.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/images/ui-icons_444444_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/images/ui-icons_555555_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/images/ui-icons_777620_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/images/ui-icons_777777_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/images/ui-icons_cc0000_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/images/ui-icons_ffffff_256x240.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/media/attachments/cf182f23985618538c3dde760a3e07e5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/css/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/css/jquery-ui.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/css/jquery-ui.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/js/jquery-ui.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/js/jquery-ui.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/js/modernizr.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/js/npm.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/client/show.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/client/show.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/ReminderController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/ReminderController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Reminder.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Reminder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/css/main.css" afterPath="$PROJECT_DIR$/web/assets/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/js/jquery.min.js" afterPath="$PROJECT_DIR$/web/assets/js/jquery.min.js" />
-    </list>
     <list id="890c3b87-0563-4632-bf42-fff3e7a4f0d3" name="Add and manage Reminder for Vaccination" comment="Add and manage Reminder for Vaccination">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/images/bg-banner.jpg" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/images/logo.png" />
@@ -78,12 +53,8 @@
     <file path="$PROJECT_DIR$/app/Resources/views/client/edit.html.twig" ignored="false" />
     <file path="$PROJECT_DIR$/src/AppBundle/Form/AnimalType.php" ignored="false" />
     <file path="$PROJECT_DIR$/src/AppBundle/Controller/ConsultationController.php" ignored="false" />
-    <file path="$PROJECT_DIR$/src/AppBundle/Controller/ReminderController.php" ignored="false" />
-    <file path="$PROJECT_DIR$/src/AppBundle/Entity/Reminder.php" ignored="false" />
     <file path="$PROJECT_DIR$/app/AppKernel.php" ignored="false" />
     <file path="$PROJECT_DIR$/app/config/config.yml" ignored="false" />
-    <file path="$PROJECT_DIR$/app/Resources/views/base.html.twig" ignored="true" />
-    <file path="$PROJECT_DIR$/app/Resources/views/client/show.html.twig" ignored="false" />
     <file path="$PROJECT_DIR$/app/Resources/views/client/animalPrototype.html.twig" ignored="false" />
     <file path="$PROJECT_DIR$/src/AppBundle/Form/PasswordType.php" ignored="false" />
     <file path="$PROJECT_DIR$/web/assets/css/style.css" ignored="false" />
@@ -1091,7 +1062,7 @@
     </task>
     <task id="LOCAL-00010" summary="Add &quot;Animal&quot; entity (an management)">
       <branch name="master" repository="C:\wamp64\www\vet" />
-      <changelist id="9e395b06-9d01-4b46-bf9c-667b9e57ecc4" name="Add &quot;Animal&quot; entity (an management)" comment="" />
+      <changelist id="" name="Add &quot;Animal&quot; entity (an management)" comment="" />
       <created>1493757291127</created>
       <option name="number" value="00010" />
       <option name="presentableId" value="LOCAL-00010" />
@@ -1181,7 +1152,7 @@
       <option name="presentableId" value="LOCAL-00018" />
       <option name="project" value="LOCAL" />
       <updated>1503851846763</updated>
-      <workItem from="1503851847607" duration="1938000" />
+      <workItem from="1503851847607" duration="1974000" />
     </task>
     <task id="LOCAL-00019" summary="GUI">
       <created>1503853650134</created>
@@ -1204,7 +1175,21 @@
       <option name="project" value="LOCAL" />
       <updated>1503853774129</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="GUI">
+      <created>1503853791619</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1503853791619</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Add &quot;Animal&quot; entity">
+      <created>1503853810871</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1503853810871</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <option name="clearContext" value="false" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
@@ -1229,7 +1214,7 @@
   </component>
   <component name="TimeTrackingManager">
     <option name="enabled" value="true" />
-    <option name="totallyTimeSpent" value="375970000" />
+    <option name="totallyTimeSpent" value="376006000" />
     <option name="showClosedTasks" value="false" />
     <option name="showSpentTimeFromLastPost" value="true" />
   </component>
@@ -1302,13 +1287,13 @@
     <MESSAGE value="Implementing Picture Upload&#10;consultation edit and basic structure&#10;&#10;Remove photo consultation has been corrected.&#10;&#10;Upload button still need to be updated to an html5 entity that permit to directly take a picture&#10;" />
     <MESSAGE value="Implementing Picture Upload&#10;consultation edit and basic structure&#10;&#10;Upload is done for the consultation edit_form ! At least !&#10;(to be adapted for a new consultation)&#10;" />
     <MESSAGE value="Implementing Picture Upload&#10;consultation edit and basic structure&#10;&#10;Photo upload and Light Box have been implemented" />
-    <MESSAGE value="Add &quot;Animal&quot; entity" />
     <MESSAGE value="Add &quot;Animal&quot; entity and views&#10;&#10;Set multi-Users design" />
     <MESSAGE value="Add and manage Reminder for Vaccination" />
-    <MESSAGE value="GUI" />
     <MESSAGE value="Implementing Picture Upload&#10;consultation edit and basic structure&#10;&#10;Photo upload and Light Box have been implemented&#10;&#10;Gui implementation" />
     <MESSAGE value="Implement Multi-User Application" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement Multi-User Application" />
+    <MESSAGE value="GUI" />
+    <MESSAGE value="Add &quot;Animal&quot; entity" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add &quot;Animal&quot; entity" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
