@@ -4,31 +4,6 @@
     <option name="FILTER_RESOLVED_ITEMS" value="false" />
   </component>
   <component name="ChangeListManager">
-    <list id="0b08efba-6ad8-40cc-ad3d-7deef6ced86c" name="Implementing Picture Upload" comment="Implementing Picture Upload&#10;consultation edit and basic structure&#10;&#10;Photo upload and Light Box have been implemented">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/media/attachments/3a21319766e7012239f9f584e526d1f5.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/media/attachments/58dcd890f16c8.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/media/attachments/58dcd89b2d8a3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/media/attachments/58dcd8a53fbf5.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/media/attachments/7f384ae4f7974d8818f355145c56bdac.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/consultation/edit.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/consultation/edit.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Form/ConsultationType.php" afterPath="$PROJECT_DIR$/src/AppBundle/Form/ConsultationType.php" />
-    </list>
-    <list id="7da35619-0692-45be-9b14-03adbd45876e" name="Implement Multi-User Application" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/media/attachments/2686a2ab75b82ce8657b982cc18041a7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/media/attachments/2ff3189fa6bd2437b2f3e25ad20b470d.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/visitor.html.twig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/RegistrationController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/SecurityController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/User.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Form/UserType.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/client/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/client/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/security.yml" afterPath="$PROJECT_DIR$/app/config/security.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/ClientController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/ClientController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Animal.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Animal.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Client.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Client.php" />
-    </list>
     <list id="9e395b06-9d01-4b46-bf9c-667b9e57ecc4" name="Add &quot;Animal&quot; entity (an management)" comment="Add &quot;Animal&quot; entity">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/images/Preloader_21.gif" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/images/Preloader_7.gif" />
@@ -95,28 +70,21 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Form/ClientType.php" afterPath="$PROJECT_DIR$/src/AppBundle/Form/ClientType.php" />
     </list>
     <list id="ae0ac6dd-a173-4df4-b806-c7427fb5ec56" name="Add Notification Zone" comment="" />
-    <list default="true" id="47167221-4a92-468a-91ff-31dc500eb92f" name="GUI" comment="GUI" />
+    <list default="true" id="47167221-4a92-468a-91ff-31dc500eb92f" name="GUI" comment="GUI">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <file path="$PROJECT_DIR$/src/AppBundle/Controller/ClientController.php" ignored="false" />
-    <file path="$PROJECT_DIR$/src/AppBundle/Entity/Client.php" ignored="false" />
-    <file path="$PROJECT_DIR$/app/Resources/views/client/index.html.twig" ignored="false" />
     <file path="$PROJECT_DIR$/src/AppBundle/Form/ClientType.php" ignored="false" />
     <file path="$PROJECT_DIR$/app/Resources/views/client/edit.html.twig" ignored="false" />
-    <file path="$PROJECT_DIR$/src/AppBundle/Form/ConsultationType.php" ignored="false" />
     <file path="$PROJECT_DIR$/src/AppBundle/Form/AnimalType.php" ignored="false" />
     <file path="$PROJECT_DIR$/src/AppBundle/Controller/ConsultationController.php" ignored="false" />
-    <file path="$PROJECT_DIR$/app/Resources/views/consultation/edit.html.twig" ignored="false" />
-    <file path="$PROJECT_DIR$/src/AppBundle/Entity/User.php" ignored="false" />
     <file path="$PROJECT_DIR$/src/AppBundle/Controller/ReminderController.php" ignored="false" />
     <file path="$PROJECT_DIR$/src/AppBundle/Entity/Reminder.php" ignored="false" />
-    <file path="$PROJECT_DIR$/src/AppBundle/Entity/Animal.php" ignored="false" />
     <file path="$PROJECT_DIR$/app/AppKernel.php" ignored="false" />
     <file path="$PROJECT_DIR$/app/config/config.yml" ignored="false" />
-    <file path="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" ignored="false" />
     <file path="$PROJECT_DIR$/app/Resources/views/base.html.twig" ignored="true" />
     <file path="$PROJECT_DIR$/app/Resources/views/client/show.html.twig" ignored="false" />
     <file path="$PROJECT_DIR$/app/Resources/views/client/animalPrototype.html.twig" ignored="false" />
-    <file path="$PROJECT_DIR$/src/AppBundle/Controller/SecurityController.php" ignored="false" />
     <file path="$PROJECT_DIR$/src/AppBundle/Form/PasswordType.php" ignored="false" />
     <file path="$PROJECT_DIR$/web/assets/css/style.css" ignored="false" />
     <file path="$PROJECT_DIR$/app/Resources/views/client/consultations.html.twig" ignored="false" />
@@ -1047,7 +1015,7 @@
     <task id="LOCAL-00001" summary="Implementing Picture Upload">
       <branch name="master" repository="C:\wamp64\www\vet" />
       <branch name="master" repository="C:\wamp64\www\vet" original="true" />
-      <changelist id="0b08efba-6ad8-40cc-ad3d-7deef6ced86c" name="Implementing Picture Upload" comment="" />
+      <changelist id="" name="Implementing Picture Upload" comment="" />
       <created>1489053823196</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
@@ -1109,7 +1077,7 @@
       <branch name="master" repository="C:\wamp64\www\vet" />
       <branch name="master" repository="C:\wamp64\www\vet" original="true" />
       <branch name="master" repository="C:\wamp64\www\vet" original="true" />
-      <changelist id="7da35619-0692-45be-9b14-03adbd45876e" name="Implement Multi-User Application" comment="" />
+      <changelist id="" name="Implement Multi-User Application" comment="" />
       <created>1493757252328</created>
       <option name="number" value="00009" />
       <option name="presentableId" value="LOCAL-00009" />
@@ -1213,7 +1181,7 @@
       <option name="presentableId" value="LOCAL-00018" />
       <option name="project" value="LOCAL" />
       <updated>1503851846763</updated>
-      <workItem from="1503851847607" duration="1868000" />
+      <workItem from="1503851847607" duration="1938000" />
     </task>
     <task id="LOCAL-00019" summary="GUI">
       <created>1503853650134</created>
@@ -1222,7 +1190,21 @@
       <option name="project" value="LOCAL" />
       <updated>1503853650134</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Implementing Picture Upload&#10;consultation edit and basic structure&#10;&#10;Photo upload and Light Box have been implemented&#10;&#10;Gui implementation">
+      <created>1503853742958</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1503853742958</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Implement Multi-User Application">
+      <created>1503853774129</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1503853774129</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <option name="clearContext" value="false" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
@@ -1247,7 +1229,7 @@
   </component>
   <component name="TimeTrackingManager">
     <option name="enabled" value="true" />
-    <option name="totallyTimeSpent" value="375900000" />
+    <option name="totallyTimeSpent" value="375970000" />
     <option name="showClosedTasks" value="false" />
     <option name="showSpentTimeFromLastPost" value="true" />
   </component>
@@ -1324,7 +1306,9 @@
     <MESSAGE value="Add &quot;Animal&quot; entity and views&#10;&#10;Set multi-Users design" />
     <MESSAGE value="Add and manage Reminder for Vaccination" />
     <MESSAGE value="GUI" />
-    <option name="LAST_COMMIT_MESSAGE" value="GUI" />
+    <MESSAGE value="Implementing Picture Upload&#10;consultation edit and basic structure&#10;&#10;Photo upload and Light Box have been implemented&#10;&#10;Gui implementation" />
+    <MESSAGE value="Implement Multi-User Application" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement Multi-User Application" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
