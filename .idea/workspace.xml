@@ -1102,7 +1102,7 @@
       <option name="presentableId" value="LOCAL-00018" />
       <option name="project" value="LOCAL" />
       <updated>1503851846763</updated>
-      <workItem from="1503851847607" duration="2045000" />
+      <workItem from="1503851847607" duration="2059000" />
     </task>
     <task id="LOCAL-00019" summary="GUI">
       <created>1503853650134</created>
@@ -1167,7 +1167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1503853875602</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="GUI">
+      <created>1503853897107</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1503853897107</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <option name="clearContext" value="false" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
@@ -1192,7 +1199,7 @@
   </component>
   <component name="TimeTrackingManager">
     <option name="enabled" value="true" />
-    <option name="totallyTimeSpent" value="376077000" />
+    <option name="totallyTimeSpent" value="376091000" />
     <option name="showClosedTasks" value="false" />
     <option name="showSpentTimeFromLastPost" value="true" />
   </component>
@@ -1270,9 +1277,9 @@
     <MESSAGE value="Implement Multi-User Application" />
     <MESSAGE value="Add &quot;Animal&quot; entity" />
     <MESSAGE value="Add and manage Reminder for Vaccination" />
-    <MESSAGE value="GUI" />
     <MESSAGE value="Add user Search and pagination" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add user Search and pagination" />
+    <MESSAGE value="GUI" />
+    <option name="LAST_COMMIT_MESSAGE" value="GUI" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
