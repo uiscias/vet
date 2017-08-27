@@ -1,19 +1,164 @@
-{% extends 'base.html.twig' %}
+{% extends 'baseTmpl.html.twig' %}
 
 {% block body %}
-    <br />
-    <div style="width:600px;align:center">
-    <h1>Client creation</h1>
-
+<br />
+<div style="width:80%;align:center">
+    {% form_theme form _self %}
     {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
+
+    <h1>Nouvelle fiche client</h1>
+    <br />
+    {{ form_label(form.firstName) }}
+    {{ form_errors(form.firstName) }}
+    {{ form_widget(form.firstName) }}
+
+    {{ form_label(form.lastName) }}
+    {{ form_errors(form.lastName) }}
+    {{ form_widget(form.lastName) }}
+
+    {{ form_label(form.address) }}
+    {{ form_errors(form.address) }}
+    {{ form_widget(form.address) }}
+
+    {{ form_label(form.city) }}
+    {{ form_errors(form.city) }}
+    {{ form_widget(form.city) }}
+
+    {{ form_label(form.cP) }}
+    {{ form_errors(form.cP) }}
+    {{ form_widget(form.cP) }}
+
+    {{ form_label(form.eMail) }}
+    {{ form_errors(form.eMail) }}
+    {{ form_widget(form.eMail) }}
+
+    {{ form_label(form.phone) }}
+    {{ form_errors(form.phone) }}
+    {{ form_widget(form.phone) }}
+
+    {{ form_label(form.phone2) }}
+    {{ form_errors(form.phone2) }}
+    {{ form_widget(form.phone2) }}
+
+    {{ form_label(form.contactPreferences) }}
+    {{ form_errors(form.contactPreferences) }}
+    {{ form_widget(form.contactPreferences) }}
+
+    <br />
+
+    <h3>Animaux</h3>
+
+    <div class="actions">
+        <a class="btn btn-appoint add-animal" href='#'><i class="fa fa-plus-square-o" aria-hidden="true"></i>
+            Ajouter un nouvel animal</a><br /><br />
+    </div>
 
     <ul>
-        <li>
-            <a href="{{ path('client_index') }}">Back to the list</a>
-        </li>
+        <div id="div-animals" data-prototype="
+                {% filter escape %}
+                    {% include 'client/animalPrototype.html.twig' with {edit_form : form} %}
+                {% endfilter %}">
+
+
+
+            {# iterate over each existing tag and render its only field: name #}
+            {% for animal in form.animals %}
+                <div>
+
+                    {#
+                    {{ form_row(photo.titre) }}
+                    {{ form_row(photo.description) }}
+                    {{ form_row(photo.file) }}
+                    #}
+
+                    &nbsp;
+                    {{ form_row(animal.species) }}
+                    {{ form_row(animal.year) }}
+                    {{ form_row(animal.name) }}
+                    {{ form_row(animal.notes) }}
+                    {{ form_row(animal.isAlive) }}
+                    {{ form_row(animal.vaccination) }}
+
+                    <br/><a class="btn btn-del remove-animal" href="#">Supprimer cet animal</a>
+
+                </div>
+            {% endfor %}
+
+        </div>
+
     </ul>
-    </div>
-{% endblock %}
+
+
+    {{ form_widget(form.save, { 'label': 'Sauvegarder', 'class': 'btn btn-appoint'}) }}
+
+    {{ form_end(form) }}
+
+
+
+    <br /><br /><hr />
+    <ul>
+        <li>
+            <a class="btn btn-appoint" href="{{ path('client_index') }}">Retour à la liste des clients</a>
+        </li>
+
+    </ul>
+
+
+    <script type="text/javascript">
+
+        // keep track of how many email fields have been rendered
+        var animalCount = '{{ form.animals|length }}';
+
+        $(document).ready(function(){
+
+            $('.remove-animal').click(function(e) {
+                e.preventDefault();
+                var p = $(this).parent();
+                $(p).remove();
+                return false;
+            });
+
+            $('.add-animal').click(function(e){
+                e.preventDefault();
+                var animalsList = jQuery('#div-animals');
+
+                // grab the prototype template
+                var newWidget = animalsList.attr('data-prototype');
+                // replace the "__name__" used in the id and name of the prototype
+                // with a number that's unique to your emails
+                // end name attribute looks like name="contact[emails][2]"
+                newWidget = newWidget.replace(/__name__/g, animalCount);
+                animalCount++;
+
+                // create a new list element and add it to the list
+                var newLi = jQuery('<div></div>').html(newWidget);
+                newLi.appendTo(animalsList);
+                animalsList.css('display','block');
+
+                $('.remove-animal').click(function(e) {
+                    e.preventDefault();
+                    var p = $(this).parent();
+                    $(p).remove();
+                    return false;
+                });
+
+
+                // Get the ul that holds the collection of tags
+                var $collectionHolder = $('div.div-animals');
+
+                // add a delete link to all of the existing tag form li elements
+                $collectionHolder.find('<div></div>').each(function() {
+                    addTagFormDeleteLink($(this));
+                });
+
+
+                return false;
+            });
+
+        });
+
+
+    </script>
+
+
+    {% endblock %}

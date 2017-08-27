@@ -1,13 +1,35 @@
-{% extends 'base.html.twig' %}
+{% extends 'baseTmpl.html.twig' %}
 
 {% block body %}
     <br />
 <div style="width:900px;text-align:center;align-items: center">
-    <h2>Consultations de {{ client.firstName }} {{ client.lastName }}</h2>
+    <h2>Consultations de {{ client.firstName }} {{ client.lastName }}</h2><br />
 <p>
     {{ client.address }}&nbsp;{{ client.cP }} - {{ client.city }} <br />
     Tel: {{ client.phone }} Mail: {{ client.eMail }}
 </p>
+<p>
+    <ul>
+
+    {% for animal in client.animals %}
+        {% if animal.isAlive %}
+        <li>- {{ animal.name }} ({{ animal.species }} - Naissance {{ animal.year }}) </li>
+        {% endif %}
+    {% endfor %}
+    </ul>
+</p>
+    <br />
+    <ul>
+    {% for consultation in consultations %}
+        {%  if consultation.debtValueForThisConsultation > 0 %}
+         <a>
+             <a href="{{ path('consultation_edit', { 'id': consultation.id }) }}"><i class="fa fa-exclamation-triangle"></i>
+             La consultation du {{ consultation.dateOfConsultation|date('Y-m-d') }}</a> &eacute;tait en dette de {{ consultation.debtValueForThisConsultation }}  EUR
+         </li>
+         <br />
+        {% endif %}
+    {%  endfor %}
+    </ul>
     <hr />
 
     {% for consultation in consultations %}
@@ -17,10 +39,11 @@
         </p>
         <p>
         {%  for photo in consultation.photosConsultation %}
-            <a class="image-link" href="{{ photos_consultation_directory }}/{{ photo.link }}" data-lightbox="{{ consultation.created|date('d/m/Y')  }}&nbsp;-&nbsp;{{ consultation.titre|e }}"><img class="example-image" src="{{ photos_consultation_directory }}/{{ photo.link }}" alt="{{ photo.link }}" height="130"/></a>
+            <a class="image-link" href="{{ photos_consultation_directory }}/{{ photo.link }}" data-lightbox="{{ consultation.created|date('d/m/Y')  }}&nbsp;-&nbsp;{{ consultation.titre|e }}">
+                <img class="example-image" src="{{ photos_consultation_directory }}/{{ photo.link }}" alt="{{ photo.link }}" height="130"/></a>
         {% endfor %}
         </p>
-        <a href="{{ path('consultation_edit', {'id': consultation.id}) }}">Editer cette consultation</a>
+        <a href="{{ path('consultation_edit', {'id': consultation.id}) }}" class="btn btn-appoint"><i class="fa fa-pencil-square-o"></i>&nbsp;Editer cette consultation</a>
         <br /><br />
 
     {% else %}
@@ -28,14 +51,14 @@
     {% endfor %}
 
 
-
+<hr />
     <ul>
         <li>
-            <a href="{{ path('client_index') }}">Retour à la liste des patients</a>
+            <a href="{{ path('client_index') }}" class="btn btn-appoint"><i class="fa fa-arrow-left"></i>&nbsp;Retour à la liste des patients</a>
         </li>
 
         <li>
-            <a href="{{ path('consultation_new', {'client': client.id}) }}">Nouvelle Consultation</a>
+            <a href="{{ path('consultation_new', {'client': client.id}) }}" class="btn btn-appoint"><i class="fa fa-plus-circle"></i>&nbsp;Nouvelle Consultation</a>
             {#{{ form_start(delete_form) }}#}
                 {#<input type="submit" value="Nouvelle Consultation">#}
             {#{{ form_end(delete_form) }}#}

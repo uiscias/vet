@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'baseTmpl.html.twig' %}
 
 {% block body %}
 <h1>Nouvelle consultation</h1>
@@ -39,7 +39,7 @@
     <h3>Photos</h3>
 
     <div class="actions">
-        <a class="add-photo" href='#'>Ajouter une nouvelle photo</a>
+        <a class="add-photo btn-appoints" href='#'>Ajouter une nouvelle photo</a>
     </div>
 
     <ul>
@@ -63,10 +63,10 @@
 
 
 
-    <br /><br />
+    <br /><hr /><br />
     <ul>
         <li>
-            <a href="{{ path('client_consultations', { 'id': consultation.client.id } ) }}">Retour à la liste des consultations</a>
+            <a href="{{ path('client_consultations', { 'id': consultation.client.id } ) }}" class="btn btn-appoint"><i class="fa fa-arrow-left"></i>&nbsp&nbsp;Retour à la liste des consultations</a>
         </li>
     </ul>
 
