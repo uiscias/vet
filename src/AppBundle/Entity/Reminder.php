@@ -7,7 +7,7 @@ use AppBundle\Entity\Client;
 use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
- * Remainder
+ * Reminder
  *
  * @ORM\Table(name="reminder")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\ReminderRepository")
@@ -47,11 +47,32 @@ class Reminder
     private $client;
 
     /**
+     * Many Reminders for One Consultation (as there is many animals).
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Consultation", inversedBy="reminders")
+     * @ORM\JoinColumn(name="consultation_id", referencedColumnName="id")
+     */
+    private $consultation;
+
+    /**
+     * Many Reminders for One Animal.
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Animal")
+     * @ORM\JoinColumn(name="animal_id", referencedColumnName="id")
+     */
+    private $animal;
+
+    /**
      * @var \DateTime
      *
      * @ORM\Column(name="ReminderDateTime", type="datetime")
      */
     private $reminderDateTime;
+
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="Sent", type="boolean")
+     */
+    private $sent;
 
     /**
      * @var bool
@@ -97,7 +118,7 @@ class Reminder
      *
      * @param \DateTime $reminderDateTime
      *
-     * @return Remainder
+     * @return Reminder
      */
     public function setReminderDateTime($reminderDateTime)
     {
@@ -121,7 +142,7 @@ class Reminder
      *
      * @param boolean $enabled
      *
-     * @return Remainder
+     * @return Reminder
      */
     public function setEnabled($enabled)
     {
@@ -141,11 +162,36 @@ class Reminder
     }
 
     /**
+     * Set sent
+     *
+     * @param boolean $sent
+     *
+     * @return Reminder
+     */
+    public function setSent($sent)
+    {
+        $this->sent = $sent;
+
+        return $this;
+    }
+
+    /**
+     * Get sent
+     *
+     * @return bool
+     */
+    public function getSent()
+    {
+        return $this->sent;
+    }
+
+
+    /**
      * Set media
      *
      * @param string $media
      *
-     * @return Remainder
+     * @return Reminder
      */
     public function setMedia($media)
     {
@@ -169,7 +215,7 @@ class Reminder
      *
      * @param string $title
      *
-     * @return Remainder
+     * @return Reminder
      */
     public function setTitle($title)
     {
@@ -193,7 +239,7 @@ class Reminder
      *
      * @param string $note
      *
-     * @return Remainder
+     * @return Reminder
      */
     public function setNote($note)
     {
@@ -234,6 +280,54 @@ class Reminder
     public function getClient()
     {
         return $this->client;
+    }
+
+    /**
+     * Set consultation
+     *
+     * @param \AppBundle\Entity\Client $client
+     *
+     * @return Reminder
+     */
+    public function setConsultation(\AppBundle\Entity\Consultation $consultation = null)
+    {
+        $this->consultation = $consultation;
+
+        return $this;
+    }
+
+    /**
+     * Get consultation
+     *
+     * @return \AppBundle\Entity\Consultation
+     */
+    public function getConsultation()
+    {
+        return $this->consultation;
+    }
+
+    /**
+     * Set animal
+     *
+     * @param \AppBundle\Entity\Animal $animal
+     *
+     * @return Reminder
+     */
+    public function setAnimal(\AppBundle\Entity\Animal $animal = null)
+    {
+        $this->animal = $animal;
+
+        return $this;
+    }
+
+    /**
+     * Get animal
+     *
+     * @return \AppBundle\Entity\Animal
+     */
+    public function getAnimal()
+    {
+        return $this->animal;
     }
 
     public function __toString(){

@@ -8,17 +8,39 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!--[if lte IE 8]><script src="{{ asset('assets/js/ie/html5shiv.js') }}"></script><![endif]-->
-    <script src="{{ asset('assets/js/jquery-3.2.1.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery-ui.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('assets/js/lightbox.js') }}"></script>
+    <script src="{{ asset('assets/js/modernizr.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/jquery-ui.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/lightbox.css') }}" />
     <!--[if lte IE 9]><link rel="stylesheet" href="{{ asset('assets/css/ie9.css') }}" /><![endif]-->
     <!--[if lte IE 8]><link rel="stylesheet" href="{{ asset('assets/css/ie8.css') }}" /><![endif]-->
     <title>{% block title %}Welcome!{% endblock %}</title>
     {% block stylesheets %}{% endblock %}
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    <script>
+        var loaded = false;
+        function checkLoaded(){
+//            $(".se-pre-con").style.visibility = 'hidden';
+            $(".se-pre-con").hide;
+        }
+        $(window).ready(function() {
+            $(".se-pre-con").hide();
+        });
+
+        $(window).load(function() {
+            // Animate loader off screen
+            $(".se-pre-con").fadeOut("slow");;
+            $(".se-pre-con").style.visibility = 'hidden';
+        });
+
+    </script>
 </head>
-<body>
+<body">
+<div id="se-pre-con" class="se-pre-con"></div>
 <div id="page-wrapper">
 
     <!-- Header -->
