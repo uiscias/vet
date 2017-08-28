@@ -1,7 +1,7 @@
 {% extends 'baseTmpl.html.twig' %}
 
 {% block body %}
-<h2>Editoin d'une consultation</h2>
+<h2>Editoin de la consultation de {{ consultation.client.firstName }} {{ consultation.client.lastName }} du {{ consultation.created|date('d-m-Y') }} </h2>
 <br/>
 
 <div>
