@@ -6,17 +6,7 @@
   <component name="ChangeListManager">
     <list id="ae0ac6dd-a173-4df4-b806-c7427fb5ec56" name="Add Notification Zone" comment="" />
     <list default="true" id="47167221-4a92-468a-91ff-31dc500eb92f" name="GUI" comment="GUI">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/media/attachments/7c07e23626123e04117b09a740c266b7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/media/attachments/fe984f30107430471bcc57fac2eb797f.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/ChangePassword.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Form/ChangePasswordType.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/AppBundle/Form/PasswordType.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/baselogin.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/baselogin.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/consultation/edit.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/consultation/edit.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/security/changePassword.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/security/changePassword.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/security/login.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/security/login.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/SecurityController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/SecurityController.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -1107,7 +1097,7 @@
       <option name="presentableId" value="LOCAL-00018" />
       <option name="project" value="LOCAL" />
       <updated>1503851846763</updated>
-      <workItem from="1503851847607" duration="13595000" />
+      <workItem from="1503851847607" duration="13610000" />
     </task>
     <task id="LOCAL-00019" summary="GUI">
       <created>1503853650134</created>
@@ -1186,7 +1176,14 @@
       <option name="project" value="LOCAL" />
       <updated>1503853911007</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="GUI">
+      <created>1503923319748</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1503923319748</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <option name="clearContext" value="false" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
@@ -1211,7 +1208,7 @@
   </component>
   <component name="TimeTrackingManager">
     <option name="enabled" value="true" />
-    <option name="totallyTimeSpent" value="387627000" />
+    <option name="totallyTimeSpent" value="387642000" />
     <option name="showClosedTasks" value="false" />
     <option name="showSpentTimeFromLastPost" value="true" />
   </component>
