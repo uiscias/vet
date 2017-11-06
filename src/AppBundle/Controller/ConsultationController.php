@@ -52,6 +52,7 @@ class ConsultationController extends Controller
 
         $consultation = new Consultation();
         $consultation->setClient($client);
+        $consultation->setDebtValueForThisConsultation(0);
         $editForm = $this->createForm('AppBundle\Form\ConsultationType', $consultation);
 //        $form = $this->get('form.factory')->create(ConsultationType::class, $consultation);
 //        $editForm->handleRequest($request);
@@ -88,7 +89,7 @@ class ConsultationController extends Controller
             $request->getSession()->getFlashBag()->add('oprationEmail', " votre email a été bien envoyé");
 
 //            return $this->redirectToRoute('consultation_show', array('id' => $consultation->getId()));
-            return $this->redirectToRoute('consultation_edit', array('id' => $consultation->getId()));
+            return $this->redirectToRoute('client_consultations', array('id' => $client->getId()));
         }
 
 
@@ -229,6 +230,7 @@ class ConsultationController extends Controller
     public function deleteAction(Request $request, Consultation $consultation)
     {
         $form = $this->createDeleteForm($consultation);
+        $client = $consultation->getClient();
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -236,8 +238,9 @@ class ConsultationController extends Controller
             $em->remove($consultation);
             $em->flush($consultation);
         }
+        return $this->redirectToRoute('client_consultations', array('id' => $client->getId()));
 
-        return $this->redirectToRoute('consultation_index');
+//        return $this->redirectToRoute('client_consultations');
     }
 
     /**
