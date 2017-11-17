@@ -6,6 +6,7 @@
     <table>
         <thead cellspacing="30">
             <tr style="margin: 50px;">
+                <th></th>
                 <th>Creation</th>
                 <th>Date du rappel </th>
                 <th>Actif</th>
@@ -18,6 +19,7 @@
         {% for reminder in reminders %}
             <tr>
 <!--                <td><a href=" path('reminder_show', { 'id': reminder.id }) }}">reminder.id }}</a></td> !-->
+                <td><ul class="list-inline"><a href=" {{ path('reminder_edit', { 'id': reminder.id }) }}"><i class="fa fa-pencil-square-o"></i></a></ul></td>
                 <td>{% if reminder.created %}{{ reminder.created|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{% if reminder.updated %}{{ reminder.updated|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{% if reminder.reminderDateTime %}{{ reminder.reminderDateTime|date('Y-m-d H:i:s') }}{% endif %}</td>

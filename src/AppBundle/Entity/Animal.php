@@ -83,6 +83,13 @@ class Animal
     private $isAlive;
 
     /**
+     * @var bool
+     *
+     * @ORM\Column(name="isGoingOutside", type="boolean")
+     */
+    private $isGoingOutside;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="vaccination", type="text", nullable=true)
@@ -212,6 +219,27 @@ class Animal
     }
 
     /**
+     * Set Set IsGoingOutside
+     *
+     * @return Animal
+     */
+    public function setIsGoingOutside($isGoingOutside)
+    {
+        $this->isGoingOutside = $isGoingOutside;
+
+    }
+    /**
+     * Is going outside
+     *
+     * @return Boolean
+     */
+    public function isGoingOutside()
+    {
+        return $this->isGoingOutside;
+
+    }
+
+    /**
      * Get notes
      *
      * @return string
@@ -324,6 +352,8 @@ class Animal
         $tostring .= $this->species;
         $tostring .= ' - Naissance ';
         $tostring .= $this->year;
+        if ($this->isGoingOutside())
+            $tostring .= ' - Sort ';
         $tostring .= ')';
         return (string) $tostring;
     }

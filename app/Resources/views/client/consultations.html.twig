@@ -1,8 +1,10 @@
 {% extends 'baseTmpl.html.twig' %}
 
 {% block body %}
-    <br />
-<div style="width:900px;text-align:center;align-items: center">
+
+<section id="doctor-team" class="section-padding" style="text-align: center; ">
+    <div class="container" style="text-align: center; align-items: center">
+
     <h2>Consultations de {{ client.firstName }} {{ client.lastName }}</h2><br />
 <p>
     {{ client.address }}&nbsp;{{ client.cP }} - {{ client.city }} <br />
@@ -13,7 +15,7 @@
 
     {% for animal in client.animals %}
         {% if animal.isAlive %}
-        <li>- {{ animal.name }} ({{ animal.species }} - Naissance {{ animal.year }}) </li>
+        <li> {{ animal.__toString() }} </li>
         {% endif %}
     {% endfor %}
     </ul>
@@ -63,6 +65,10 @@
                 {#<input type="submit" value="Nouvelle Consultation">#}
             {#{{ form_end(delete_form) }}#}
         </li>
+
+        <li>
+            <a href="{{ path('client_edit', { 'id': client.id }) }}" class="btn btn-appoint"><i class="fa fa-pencil-square-o"></i>&nbsp;Editer le client et les animaux</a>
+        </li>
     </ul>
-</div>
+    </div></section>
 {% endblock %}

@@ -2171,6 +2171,7 @@
 	}
 
 	input[type="text"],
+	input[type="date"],
 	input[type="password"],
 	input[type="email"],
 	select,
@@ -2195,6 +2196,7 @@
 	}
 
 		input[type="text"]:invalid,
+		input[type="date"]:invalid,
 		input[type="password"]:invalid,
 		input[type="email"]:invalid,
 		select:invalid,
@@ -2203,6 +2205,7 @@
 		}
 
 		input[type="text"]:focus,
+		input[type="date"]:focus,
 		input[type="password"]:focus,
 		input[type="email"]:focus,
 		select:focus,
@@ -2244,6 +2247,7 @@
 		}
 
 	input[type="text"],
+	input[type="date"],
 	input[type="password"],
 	input[type="email"],
 	select {
@@ -3097,6 +3101,7 @@
 		}
 
 			.wrapper.style2 input[type="text"]:focus,
+			.wrapper.style2 input[type="date"]:focus,
 			.wrapper.style2 input[type="password"]:focus,
 			.wrapper.style2 input[type="email"]:focus,
 			.wrapper.style2 select:focus,

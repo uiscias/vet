@@ -21,6 +21,7 @@ class AnimalType extends AbstractType
                     'choices' => array(
                         'Chat' => 'chat',
                         'Chien' => 'chien',
+                        'Lapin'   => 'lapin',
                         'Furet'   => 'furet',
                         'Autre' => 'autre'),
                     'preferred_choices' => array('Chien', 'chien'),
@@ -34,6 +35,12 @@ class AnimalType extends AbstractType
                         'Non' => false),
                     'preferred_choices' => array(true, 'Oui'),
                     'label' => 'Est vivant'))
+                ->add('isGoingOutside', ChoiceType::class, array(
+                    'choices' => array(
+                        'Oui' => true,
+                        'Non' => false),
+                    'preferred_choices' => array(true, 'Oui'),
+                    'label' => 'Va à l\'extérieur'))
                 ->add('vaccination', TextareaType::class, array('label' => 'Vaccination'));
     }
     
