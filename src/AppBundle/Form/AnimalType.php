@@ -28,6 +28,7 @@ class AnimalType extends AbstractType
                     'label' => 'Espèce'))
                 ->add('year', TextType::class, array('label' => 'Année de naissance'))
                 ->add('name', TextType::class, array('label' => 'Nom'))
+                ->add('identificationNumber', TextType::class, array('label' => 'Numéro d\'identification'))
                 ->add('notes', TextareaType::class, array('label' => 'Notes'))
                 ->add('isAlive', ChoiceType::class, array(
                     'choices' => array(

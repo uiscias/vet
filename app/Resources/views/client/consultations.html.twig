@@ -35,7 +35,21 @@
     <hr />
 
     {% for consultation in consultations %}
-    <h3>{{ consultation.created|date('d/m/Y')  }}&nbsp;-&nbsp;{{ consultation.titre|e }}</h3>
+    <h3>
+        {% if consultation.animal != "" %}
+            {% if consultation.titre != "" %}
+                {{ consultation.created|date('d/m/Y')  }}&nbsp;-&nbsp;{{ consultation.titre|e }} - <i>Animal: {{ consultation.animal.name|e }}</i>
+            {% else %}
+                {{ consultation.created|date('d/m/Y')  }}&nbsp;-&nbsp;<i>Animal : {{ consultation.animal.name|e }}</i>
+            {% endif %}
+        {% else %}
+            {% if consultation.titre != "" %}
+                {{ consultation.created|date('d/m/Y')  }}&nbsp;-&nbsp;{{ consultation.titre|e }}
+            {% else %}
+                {{ consultation.created|date('d/m/Y')  }}
+            {% endif %}
+        {% endif %}
+    </h3>
         <p>
             {{ consultation.notes|e }}
         </p>

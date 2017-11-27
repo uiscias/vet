@@ -30,7 +30,7 @@
 
     {{ form_label(form.eMail) }}
     {{ form_errors(form.eMail) }}
-    {{ form_widget(form.eMail) }}
+    {{ form_widget(form.eMail, {'required': false}) }}
 
     {{ form_label(form.phone) }}
     {{ form_errors(form.phone) }}

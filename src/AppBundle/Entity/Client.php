@@ -126,8 +126,7 @@ class Client
     /**
      * @var string
      *
-     * @ORM\Column(name="EMail", type="string", length=255, unique=true)
-     * @Assert\NotBlank()
+     * @ORM\Column(name="EMail", type="string", length=255, unique=true, nullable=true)
      * @Assert\Email()
      */
     private $eMail;
@@ -203,6 +202,23 @@ class Client
     public function getAnimals()
     {
         return $this->animals;
+    }
+
+    /**
+     * Get animals
+     *
+     * @return \Doctrine\Common\Collections\ArrayCollection()
+     */
+    public function getAnimalsAlive()
+    {
+        $animalsAlive = new \Doctrine\Common\Collections\ArrayCollection();
+
+        foreach ($this->animals as $animal) {
+            if($animal->getIsAlive()){
+                $animalsAlive->add($animal);
+            }
+        }
+            return $animalsAlive;
     }
 
     /**

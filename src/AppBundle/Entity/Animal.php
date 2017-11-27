@@ -50,9 +50,17 @@ class Animal
     /**
      * @var string
      *
-     * @ORM\Column(name="species", type="string", length=255)
+     * @ORM\Column(name="species", type="string", length=255, nullable=true)
+
      */
     private $species;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="identificationNumber", type="string", length=255, nullable=true)
+     */
+    private $identificationNumber;
 
     /**
      * @var int
@@ -131,6 +139,29 @@ class Animal
         return $this->client;
     }
 
+    /**
+     * Set IdentificationNumber
+     *
+     * @param string $identificationNumber
+     *
+     * @return Animal
+     */
+    public function setIdentificationNumber($identificationNumber)
+    {
+        $this->identificationNumber = $identificationNumber;
+
+        return $this;
+    }
+
+    /**
+     * Get IdentificationNumber
+     *
+     * @return string
+     */
+    public function getIdentificationNumber()
+    {
+        return $this->identificationNumber;
+    }
 
     /**
      * Set species

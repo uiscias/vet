@@ -20,12 +20,12 @@ class ClientType extends AbstractType
     {
         $builder->add('firstName', TextType::class, array('label' => 'Prénom'))
                 ->add('lastName', TextType::class, array('label' => 'Nom de famille'))
-                ->add('address', TextType::class, array('label' => 'Adresse'))
-                ->add('cP', TextType::class, array('label' => 'Code Postal'))
-                ->add('city', TextType::class, array('label' => 'Ville'))
-                ->add('phone', TextType::class, array('label' => 'Téléphone'))
+                ->add('address', TextType::class, array('label' => 'Adresse', 'required' => false))
+                ->add('cP', TextType::class, array('label' => 'Code Postal', 'required' => false))
+                ->add('city', TextType::class, array('label' => 'Ville', 'required' => false))
+                ->add('phone', TextType::class, array('label' => 'Téléphone', 'required' => false))
                 ->add('phone2', TextType::class, array('label' => 'Téléphone 2', 'required' => false))
-                ->add('eMail', EmailType::class, ['attr' => ['class' => 'input-lg']],array('label' => 'E-Mail'))
+                ->add('eMail', EmailType::class, ['attr' => ['class' => 'input-lg', 'required' => false]],array('label' => 'E-Mail'))
                 ->add('contactPreferences', ChoiceType::class, array(
                     'choices' => array(
                         'eMail' => 'eMail',

@@ -14,6 +14,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class ConsultationType extends AbstractType
 {
@@ -24,6 +25,12 @@ class ConsultationType extends AbstractType
     {
         $builder
             ->add('titre')
+            ->add('animal', EntityType::class , array(
+                'class'      => 'AppBundle:Animal',
+                'choices'   => $builder->getData()->getClient()->getAnimalsAlive(),
+                'multiple'  => false,
+                'required'  => false,
+           ))
             ->add('debtValueForThisConsultation', TextType::class, array('label' => 'Créance pour la consultation'))
             ->add('notes', TextareaType::class, Array('attr' => array('rows' => '7')))
             ->add('photosConsultation', CollectionType::class, array(

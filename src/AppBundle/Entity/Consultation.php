@@ -32,6 +32,13 @@ class Consultation
     private $client;
 
     /**
+     * Many Consultations for One Animal.
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Animal")
+     * @ORM\JoinColumn(name="animal_id", referencedColumnName="id")
+     */
+    private $animal;
+
+    /**
      * @var \DateTime $created
      *
      * @Gedmo\Timestampable(on="create")
@@ -166,6 +173,24 @@ class Consultation
         // $this->attachments[] = $attachment;
 
         return $this;
+    }
+
+    /**
+     * Get Animal
+     *
+     * @return \Animal
+     */
+    public function getAnimal()
+    {
+        return $this->animal;
+    }
+
+    /**
+     * Set Animal
+     */
+    public function setAnimal($animal)
+    {
+        $this->animal = $animal;
     }
 
 

@@ -30,7 +30,7 @@
 
     {{ form_label(edit_form.eMail) }}
     {{ form_errors(edit_form.eMail) }}
-    {{ form_widget(edit_form.eMail) }}
+    {{ form_widget(edit_form.eMail, {'required': false}) }}
 
     {{ form_label(edit_form.phone) }}
     {{ form_errors(edit_form.phone) }}
@@ -75,6 +75,7 @@
                         {{ form_row(animal.species) }}
                         {{ form_row(animal.year) }}
                         {{ form_row(animal.name) }}
+                        {{ form_row(animal.identificationNumber) }}
                         {{ form_row(animal.notes) }}
                         {{ form_row(animal.isAlive) }}
                         {{ form_row(animal.isGoingOutside) }}
@@ -92,8 +93,9 @@
 
     {{ form_widget(edit_form.save, { 'label': 'Sauvegarder', 'class': 'btn btn-appoint'}) }}
 
+    <div style="display:none;">
     {{ form_end(edit_form) }}
-
+    </div>
 
 
     <br /><br /><hr />
