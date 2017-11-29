@@ -78,7 +78,7 @@
                     </div><br /><br /><br />
                     {% for client in clients %}
                     <div class="col-md-3 col-sm-3 col-xs-6">
-                        <div class="thumbnail">
+                        <div class="thumbnail equalize  " style="">
                             <div class="caption">
                                 <h3><a href="{{ path('client_consultations', { 'id': client.id }) }}">{{ client.firstName }} {{ client.lastName }}</a></h3>
                                 <p>{{ client.address }} <br /> {{ client.city }}</p>
@@ -104,6 +104,15 @@
                 </div>
             </div>
         </section>
+        <SCRIPT>
+            $(document).ready(function() {
+                var maxHeight = 0;
+                $(".equalize").each(function(){
+                    if ($(this).height() > maxHeight) { maxHeight = $(this).height(); }
+                });
+                $(".equalize").height(maxHeight);
+            });
+        </SCRIPT>
         <!--/ doctor team-->
             <a href="{{ path('client_new') }}" class="btn btn-appoint">Create a new client</a>
     </div>
