@@ -6,11 +6,13 @@
   <component name="ChangeListManager">
     <list id="ae0ac6dd-a173-4df4-b806-c7427fb5ec56" name="Add Notification Zone" comment="" />
     <list id="47167221-4a92-468a-91ff-31dc500eb92f" name="GUI" comment="GUI&#10;Correction of some minors issues like label under button, redirection post deletion, and debt default value" />
-    <list default="true" id="502ee5ac-70f1-467e-8e31-126c738e2470" name="Updates asked by Dr Thiellens" comment="Updates asked by Dr Thiellens&#10;Ajout de la case permettant de dire si l'animal sort ou pas&#10;Ajout des fonctions permettant de modifier les rappels&#10;Correction de la gestion des photos depuis l'hurl public&#10;ajout d'un racourcis permettant d'éditer le client et les animaux depuis la liste des consultations&#10;&#10;Ajout du num d'identification ; correction mineures des templates">
+    <list default="true" id="502ee5ac-70f1-467e-8e31-126c738e2470" name="Updates asked by Dr Thiellens" comment="Updates asked by Dr Thiellens&#10;Ajout de la case permettant de dire si l'animal sort ou pas&#10;Ajout des fonctions permettant de modifier les rappels&#10;Correction de la gestion des photos depuis l'hurl public&#10;ajout d'un racourcis permettant d'éditer le client et les animaux depuis la liste des consultations&#10;&#10;Ajout de la fonction logout">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.phar" afterPath="$PROJECT_DIR$/composer.phar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/baseTmpl.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/baseTmpl.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/security.yml" afterPath="$PROJECT_DIR$/app/config/security.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/SecurityController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/SecurityController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/client/consultations.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/client/consultations.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/client/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/client/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/consultation/edit.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/consultation/edit.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -50,6 +52,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
+      <file leaf-file-name="consultations.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/client/consultations.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-165">
+              <caret line="13" column="32" lean-forward="true" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/client/edit.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="792">
+              <caret line="111" column="9" lean-forward="true" selection-start-line="111" selection-start-column="9" selection-end-line="111" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="VetController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/VetController.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -87,6 +109,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="edit.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/consultation/edit.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="759">
+              <caret line="92" column="58" lean-forward="false" selection-start-line="92" selection-start-column="58" selection-end-line="92" selection-end-column="58" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="security.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/config/security.yml">
           <provider selected="true" editor-type-id="text-editor">
@@ -97,7 +129,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="baseTmpl.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="baseTmpl.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/baseTmpl.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="611">
@@ -115,22 +147,9 @@
       <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/client/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="86" column="111" lean-forward="false" selection-start-line="86" selection-start-column="81" selection-end-line="86" selection-end-column="111" />
+            <state relative-caret-position="304">
+              <caret line="88" column="63" lean-forward="true" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="63" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ClientController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ClientController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
-              <caret line="106" column="39" lean-forward="false" selection-start-line="106" selection-start-column="39" selection-end-line="106" selection-end-column="39" />
-              <folding>
-                <element signature="e#40#68#0#PHP" expanded="true" />
-                <element signature="e#5226#5250#0#PHP" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -138,30 +157,8 @@
       <file leaf-file-name="Client.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Client.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1073">
-              <caret line="86" column="0" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ReminderController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ReminderController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="537">
-              <caret line="198" column="0" lean-forward="false" selection-start-line="195" selection-start-column="0" selection-end-line="198" selection-end-column="0" />
-              <folding>
-                <element signature="e#7742#7767#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CsvImport.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/CsvImport.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
-              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state relative-caret-position="279">
+              <caret line="443" column="28" lean-forward="false" selection-start-line="443" selection-start-column="24" selection-end-line="443" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -178,8 +175,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>text</find>
-      <find>type=&quot;text</find>
       <find>client</find>
       <find>http</find>
       <find>supprim</find>
@@ -208,6 +203,8 @@
       <find>csvIm</find>
       <find>iss</find>
       <find>fa</find>
+      <find>phon</find>
+      <find>mail</find>
     </findStrings>
     <replaceStrings>
       <replace>edit_form</replace>
@@ -262,7 +259,6 @@
         <option value="$PROJECT_DIR$/app/Resources/views/consultation/photoPrototype.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/client/new.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/client/show.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/consultation/edit.html.twig" />
         <option value="$PROJECT_DIR$/app/config/routing.yml" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/app/Resources/views/client/dettes.html.twig" />
@@ -270,7 +266,6 @@
         <option value="$PROJECT_DIR$/app/AppKernel.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Form/ConsultationType.php" />
         <option value="$PROJECT_DIR$/app/config/config.yml" />
-        <option value="$PROJECT_DIR$/app/Resources/views/client/consultations.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/consultation/index.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/ClientController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/client/debts.html.twig" />
@@ -282,10 +277,12 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Form/CsvImportType.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/CsvImport.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/VetController.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/client/index.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/SecurityController.php" />
         <option value="$PROJECT_DIR$/app/config/security.yml" />
         <option value="$PROJECT_DIR$/app/Resources/views/baseTmpl.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/client/index.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/client/consultations.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/consultation/edit.html.twig" />
       </list>
     </option>
   </component>
@@ -1279,7 +1276,7 @@
       <updated>1510155509150</updated>
       <workItem from="1510155509764" duration="1462000" />
       <workItem from="1510495679958" duration="19695000" />
-      <workItem from="1511775195897" duration="32525000" />
+      <workItem from="1511775195897" duration="34261000" />
     </task>
     <task id="LOCAL-00034" summary="Updates asked by Dr Thiellens&#10;Ajout de la case permettant de dire si l'animal sort ou pas&#10;Ajout des fonctions permettant de modifier les rappels&#10;Correction de la gestion des photos depuis l'hurl public&#10;ajout d'un racourcis permettant d'éditer le client et les animaux depuis la liste des consultations">
       <created>1510947497315</created>
@@ -1302,7 +1299,14 @@
       <option name="project" value="LOCAL" />
       <updated>1511945005596</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Updates asked by Dr Thiellens&#10;Ajout de la case permettant de dire si l'animal sort ou pas&#10;Ajout des fonctions permettant de modifier les rappels&#10;Correction de la gestion des photos depuis l'hurl public&#10;ajout d'un racourcis permettant d'éditer le client et les animaux depuis la liste des consultations&#10;&#10;Ajout de la fonction logout">
+      <created>1511947156120</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1511947156120</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <option name="clearContext" value="false" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
@@ -1327,7 +1331,7 @@
   </component>
   <component name="TimeTrackingManager">
     <option name="enabled" value="true" />
-    <option name="totallyTimeSpent" value="448493000" />
+    <option name="totallyTimeSpent" value="450229000" />
     <option name="showClosedTasks" value="false" />
     <option name="showSpentTimeFromLastPost" value="true" />
   </component>
@@ -1410,7 +1414,8 @@
     <MESSAGE value="GUI&#10;Correction of some minors issues like label under button, redirection post deletion, and debt default value" />
     <MESSAGE value="Updates asked by Dr Thiellens&#10;Ajout de la case permettant de dire si l'animal sort ou pas&#10;Ajout des fonctions permettant de modifier les rappels&#10;Correction de la gestion des photos depuis l'hurl public&#10;ajout d'un racourcis permettant d'éditer le client et les animaux depuis la liste des consultations" />
     <MESSAGE value="Updates asked by Dr Thiellens&#10;Ajout de la case permettant de dire si l'animal sort ou pas&#10;Ajout des fonctions permettant de modifier les rappels&#10;Correction de la gestion des photos depuis l'hurl public&#10;ajout d'un racourcis permettant d'éditer le client et les animaux depuis la liste des consultations&#10;&#10;Ajout du num d'identification ; correction mineures des templates" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updates asked by Dr Thiellens&#10;Ajout de la case permettant de dire si l'animal sort ou pas&#10;Ajout des fonctions permettant de modifier les rappels&#10;Correction de la gestion des photos depuis l'hurl public&#10;ajout d'un racourcis permettant d'éditer le client et les animaux depuis la liste des consultations&#10;&#10;Ajout du num d'identification ; correction mineures des templates" />
+    <MESSAGE value="Updates asked by Dr Thiellens&#10;Ajout de la case permettant de dire si l'animal sort ou pas&#10;Ajout des fonctions permettant de modifier les rappels&#10;Correction de la gestion des photos depuis l'hurl public&#10;ajout d'un racourcis permettant d'éditer le client et les animaux depuis la liste des consultations&#10;&#10;Ajout de la fonction logout" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updates asked by Dr Thiellens&#10;Ajout de la case permettant de dire si l'animal sort ou pas&#10;Ajout des fonctions permettant de modifier les rappels&#10;Correction de la gestion des photos depuis l'hurl public&#10;ajout d'un racourcis permettant d'éditer le client et les animaux depuis la liste des consultations&#10;&#10;Ajout de la fonction logout" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1502,16 +1507,6 @@
         <state relative-caret-position="386">
           <caret line="30" column="43" lean-forward="false" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/client/edit.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="111" column="9" lean-forward="true" selection-start-line="111" selection-start-column="9" selection-end-line="111" selection-end-column="9" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1635,14 +1630,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/consultation/edit.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="18" column="52" lean-forward="false" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/client/show.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="457">
@@ -1656,16 +1643,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="23" lean-forward="false" selection-start-line="0" selection-start-column="23" selection-end-line="0" selection-end-column="23" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/client/consultations.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="5" column="75" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="5" selection-end-column="75" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#section#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1824,14 +1801,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Client.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1073">
-          <caret line="86" column="0" lean-forward="false" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ClientController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="429">
@@ -1882,14 +1851,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/client/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="86" column="111" lean-forward="false" selection-start-line="86" selection-start-column="81" selection-end-line="86" selection-end-column="111" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/baseTmpl.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="611">
@@ -1900,6 +1861,46 @@
             <element signature="e#3250#3262#0#Twig" expanded="true" />
             <element signature="e#3339#3354#0#Twig" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Client.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="443" column="28" lean-forward="false" selection-start-line="443" selection-start-column="24" selection-end-line="443" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/client/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="88" column="63" lean-forward="true" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/client/consultations.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-165">
+          <caret line="13" column="32" lean-forward="true" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/client/edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="792">
+          <caret line="111" column="9" lean-forward="true" selection-start-line="111" selection-start-column="9" selection-end-line="111" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/consultation/edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="759">
+          <caret line="92" column="58" lean-forward="false" selection-start-line="92" selection-start-column="58" selection-end-line="92" selection-end-column="58" />
+          <folding />
         </state>
       </provider>
     </entry>

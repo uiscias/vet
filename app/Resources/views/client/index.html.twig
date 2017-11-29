@@ -86,8 +86,10 @@
                                     {% if client.eMail != '' %}
                                          <li><a href="mailto:{{ client.eMail }}"><i class="fa fa-envelope"></i></a></li>
                                     {% endif %}
-                                    {% if client.eMail != '' %}
+                                    {% if client.phone != '' %}
                                         <li><a href="tel:{{ client.phone }}"><i class="fa fa-phone"></i>{{ client.phone }}</a></li>
+                                        {% elseif client.phone2 != '' %}
+                                        <li><a href="tel:{{ client.phone2 }}"><i class="fa fa-phone"></i>{{ client.phone2 }}</a></li>
                                     {% endif %}
                                 </ul>
                                 <ul class="list-inline">

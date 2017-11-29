@@ -8,7 +8,14 @@
     <h2>Consultations de {{ client.firstName }} {{ client.lastName }}</h2><br />
 <p>
     {{ client.address }}&nbsp;{{ client.cP }} - {{ client.city }} <br />
-    Tel: {{ client.phone }} Mail: {{ client.eMail }}
+    {% if client.phone != '' %}
+        Tel: {{ client.phone }}
+        {% elseif client.phone2 != '' %}
+        Tel: {{ client.phone2 }}
+    {% endif %}
+    {% if client.eMail != '' %}
+        Mail: {{ client.eMail }}
+    {% endif %}
 </p>
 <p>
     <ul>
