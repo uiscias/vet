@@ -59,7 +59,6 @@
                             <li class=""><a href="{{ path('reminder_index') }}">Rappels</a></li>
                             <li class=""><a href="{{ path('client_debts') }}">Dettes</a></li>
                             {% if is_granted('ROLE_USER') %}
-                                <li class=""><a href="{{ path('client_debts') }}">Dettes</a></li>
                                 <li><a href="{{ path('security_logout') }}"><i class="fa fa-sign-out"></i></a></li>
                             {% endif %}
                         </ul>
