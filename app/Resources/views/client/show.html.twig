@@ -99,7 +99,10 @@
 </section>
     <ul>
         <li>
-            <a href="{{ path('client_index') }}" class="btn btn-appoint"><i class="fa fa-arrow-left"></i>&nbsp&nbsp;Retour à la liste</a>
+            <a href="{{ path('client_index') }}" class="btn btn-appoint"><i class="fa fa-arrow-left"></i>&nbsp&nbsp;Retour à la liste des clients</a>
+        </li>
+        <li>
+            <a class="btn btn-appoint" href="{{ path('client_consultations', { 'id': client.id }) }}">Liste des consultations du client</a>
         </li>
         <li>
             <a href="{{ path('client_edit', { 'id': client.id }) }}" class="btn btn-appoint"><i class="fa fa-pencil-square-o"></i>&nbsp;Editer le client et les animaux</a>

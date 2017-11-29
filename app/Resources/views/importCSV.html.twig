@@ -75,7 +75,23 @@
 
 
 
-        {% block body %}{% endblock %}
+        {% block body %}
+
+            <h1>CSV Contact Import from Outlook by Fabien v0.001</h1>
+
+            {{ form_start(formUploadFile) }}
+            {{ form_widget(formUploadFile) }}
+            <input type="submit" value="Create" />
+            {{ form_end(formUploadFile) }}
+
+            <ul>
+                <li>
+                    <a href="{{ path('client_index') }}">Back to the client list</a>
+                </li>
+            </ul>
+
+
+        {% endblock %}
         {% block javascripts %}{% endblock %}
 
 

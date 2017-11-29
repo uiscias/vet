@@ -26,6 +26,7 @@ class ConsultationController extends Controller
      */
     public function indexAction()
     {
+
         $em = $this->getDoctrine()->getManager();
 
         $consultations = $em->getRepository('AppBundle:Consultation')->findAll();
@@ -229,6 +230,13 @@ class ConsultationController extends Controller
      */
     public function deleteAction(Request $request, Consultation $consultation)
     {
+        if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
+            throw $this->createAccessDeniedException();
+        }
+        if ($this->getUser()) {
+            $user = $this->getUser()->getUsername();
+        }
+
         $form = $this->createDeleteForm($consultation);
         $client = $consultation->getClient();
         $form->handleRequest($request);

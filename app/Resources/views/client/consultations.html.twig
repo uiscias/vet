@@ -51,7 +51,7 @@
         {% endif %}
     </h3>
         <p>
-            {{ consultation.notes|e }}
+            {{ consultation.notes | raw }}
         </p>
         <p>
         {%  for photo in consultation.photosConsultation %}

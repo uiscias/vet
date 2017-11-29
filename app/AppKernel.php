@@ -25,6 +25,9 @@ class AppKernel extends Kernel
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Vich\UploaderBundle\VichUploaderBundle(),
+//            new KMS\FroalaEditorBundle\KMSFroalaEditorBundle(),
+            new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
+
 
 
 

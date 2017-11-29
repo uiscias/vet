@@ -113,3 +113,9 @@ sensio_framework_extra:
     request:
         converters: true
         auto_convert: true
+ivory_ck_editor:
+    default_config: "my_custom_config"
+    configs:
+        my_custom_config:
+            uiColor:                    "#FCFCFC"
+            toolbar:                    [ [ 'Preview' ], [ 'Cut','Copy','Paste','-','Undo','Redo' ], [ 'Bold','Italic','Underline','Strike', 'Blockquote','Subscript','Superscript','-','RemoveFormat' ], [ 'NumberedList','BulletedList','-','Outdent','Indent','-','-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock' ], [ 'Link' ], [ 'TextColor','BGColor' ], [ 'RemoveFormat' ] ]

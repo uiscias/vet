@@ -83,8 +83,12 @@
                                 <h3><a href="{{ path('client_consultations', { 'id': client.id }) }}">{{ client.firstName }} {{ client.lastName }}</a></h3>
                                 <p>{{ client.address }} <br /> {{ client.city }}</p>
                                 <ul class="list-inline">
-                                    <li><a href="mailto:{{ client.eMail }}"><i class="fa fa-envelope"></i></a></li>
-                                    <li><a href="tel:{{ client.phone }}"><i class="fa fa-phone"></i>{{ client.phone }}</a></li>
+                                    {% if client.eMail != '' %}
+                                         <li><a href="mailto:{{ client.eMail }}"><i class="fa fa-envelope"></i></a></li>
+                                    {% endif %}
+                                    {% if client.eMail != '' %}
+                                        <li><a href="tel:{{ client.phone }}"><i class="fa fa-phone"></i>{{ client.phone }}</a></li>
+                                    {% endif %}
                                 </ul>
                                 <ul class="list-inline">
                                     <li><a href="{{ path('client_show', { 'id': client.id }) }}"><i class="fa fa-eye"></i></a></li>

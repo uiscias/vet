@@ -1,0 +1,37 @@
+{% extends 'baseTmpl.html.twig' %}
+
+{% block body %}
+
+<section id="doctor-team" class="section-padding" style="text-align: center; ">
+    <div class="container" style="text-align: center; align-items: center">
+    <h1>Dettes des clients</h1><br />
+
+        <table style="width: 100%; margin: 0px auto; text-align: center; align-items: center">
+            <thead cellspacing="150">
+            <tr style="margin: 150px; text-align: center; align-items: center">
+                <th></th>
+                <th>Prénom du client</th>
+                <th>Nom du client </th>
+                <th>Valeur de la dette</th>
+            </tr>
+            </thead>
+            <tbody >
+            {% for debt in debts  %}
+                <tr style="text-align: left; align-items: left">
+                    <td><ul class="list-inline"><a href=" {{ path('client_consultations', { 'id': debt.id }) }}"><i class="fa fa-arrow-left"></i></a></ul></td>
+                    <td>{{ debt.firstName }}</td>
+                    <td>{{ debt.lastName }}</td>
+                    <td>{{ debt.debt }}  &euro;</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+<hr />
+    <ul>
+        <li>
+            <a href="{{ path('client_index') }}" class="btn btn-appoint"><i class="fa fa-arrow-left"></i>&nbsp;Retour à la liste des patients</a>
+        </li>
+    </ul>
+    </div></section>
+{% endblock %}

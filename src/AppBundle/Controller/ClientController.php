@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Client;
+use AppBundle\Entity\Consultation;
 use AppBundle\Entity\ClientSearch;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -119,6 +120,43 @@ class ClientController extends Controller
             'form' => $form->createView(),
         ));
     }
+
+    /**
+     * Finds and displays clients's debts.
+     *
+     * @Route("/debts", name="client_debts")
+     * @Method("GET")
+     */
+    public function debtsAction()
+    {
+        if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
+            throw $this->createAccessDeniedException();
+        }
+        if ($this->getUser()) {
+            $user = $this->getUser()->getUsername();
+        }
+
+        $em = $this->getDoctrine()->getManager();
+        $querySumDebts = $em->createQueryBuilder('debts')
+            ->select('SUM(g.debtValueForThisConsultation) as debt')
+            ->from('AppBundle\Entity\Consultation', 'g')
+            ->addselect('c.id')
+            ->addselect('c.firstName')
+            ->addselect('c.lastName')
+            ->leftJoin('g.client', 'c')
+            ->where('g.debtValueForThisConsultation > 0 and c.associatedUsername = :user')
+            ->addGroupBy('g.client')
+            ->orderBy('debt', 'DESC')
+            ->setParameter('user', $user)
+            ->getQuery();
+
+        $SumDebts = $querySumDebts->getResult();
+
+        return $this->render('client/debts.html.twig', array(
+            'debts' => $SumDebts
+        ));
+    }
+
 
     /**
      * Finds and displays a client entity.

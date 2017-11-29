@@ -2,9 +2,17 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Client;
+use AppBundle\Entity\Consultation;
+use AppBundle\Form\CsvImportType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use AppBundle\Entity\CsvImport;
+use Symfony\Component\Serializer\Serializer;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\Serializer\Encoder\CsvEncoder;
+
 
 class VetController extends Controller
 {
@@ -37,6 +45,197 @@ class VetController extends Controller
 
         return new Response('Saved new product with id '.$product->getId());
 */
+    }
+
+    /**
+     * @Route("/csvImport", name="ImportCSV")
+     */
+    public function csvAction(Request $request)
+    {
+        if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
+            throw $this->createAccessDeniedException();
+        }
+        if ($this->getUser()) {
+            $user = $this->getUser()->getUsername();
+        }
+
+        $uploadFile = new CsvImport();
+
+        $formUploadFile = $this->createForm(CsvImportType::class, $uploadFile);
+
+        $formUploadFile->handleRequest($request);
+
+        if($formUploadFile->isSubmitted() && $formUploadFile->isValid())
+        {
+            $file = $formUploadFile->get('file')->getData();
+            $serializer = new Serializer([new ObjectNormalizer()], [new CsvEncoder()]);
+
+            if(!empty($file) || 1)
+            {
+                $datas = $serializer->decode(file_get_contents($file), 'csv');
+
+                foreach ($datas as $data){
+//                    die(dump($data));
+
+                    $currentClient = new Client();
+                    if(isset($data["First Name"]) && $data["First Name"] != '') {
+                        $currentClient->setFirstName($data["First Name"]);
+                    }
+                    if(isset($data["Last Name"]) && $data["Last Name"] != '') {
+                        $currentClient->setLastName($data['Last Name']);
+                        if ($currentClient->getFirstName() == ''){
+                            $currentClient->setFirstName('  ');
+                        }
+                    }else{
+                        if ($currentClient->getFirstName() != ''){
+                            $currentClient->setLastName(' ');
+                        }else{
+                            continue;
+                        }
+                    }
+                    $currentClient->setAssociatedUsername($user);
+                    if($data['Home Street'] != ''){
+                        $currentClient->setAddress($data['Home Street']);
+                        if($data['Home City'] != '') {
+                            $currentClient->setCity($data['Home City']);
+                        }
+                        if($data['Home Postal Code'] != '') {
+                            $currentClient->setCP($data['Home Postal Code']);
+                        }
+
+                    }else if($data['Business Street'] != ''){
+                        $currentClient->setAddress($data['Business Street']);
+                        if($data['Business City'] != '') {
+                            $currentClient->setCity($data['Business City']);
+                        }
+                        if($data['Business Postal Code'] != '') {
+                            $currentClient->setCP($data['Business Postal Code']);
+                        }
+                    }else if($data['Other Street'] != ''){
+                        $currentClient->setAddress($data['Other Street']);
+                        if($data['Other City'] != '') {
+                            $currentClient->setCity($data['Other City']);
+                        }
+                        if($data['Other Postal Code'] != '') {
+                            $currentClient->setCP($data['Other Postal Code']);
+                        }
+                    }
+
+                    $phone1 = '';
+                    $phone2 = '';
+
+
+                    if($data['Mobile Phone'] != ''){
+                        if ($phone1 != ''){
+                            if ($phone2 != ''){}else{
+                                $phone2 = $data['Mobile Phone'];
+                            }
+                        }else{
+                            $phone1 = $data['Mobile Phone'];
+                        }
+                    }
+                    if($data['Primary Phone'] != ''){
+                        if ($phone1 != ''){
+                            if ($phone2 != ''){}else{
+                                $phone2 = $data['Primary Phone'];
+                            }
+                        }else{
+                            $phone1 = $data['Primary Phone'];
+                        }
+                    }
+                    if($data['Home Phone'] != ''){
+                        if ($phone1 != ''){
+                            if ($phone2 != ''){}else{
+                                $phone2 = $data['Home Phone'];
+                            }
+                        }else{
+                            $phone1 = $data['Home Phone'];
+                        }
+                    }
+                    if($data['Home Phone 2'] != ''){
+                        if ($phone1 != ''){
+                            if ($phone2 != ''){}else{
+                                $phone2 = $data['Home Phone 2'];
+                            }
+                        }else{
+                            $phone1 = $data['Home Phone 2'];
+                        }
+                    }
+                    if($data['Business Phone'] != ''){
+                        if ($phone1 != ''){
+                            if ($phone2 != ''){}else{
+                                $phone2 = $data['Business Phone'];
+                            }
+                        }else{
+                            $phone1 = $data['Business Phone'];
+                        }
+                    }
+                    if($data['Business Phone 2'] != ''){
+                        if ($phone1 != ''){
+                            if ($phone2 != ''){}else{
+                                $phone2 = $data['Business Phone 2'];
+                            }
+                        }else{
+                            $phone1 = $data['Business Phone 2'];
+                        }
+                    }
+                    if($data['Other Phone'] != ''){
+                        if ($phone1 != ''){
+                            if ($phone2 != ''){}else{
+                                $phone2 = $data['Business Phone'];
+                            }
+                        }else{
+                            $phone1 = $data['Business Phone'];
+                        }
+                    }
+
+                    $mail1 = '';
+                    if(isset($data['E-mail Address']) && $data['E-mail Address'] != ''){
+                        $currentClient->setEMail($data['E-mail Address']);
+                    }else if(isset($data['E-mail 2 Address']) && $data['E-mail 2 Address'] != ''){
+                        $currentClient->setEMail($data['E-mail 2 Address']);
+                    }else if(isset($data['E-mail 3 Address']) && $data['E-mail 3 Address'] != ''){
+                        $currentClient->setEMail($data['E-mail 3 Address']);
+                    }
+
+                    if ($phone1 != '')
+                        $currentClient->setPhone($phone1);
+                    if ($phone2 != '')
+                        $currentClient->setPhone2($phone2);
+
+                    $currentClient->setLastConsultationToNow();
+                    $currentClient->setContactPreferences('All');
+
+                    $importedConsult = new Consultation();
+                    $importedConsult->setClient($currentClient);
+                    $importedConsult->setTitre('Consultation Importée de Outlook');
+                    if(isset($data['Notes']))
+                        $importedConsult->setNotes($data['Notes']);
+                    $importedConsult->setHasDebts(false);
+                    $importedConsult->setDebtValueForThisConsultation(0);
+
+
+
+                    $em = $this->getDoctrine()->getManager();
+                    $em->persist($currentClient);
+                    $em->persist($importedConsult);
+                    $em->flush($currentClient);
+                    $em->flush($importedConsult);
+
+
+                }
+
+            }
+        }
+
+
+        return $this->render('importCSV.html.twig', array(
+            'formUploadFile' => $formUploadFile->createView(),
+        ));
+
+
+
+
     }
 /*
     public function showAction($productId)
