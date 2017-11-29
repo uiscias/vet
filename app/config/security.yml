@@ -27,6 +27,8 @@ security:
 #                default_target_path: default_security_target
 #                always_use_default_target_path: true
 #                failure_path: login_failure
+            logout:
+                path: /logout
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false

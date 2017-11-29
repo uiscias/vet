@@ -7,8 +7,8 @@ use AppBundle\Entity\Reminder;
 use AppBundle\Entity\ChangePassword;
 use AppBundle\Form\ChangePasswordType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Reminder controller.
@@ -75,5 +75,13 @@ class SecurityController extends Controller
             'form' => $form->createView(),
         ));
 
+    }
+
+    /**
+     * @Route("/logout", name="security_logout")
+     */
+    public function logoutAction()
+    {
+        throw new \Exception('this should not be reached!');
     }
 }
