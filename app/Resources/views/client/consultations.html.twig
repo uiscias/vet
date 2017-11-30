@@ -22,7 +22,11 @@
 
     {% for animal in client.animals %}
         {% if animal.isAlive %}
-        <li> {{ animal.__toString() }} </li>
+        <li> {{ animal.__toString() }}
+            {% if animal.getAlerte != '' %}
+                <b style="color: #ac2925">{{ animal.alerte }}</b>
+            {% endif %}
+        </li>
         {% endif %}
     {% endfor %}
     </ul>

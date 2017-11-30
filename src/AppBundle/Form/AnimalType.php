@@ -27,9 +27,10 @@ class AnimalType extends AbstractType
                     'preferred_choices' => array('Chien', 'chien'),
                     'label' => 'Espèce'))
                 ->add('year', TextType::class, array('label' => 'Année de naissance'))
-                ->add('name', TextType::class, array('label' => 'Nom'))
-                ->add('identificationNumber', TextType::class, array('label' => 'Numéro d\'identification'))
-                ->add('notes', TextareaType::class, array('label' => 'Notes'))
+                ->add('name', TextType::class, array('label' => 'Nom', 'required' => false))
+                ->add('alerte', TextType::class, array('label' => 'Alerte', 'required' => false))
+                ->add('identificationNumber', TextType::class, array('label' => 'Numéro d\'identification', 'required' => false))
+                ->add('notes', TextareaType::class, array('label' => 'Notes', 'required' => false))
                 ->add('isAlive', ChoiceType::class, array(
                     'choices' => array(
                         'Oui' => true,

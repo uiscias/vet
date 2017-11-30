@@ -63,6 +63,13 @@ class Animal
     private $identificationNumber;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="alerte", type="string", length=255, nullable=true)
+     */
+    private $alerte;
+
+    /**
      * @var int
      *
      * @ORM\Column(name="year", type="integer", nullable=true)
@@ -188,6 +195,31 @@ class Animal
     public function getIdentificationNumber()
     {
         return $this->identificationNumber;
+    }
+
+
+    /**
+     * Set Alerte
+     *
+     * @param string $alerte
+     *
+     * @return Animal
+     */
+    public function setAlerte($alerte)
+    {
+        $this->alerte = $alerte;
+
+        return $this;
+    }
+
+    /**
+     * Get Alerte
+     *
+     * @return string
+     */
+    public function getAlerte()
+    {
+        return $this->alerte;
     }
 
     /**
@@ -408,11 +440,12 @@ class Animal
         $tostring = $this->name;
         $tostring .= ' (';
         $tostring .= $this->species;
-        $tostring .= ' - Naissance ';
-        $tostring .= $this->year;
+        if($this->year != '' and $this->year > 0)
+            $tostring .= ' - Naissance ' . $this->year;
         if ($this->isGoingOutside())
             $tostring .= ' - Sort ';
         $tostring .= ')';
+
         return (string) $tostring;
     }
 

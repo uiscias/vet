@@ -112,7 +112,7 @@ class ClientController extends Controller
             $em->persist($client);
             $em->flush($client);
 
-            return $this->redirectToRoute('client_show', array('id' => $client->getId()));
+            return $this->redirectToRoute('client_consultations', array('id' => $client->getId()));
         }
 
         return $this->render('client/new.html.twig', array(
