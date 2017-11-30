@@ -348,6 +348,42 @@ $products = $query->getResult();
         // ...
     }
  */
+
+
+    protected  function sendSms($number, $content){
+        echo ("sms sent to ".$number);
+    }
+
+    protected  function sendReminderMail($mail, $subject, $content){
+        echo ("mail sent to ".$mail);
+        $mailer = $this->get('mailer');
+        $message = $mailer->createMessage()
+            ->setSubject($subject)
+            ->setTo($mail)
+            ->setBody(
+            //                 $this->renderView(
+                // app/Resources/views/Emails/registration.html.twig
+            //                     'Emails/registration.html.twig',
+                               //      array('name' => $name)
+                $content
+                //),
+               // 'text/html'
+            )
+            /*
+             * If you also want to include a plaintext version of the message
+            ->addPart(
+                $this->renderView(
+                    'Emails/registration.txt.twig',
+                    array('name' => $name)
+                ),
+                'text/plain'
+            )
+            */
+        ;
+        $mailer->send($message);
+        return null;
+    }
+
     /**
      * @Route("/reminderJob", name="reminderJob")
      */
@@ -360,8 +396,20 @@ $products = $query->getResult();
             ->addselect('r.media')
             ->addselect('IDENTITY(r.consultation)')
             ->addselect('IDENTITY(r.animal)')
+            ->addselect('r.title')
             ->addselect('r.note')
+            ->addselect('us.reminderMessage')
+            ->addselect('c.eMail')
+            ->addselect('c.phone')
+            ->addselect('c.phone2')
+            ->addselect('a.name')
             ->leftJoin('r.client', 'c')
+            ->leftJoin('r.animal', 'a')
+            ->leftJoin(
+                'AppBundle\Entity\UserSettings',
+                'us',
+                \Doctrine\ORM\Query\Expr\Join::WITH,
+                'c.associatedUsername = us.username')
             ->leftJoin('r.consultation', 'cons')
             ->where('DATE_DIFF(r.reminderDateTime, CURRENT_DATE()) <= 0  and r.enabled = 1 and r.sent = 0')
 //            ->setParameter('user', $user)
@@ -370,6 +418,37 @@ $products = $query->getResult();
         $reminders = $querySumDebts->getResult();
 
 
+        foreach ($reminders as $reminder){
+            $content = $reminder['reminderMessage'] . ' ' . $reminder['name'];
+            switch ($reminder['media']){
+                case 'ALL':
+                    if(isset($reminder['eMail']) and $reminder['eMail'] != '')
+                        $this->sendReminderMail($reminder['eMail'], $reminder['title'], $content);
+                    if(isset($reminder['phone']) and $reminder['phone'] != '')
+                        $this->sendSms($reminder['phone'], $content);
+                    if(isset($reminder['phone2']) and $reminder['phone2'] != '')
+                        $this->sendSms($reminder['phone2'], $content);
+                    break;
+                case 'eMail':
+                    if(isset($reminder['eMail']) and $reminder['eMail'] != '')
+                        $this->sendReminderMail($reminder['eMail'], $reminder['title'], $content);
+                    break;
+                case 'Phone1':
+                    if(isset($reminder['phone']) and $reminder['phone'] != '')
+                        $this->sendSms($reminder['phone'], $content);
+                    break;
+                case 'Phone2':
+                    if(isset($reminder['phone2']) and $reminder['phone2'] != '')
+                        $this->sendSms($reminder['phone2'], $content);
+                    break;
+                case 'Phone1AndEMail':
+                    if(isset($reminder['eMail']) and $reminder['eMail'] != '')
+                        $this->sendReminderMail($reminder['eMail'], $reminder['title'], $content);
+                    if(isset($reminder['phone']) and $reminder['phone'] != '')
+                        $this->sendSms($reminder['phone'], $content);
+                    break;
+            }
+        }
 
         $number = 1;
         return $this->render('home.html.twig', array(

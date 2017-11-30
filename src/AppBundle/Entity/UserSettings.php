@@ -22,6 +22,13 @@ class UserSettings
     private $id;
 
     /**
+     * One UserSetting or one User.
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\User")
+     * @ORM\JoinColumn(name="username", referencedColumnName="username")
+     */
+    private $username;
+
+    /**
      * @var int
      *
      * @ORM\Column(name="ReminderInterval", type="integer", nullable=false)
@@ -46,6 +53,8 @@ class UserSettings
         return $this->id;
     }
 
+
+
     /**
      * Set reminderMessage
      *
@@ -68,6 +77,15 @@ class UserSettings
     public function getReminderMessage()
     {
         return $this->reminderMessage;
+    }
+    /**
+     * Get username
+     *
+     * @return String
+     */
+    public function getUsername()
+    {
+        return $this->username;
     }
 
     /**

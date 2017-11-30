@@ -68,8 +68,7 @@ class Client
     /**
      * @var string
      *
-     * @ORM\Column(name="FirstName", type="string", length=64)
-     * @Assert\NotBlank()
+     * @ORM\Column(name="FirstName", type="string", length=64, nullable=true)
      */
     private $firstName;
 
