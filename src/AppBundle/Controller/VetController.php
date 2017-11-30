@@ -347,6 +347,61 @@ $products = $query->getResult();
 
         // ...
     }
+ */
+    /**
+     * @Route("/reminderJob", name="reminderJob")
+     */
+    public function reminderJobAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $querySumDebts = $em->createQueryBuilder('debts')
+            ->select('SUM(g.debtValueForThisConsultation) as debt')
+            ->from('AppBundle\Entity\Consultation', 'g')
+            ->addselect('c.id')
+            ->addselect('c.firstName')
+            ->addselect('c.lastName')
+            ->leftJoin('g.client', 'c')
+            ->where('g.debtValueForThisConsultation > 0 and c.associatedUsername = :user')
+            ->addGroupBy('g.client')
+            ->orderBy('debt', 'DESC')
+            ->setParameter('user', $user)
+            ->getQuery();
 
-*/
+        $SumDebts = $querySumDebts->getResult();
+
+
+
+        $number = 1;
+        return $this->render('home.html.twig', array(
+            'number' => $number,
+        ));
+
+
+
+
+        /*
+
+9
+down vote
+It is also possible to use built-in function DATE_DIFF(date1, date2) which returns difference in days. Check docs
+
+$result = $this->createQueryBuilder('l')
+    ->where('DATE_DIFF(l.startDate, CURRENT_DATE()) = 0')
+
+
+        $qb->select('p')
+   ->where('YEAR(p.postDate) = :year')
+   ->andWhere('MONTH(p.postDate) = :month')
+   ->andWhere('DAY(p.postDate) = :day');
+
+$qb->setParameter('year', $year)
+   ->setParameter('month', $month)
+   ->setParameter('day', $day);
+
+
+        $today_startdatetime = \DateTime::createFromFormat( "Y-m-d H:i:s", date("Y-m-d 00:00:00") );
+
+        */
+    }
+
 }
