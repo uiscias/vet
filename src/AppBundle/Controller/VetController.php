@@ -354,26 +354,26 @@ $products = $query->getResult();
     public function reminderJobAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
-        $querySumDebts = $em->createQueryBuilder('debts')
-            ->select('SUM(g.debtValueForThisConsultation) as debt')
-            ->from('AppBundle\Entity\Consultation', 'g')
-            ->addselect('c.id')
-            ->addselect('c.firstName')
-            ->addselect('c.lastName')
-            ->leftJoin('g.client', 'c')
-            ->where('g.debtValueForThisConsultation > 0 and c.associatedUsername = :user')
-            ->addGroupBy('g.client')
-            ->orderBy('debt', 'DESC')
-            ->setParameter('user', $user)
+        $querySumDebts = $em->createQueryBuilder('remindersOfTheDay')
+            ->from('AppBundle\Entity\Reminder', 'r')
+            ->addselect('IDENTITY(r.client)')
+            ->addselect('r.media')
+            ->addselect('IDENTITY(r.consultation)')
+            ->addselect('IDENTITY(r.animal)')
+            ->addselect('r.note')
+            ->leftJoin('r.client', 'c')
+            ->leftJoin('r.consultation', 'cons')
+            ->where('DATE_DIFF(r.reminderDateTime, CURRENT_DATE()) <= 0  and r.enabled = 1 and r.sent = 0')
+//            ->setParameter('user', $user)
             ->getQuery();
 
-        $SumDebts = $querySumDebts->getResult();
+        $reminders = $querySumDebts->getResult();
 
 
 
         $number = 1;
         return $this->render('home.html.twig', array(
-            'number' => $number,
+            'reminders' => $reminders,
         ));
 
 

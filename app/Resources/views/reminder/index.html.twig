@@ -9,10 +9,10 @@
                 <th></th>
                 <th>Creation</th>
                 <th>Date du rappel </th>
+                <th>Client </th>
                 <th>Actif</th>
                 <th>Media</th>
                 <th>titre</th>
-                <th>Note</th>
             </tr>
         </thead>
         <tbody>
@@ -21,12 +21,11 @@
 <!--                <td><a href=" path('reminder_show', { 'id': reminder.id }) }}">reminder.id }}</a></td> !-->
                 <td><ul class="list-inline"><a href=" {{ path('reminder_edit', { 'id': reminder.id }) }}"><i class="fa fa-pencil-square-o"></i></a></ul></td>
                 <td>{% if reminder.created %}{{ reminder.created|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{% if reminder.updated %}{{ reminder.updated|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{% if reminder.reminderDateTime %}{{ reminder.reminderDateTime|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ reminder.client }}</td>
                 <td>{% if reminder.enabled %}Yes{% else %}No{% endif %}</td>
                 <td>{{ reminder.media }}</td>
                 <td>{{ reminder.title }}</td>
-                <td>{{ reminder.note }}</td>
 <!--                <td>
                     <ul>
                         <li>
