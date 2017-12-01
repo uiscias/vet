@@ -6,9 +6,9 @@
   <component name="ChangeListManager">
     <list id="ae0ac6dd-a173-4df4-b806-c7427fb5ec56" name="Add Notification Zone" comment="" />
     <list id="47167221-4a92-468a-91ff-31dc500eb92f" name="GUI" comment="GUI&#10;Correction of some minors issues like label under button, redirection post deletion, and debt default value" />
-    <list default="true" id="502ee5ac-70f1-467e-8e31-126c738e2470" name="Updates asked by Dr Thiellens" comment="Updates asked by Dr Thiellens&#10;changer le prénom et le nom de l'animal pour ne plus qu'ils soient obligatoires (sera fait très très rapidement) ===&gt;  c'est fait :)&#10;après création du client aller directement dans la création d'une nouvelle consultation (et non dans les détails du client) (sera fait très très rapidement )===&gt;  c'est fait :)&#10;corriger tostring naissance si vide (sera fait très très rapidement) ===&gt;  c'est fait :)&#10;ajouter un tag Alerte au niveau de l'animal (sera fait très très rapidement) ===&gt;  c'est fait :)">
+    <list default="true" id="502ee5ac-70f1-467e-8e31-126c738e2470" name="Updates asked by Dr Thiellens" comment="Updates asked by Dr Thiellens&#10;Ajouter un bouton nouveau client en haut de la page ^_^ (sera fait très très rapidement)  ===&gt;  c'est fait :)">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/client/consultations.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/client/consultations.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/consultation/photoPrototype.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/consultation/photoPrototype.html.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -90,11 +90,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="consultations.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="consultations.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/client/consultations.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="151">
-              <caret line="17" column="15" lean-forward="true" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
+              <caret line="17" column="15" lean-forward="false" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
               <folding>
                 <element signature="n#style#0;n#b#0;n#li#0;n#ul#0;n#div#0;n#section#0;n#!!top" expanded="true" />
               </folding>
@@ -102,11 +102,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="photoPrototype.html.twig" pinned="false" current-in-tab="false">
+      <file leaf-file-name="photoPrototype.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/consultation/photoPrototype.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-330">
-              <caret line="74" column="62" lean-forward="false" selection-start-line="74" selection-start-column="62" selection-end-line="74" selection-end-column="62" />
+            <state relative-caret-position="449">
+              <caret line="67" column="0" lean-forward="true" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -163,8 +163,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>array</find>
-      <find>ali</find>
       <find>animal</find>
       <find>displ</find>
       <find>app</find>
@@ -193,6 +191,8 @@
       <find>getide</find>
       <find>get</find>
       <find>getAl</find>
+      <find>current</find>
+      <find>webk</find>
     </findStrings>
     <replaceStrings>
       <replace>edit_form</replace>
@@ -231,7 +231,6 @@
         <option value="$PROJECT_DIR$/app/Resources/views/reminder/edit.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/ReminderController.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/consultation/new.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/consultation/photoPrototype.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/client/new.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/client/show.html.twig" />
         <option value="$PROJECT_DIR$/app/config/routing.yml" />
@@ -271,6 +270,7 @@
         <option value="$PROJECT_DIR$/app/Resources/views/client/edit.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/client/animalPrototype.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/client/consultations.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/consultation/photoPrototype.html.twig" />
       </list>
     </option>
   </component>
@@ -1287,7 +1287,7 @@
       <workItem from="1510155509764" duration="1462000" />
       <workItem from="1510495679958" duration="19695000" />
       <workItem from="1511775195897" duration="41194000" />
-      <workItem from="1512030267121" duration="12779000" />
+      <workItem from="1512030267121" duration="14024000" />
     </task>
     <task id="LOCAL-00034" summary="Updates asked by Dr Thiellens&#10;Ajout de la case permettant de dire si l'animal sort ou pas&#10;Ajout des fonctions permettant de modifier les rappels&#10;Correction de la gestion des photos depuis l'hurl public&#10;ajout d'un racourcis permettant d'éditer le client et les animaux depuis la liste des consultations">
       <created>1510947497315</created>
@@ -1373,7 +1373,14 @@
       <option name="project" value="LOCAL" />
       <updated>1512086399106</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Updates asked by Dr Thiellens&#10;Ajouter un bouton nouveau client en haut de la page ^_^ (sera fait très très rapidement)  ===&gt;  c'est fait :)">
+      <created>1512111892805</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1512111892805</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <option name="clearContext" value="false" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
@@ -1398,7 +1405,7 @@
   </component>
   <component name="TimeTrackingManager">
     <option name="enabled" value="true" />
-    <option name="totallyTimeSpent" value="469941000" />
+    <option name="totallyTimeSpent" value="471186000" />
     <option name="showClosedTasks" value="false" />
     <option name="showSpentTimeFromLastPost" value="true" />
   </component>
@@ -1486,7 +1493,8 @@
     <MESSAGE value="Updates asked by Dr Thiellens&#10;Ajout de la case permettant de dire si l'animal sort ou pas&#10;Ajout des fonctions permettant de modifier les rappels&#10;Correction de la gestion des photos depuis l'hurl public&#10;ajout d'un racourcis permettant d'éditer le client et les animaux depuis la liste des consultations&#10;&#10;SoftDelete Implementation" />
     <MESSAGE value="Updates asked by Dr Thiellens&#10;Ajout de la case permettant de dire si l'animal sort ou pas&#10;Ajout des fonctions permettant de modifier les rappels&#10;Correction de la gestion des photos depuis l'hurl public&#10;ajout d'un racourcis permettant d'éditer le client et les animaux depuis la liste des consultations&#10;&#10;Correction liste de rappels" />
     <MESSAGE value="Updates asked by Dr Thiellens&#10;changer le prénom et le nom de l'animal pour ne plus qu'ils soient obligatoires (sera fait très très rapidement) ===&gt;  c'est fait :)&#10;après création du client aller directement dans la création d'une nouvelle consultation (et non dans les détails du client) (sera fait très très rapidement )===&gt;  c'est fait :)&#10;corriger tostring naissance si vide (sera fait très très rapidement) ===&gt;  c'est fait :)&#10;ajouter un tag Alerte au niveau de l'animal (sera fait très très rapidement) ===&gt;  c'est fait :)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updates asked by Dr Thiellens&#10;changer le prénom et le nom de l'animal pour ne plus qu'ils soient obligatoires (sera fait très très rapidement) ===&gt;  c'est fait :)&#10;après création du client aller directement dans la création d'une nouvelle consultation (et non dans les détails du client) (sera fait très très rapidement )===&gt;  c'est fait :)&#10;corriger tostring naissance si vide (sera fait très très rapidement) ===&gt;  c'est fait :)&#10;ajouter un tag Alerte au niveau de l'animal (sera fait très très rapidement) ===&gt;  c'est fait :)" />
+    <MESSAGE value="Updates asked by Dr Thiellens&#10;Ajouter un bouton nouveau client en haut de la page ^_^ (sera fait très très rapidement)  ===&gt;  c'est fait :)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updates asked by Dr Thiellens&#10;Ajouter un bouton nouveau client en haut de la page ^_^ (sera fait très très rapidement)  ===&gt;  c'est fait :)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1823,7 +1831,7 @@
         <state relative-caret-position="554">
           <caret line="20" column="98" lean-forward="false" selection-start-line="20" selection-start-column="98" selection-end-line="20" selection-end-column="98" />
           <folding>
-            <element signature="e#34#74#0#PHP" expanded="true" />
+            <element signature="e#34#74#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1873,14 +1881,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/client/animalPrototype.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="4" column="52" lean-forward="false" selection-start-line="4" selection-start-column="52" selection-end-line="4" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Client.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="317">
@@ -1897,14 +1897,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/consultation/photoPrototype.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-330">
-          <caret line="74" column="62" lean-forward="false" selection-start-line="74" selection-start-column="62" selection-end-line="74" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/reminder/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="730">
@@ -1916,10 +1908,26 @@
     <entry file="file://$PROJECT_DIR$/app/Resources/views/client/consultations.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="151">
-          <caret line="17" column="15" lean-forward="true" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
+          <caret line="17" column="15" lean-forward="false" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
           <folding>
             <element signature="n#style#0;n#b#0;n#li#0;n#ul#0;n#div#0;n#section#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/client/animalPrototype.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="4" column="52" lean-forward="false" selection-start-line="4" selection-start-column="52" selection-end-line="4" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/consultation/photoPrototype.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="449">
+          <caret line="67" column="0" lean-forward="true" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

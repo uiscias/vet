@@ -48,24 +48,27 @@ var videoDevices = [0,0];
 var videoDeviceIndex = 0;
 devices.forEach(function(device) {
     console.log(device.kind + ": " + device.label + " id = " + device.deviceId);
-    if (device.kind == "videoinput") {
+    console.log("Debug Fab: " + (device.label).indexOf("ear"));
+    if (device.kind == "videoinput" && (device.label).indexOf("ear") > -1) {
         videoDevices[videoDeviceIndex++] =  device.deviceId;
     }
 });
 var constraints =  {width: { min: 1024, ideal: 1280, max: 1920 },
     height: { min: 776, ideal: 720, max: 1080 },
-    deviceId: { exact: videoDevices[1]  }
+    deviceId: { exact: videoDevices[0]  }
 };
 return navigator.mediaDevices.getUserMedia({ video: constraints });
 
 })
 .then(stream => {
-    if (window.webkitURL) {
+    if (window.URL || window.webkitURL) {
     ni = document.createNodeIterator(document.documentElement, NodeFilter.SHOW_ELEMENT, function(node){
         return node.classList.contains('video') ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
     });
+
+    var winurl = window.URL || window.webkitURL;
     while(currentNode = ni.nextNode()) {
-        currentNode.src = window.webkitURL.createObjectURL(stream);
+        currentNode.src = winurl.createObjectURL(stream);
         localMediaStream = stream;
     }
 //                video.src = window.webkitURL.createObjectURL(stream);
