@@ -31,6 +31,9 @@
     {% endfor %}
     </ul>
 </p>
+        <ul><li>
+            <a href="{{ path('consultation_new', {'client': client.id}) }}" class="btn btn-appoint"><i class="fa fa-plus-circle"></i>&nbsp;Nouvelle Consultation</a>
+            </li></ul>
     <br />
     <ul>
     {% for consultation in consultations %}
