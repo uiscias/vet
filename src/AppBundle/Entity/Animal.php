@@ -58,6 +58,14 @@ class Animal
     /**
      * @var string
      *
+     * @ORM\Column(name="gender", type="string", length=255, nullable=true)
+
+     */
+    private $gender;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="identificationNumber", type="string", length=255, nullable=true)
      */
     private $identificationNumber;
@@ -244,6 +252,30 @@ class Animal
     public function getSpecies()
     {
         return $this->species;
+    }
+
+    /**
+     * Set Gender
+     *
+     * @param string $gender
+     *
+     * @return Animal
+     */
+    public function setGender($gender)
+    {
+        $this->gender = $gender;
+
+        return $this;
+    }
+
+    /**
+     * Get Gender
+     *
+     * @return string
+     */
+    public function getGender()
+    {
+        return $this->gender;
     }
 
     /**
@@ -440,6 +472,11 @@ class Animal
         $tostring = $this->name;
         $tostring .= ' (';
         $tostring .= $this->species;
+        if ($this->getGender() == 'Femelle'){
+            $tostring .= ' F';
+        }else{
+            $tostring .= ' M';
+        }
         if($this->year != '' and $this->year > 0)
             $tostring .= ' - Naissance ' . $this->year;
         if ($this->isGoingOutside())

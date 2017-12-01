@@ -17,7 +17,8 @@ class AnimalType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('species', ChoiceType::class, array(
+        $builder
+                ->add('species', ChoiceType::class, array(
                     'choices' => array(
                         'Chat' => 'chat',
                         'Chien' => 'chien',
@@ -26,6 +27,11 @@ class AnimalType extends AbstractType
                         'Autre' => 'autre'),
                     'preferred_choices' => array('Chien', 'chien'),
                     'label' => 'Espèce'))
+                ->add('gender', ChoiceType::class, array(
+                    'choices' => array(
+                        'Male' => 'Male',
+                        'Femelle' => 'Femelle'),
+                    'label' => 'Sexe'))
                 ->add('year', TextType::class, array('label' => 'Année de naissance'))
                 ->add('name', TextType::class, array('label' => 'Nom', 'required' => false))
                 ->add('alerte', TextType::class, array('label' => 'Alerte', 'required' => false))

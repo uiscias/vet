@@ -72,11 +72,15 @@
                     #}
 
                     &nbsp;
+                    {{ form_row(animal.gender) }}
                     {{ form_row(animal.species) }}
                     {{ form_row(animal.year) }}
                     {{ form_row(animal.name) }}
+                    {{ form_row(animal.alerte) }}
+                    {{ form_row(animal.identificationNumber) }}
                     {{ form_row(animal.notes) }}
                     {{ form_row(animal.isAlive) }}
+                    {{ form_row(animal.isGoingOutside) }}
                     {{ form_row(animal.vaccination) }}
 
                     <br/><a class="btn btn-del remove-animal" href="#">Supprimer cet animal</a>
