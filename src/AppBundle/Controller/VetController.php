@@ -380,8 +380,55 @@ $products = $query->getResult();
             )
             */
         ;
-        $mailer->send($message);
-        return null;
+        return $mailer->send($message);
+    }
+
+    protected  function notifyReminderSent($user, $clientName, $reminderType){
+
+        $reminderTYpeMessage = '';
+        switch ($reminderType) {
+            case 'ALL':
+                $reminderTYpeMessage = "Un rappel de vaccin a été envoyé sur tous les canaux (tel1, tel2 et mail) a ".$clientName;
+                break;
+            case 'eMail':
+                $reminderTYpeMessage = "Un rappel de vaccin a été envoyé par mail a ".$clientName;
+                break;
+            case 'Phone1':
+                $reminderTYpeMessage = "Un rappel de vaccin a été envoyé sur le téléphone 1 a ".$clientName;
+                break;
+            case 'Phone2':
+                $reminderTYpeMessage = "Un rappel de vaccin a été envoyé sur le téléphone 2 a ".$clientName;
+                break;
+            case 'Phone1AndEMail':
+                $reminderTYpeMessage = "Un rappel de vaccin a été envoyé sur le téléphone 1 et par mail a ".$clientName;
+                break;
+        }
+
+        $mailer = $this->get('mailer');
+        $message = $mailer->createMessage()
+            ->setSubject($reminderTYpeMessage)
+            ->setTo($user)
+            ->setBody(
+            //                 $this->renderView(
+            // app/Resources/views/Emails/registration.html.twig
+            //                     'Emails/registration.html.twig',
+            //      array('name' => $name)
+                $reminderTYpeMessage
+            //),
+            // 'text/html'
+            )
+            /*
+             * If you also want to include a plaintext version of the message
+            ->addPart(
+                $this->renderView(
+                    'Emails/registration.txt.twig',
+                    array('name' => $name)
+                ),
+                'text/plain'
+            )
+            */
+        ;
+        return $mailer->send($message);
     }
 
     /**
@@ -389,6 +436,7 @@ $products = $query->getResult();
      */
     public function reminderJobAction(Request $request)
     {
+        $msg = '';
         $em = $this->getDoctrine()->getManager();
         $querySumDebts = $em->createQueryBuilder('remindersOfTheDay')
             ->from('AppBundle\Entity\Reminder', 'r')
@@ -399,10 +447,13 @@ $products = $query->getResult();
             ->addselect('r.title')
             ->addselect('r.note')
             ->addselect('us.reminderMessage')
+            ->addselect('c.firstName')
+            ->addselect('c.lastName')
+            ->addselect('a.name')
             ->addselect('c.eMail')
             ->addselect('c.phone')
             ->addselect('c.phone2')
-            ->addselect('a.name')
+            ->addselect('u.email as usmail')
             ->leftJoin('r.client', 'c')
             ->leftJoin('r.animal', 'a')
             ->leftJoin(
@@ -410,49 +461,83 @@ $products = $query->getResult();
                 'us',
                 \Doctrine\ORM\Query\Expr\Join::WITH,
                 'c.associatedUsername = us.username')
+            ->leftJoin(
+                'AppBundle\Entity\User',
+                'u',
+                \Doctrine\ORM\Query\Expr\Join::WITH,
+                'u.username= us.username')
             ->leftJoin('r.consultation', 'cons')
-            ->where('DATE_DIFF(r.reminderDateTime, CURRENT_DATE()) <= 0  and r.enabled = 1 and r.sent = 0')
+            ->where('DATE_DIFF(r.reminderDateTime, CURRENT_DATE()) <= 0  and r.enabled = 1 and r.sent = 0 and us.username = \'auron\'')
+
 //            ->setParameter('user', $user)
+
+
             ->getQuery();
 
         $reminders = $querySumDebts->getResult();
-
+        $mailResult = '';
+        $smsResult = '';
+        $sms2Result = '';
 
         foreach ($reminders as $reminder){
             $content = $reminder['reminderMessage'] . ' ' . $reminder['name'];
-            switch ($reminder['media']){
+            switch ($reminder['media']) {
                 case 'ALL':
-                    if(isset($reminder['eMail']) and $reminder['eMail'] != '')
-                        $this->sendReminderMail($reminder['eMail'], $reminder['title'], $content);
-                    if(isset($reminder['phone']) and $reminder['phone'] != '')
-                        $this->sendSms($reminder['phone'], $content);
-                    if(isset($reminder['phone2']) and $reminder['phone2'] != '')
-                        $this->sendSms($reminder['phone2'], $content);
+                    if (isset($reminder['eMail']) and $reminder['eMail'] != ''){
+                        $mailResult = $this->sendReminderMail($reminder['eMail'], $reminder['title'], $content);
+                    }
+                    if (isset($reminder['phone']) and $reminder['phone'] != ''){
+                        $smsResult = $this->sendSms($reminder['phone'], $content);
+                    }
+                    if (isset($reminder['phone2']) and $reminder['phone2'] != ''){
+                        $sms2Result = $this->sendSms($reminder['phone2'], $content);
+                    }
                     break;
                 case 'eMail':
-                    if(isset($reminder['eMail']) and $reminder['eMail'] != '')
-                        $this->sendReminderMail($reminder['eMail'], $reminder['title'], $content);
+                    if (isset($reminder['eMail']) and $reminder['eMail'] != '') {
+                        $mailResult = $this->sendReminderMail($reminder['eMail'], $reminder['title'], $content);
+                    }
                     break;
                 case 'Phone1':
-                    if(isset($reminder['phone']) and $reminder['phone'] != '')
-                        $this->sendSms($reminder['phone'], $content);
+                    if (isset($reminder['phone']) and $reminder['phone'] != ''){
+                        $smsResult = $this->sendSms($reminder['phone'], $content);
+                    }
                     break;
                 case 'Phone2':
-                    if(isset($reminder['phone2']) and $reminder['phone2'] != '')
-                        $this->sendSms($reminder['phone2'], $content);
+                    if (isset($reminder['phone2']) and $reminder['phone2'] != '') {
+                        $sms2Result = $this->sendSms($reminder['phone2'], $content);
+                    }
                     break;
                 case 'Phone1AndEMail':
-                    if(isset($reminder['eMail']) and $reminder['eMail'] != '')
-                        $this->sendReminderMail($reminder['eMail'], $reminder['title'], $content);
-                    if(isset($reminder['phone']) and $reminder['phone'] != '')
-                        $this->sendSms($reminder['phone'], $content);
+                    if (isset($reminder['eMail']) and $reminder['eMail'] != ''){
+                        $mailResult = $this->sendReminderMail($reminder['eMail'], $reminder['title'], $content);
+                    }
+                    if(isset($reminder['phone']) and $reminder['phone'] != '') {
+                        $smsResult = $this->sendSms($reminder['phone'], $content);
+                    }
                     break;
             }
+            if($mailResult != '' && $mailResult){
+                $msg .= '<br />'.$this->notifyReminderSent($reminder['usmail'], $reminder['firstName'].' '.$reminder['firstName'].' pour '.$reminder['name'], 'eMail', true);
+            }else{
+                $msg .= '<br />'.$this->notifyReminderSent($reminder['usmail'], $reminder['firstName'].' '.$reminder['firstName'].' pour '.$reminder['name'], 'eMail', false);
+            }
+            if($smsResult != '' && $smsResult){
+                $msg .= '<br />'.$this->notifyReminderSent($reminder['usmail'], $reminder['firstName'].' '.$reminder['firstName'].' pour '.$reminder['name'], 'Phone1', true);
+            }else{
+                $msg .= '<br />'.$this->notifyReminderSent($reminder['usmail'], $reminder['firstName'].' '.$reminder['firstName'].' pour '.$reminder['name'], 'Phone1', false);
+            }
+            if($sms2Result != '' && $sms2Result){
+                $msg .= '<br />'.$this->notifyReminderSent($reminder['usmail'], $reminder['firstName'].' '.$reminder['firstName'].' pour '.$reminder['name'], 'Phone2', true);
+            }else{
+                $msg .= '<br />'.$this->notifyReminderSent($reminder['usmail'], $reminder['firstName'].' '.$reminder['firstName'].' pour '.$reminder['name'], 'Phone2', false);
+            }
+
         }
 
-        $number = 1;
         return $this->render('home.html.twig', array(
             'reminders' => $reminders,
+            'output' => $msg,
         ));
 
 
