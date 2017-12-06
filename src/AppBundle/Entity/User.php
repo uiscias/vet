@@ -34,6 +34,8 @@ class User implements AdvancedUserInterface, \Serializable{
 
     /**
      * @ORM\Column(type="string", length=255, unique=true)
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\UserSettings", cascade={"persist"})
+     * @ORM\JoinColumn(name="username", referencedColumnName="username")
      * @Assert\NotBlank()
      */
     private $username;

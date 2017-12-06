@@ -24,6 +24,7 @@ class UserSettings
     /**
      * One UserSetting or one User.
      * @ORM\OneToOne(targetEntity="AppBundle\Entity\User")
+     * @ORM\Column(type="string", length=255, unique=true)
      * @ORM\JoinColumn(name="username", referencedColumnName="username")
      */
     private $username;

@@ -518,19 +518,19 @@ $products = $query->getResult();
                     break;
             }
             if($mailResult != '' && $mailResult){
-                $msg .= '<br />'.$this->notifyReminderSent($reminder['usmail'], $reminder['firstName'].' '.$reminder['firstName'].' pour '.$reminder['name'], 'eMail', true);
+                $msg .= '<br /> reminder (mail) sent to '.$reminder['usmail'].': '.$reminder['firstName'].' '.$reminder['firstName'].' pour '.$reminder['name'].' ==> '.$this->notifyReminderSent($reminder['usmail'], $reminder['firstName'].' '.$reminder['firstName'].' pour '.$reminder['name'], 'eMail', true);
             }else{
-                $msg .= '<br />'.$this->notifyReminderSent($reminder['usmail'], $reminder['firstName'].' '.$reminder['firstName'].' pour '.$reminder['name'], 'eMail', false);
+                $msg .= '<br /> reminder (mail) sent to '.$reminder['usmail'].': '.$reminder['firstName'].' '.$reminder['firstName'].' pour '.$reminder['name'].' ==> '.$this->notifyReminderSent($reminder['usmail'], $reminder['firstName'].' '.$reminder['firstName'].' pour '.$reminder['name'], 'eMail', false);
             }
             if($smsResult != '' && $smsResult){
-                $msg .= '<br />'.$this->notifyReminderSent($reminder['usmail'], $reminder['firstName'].' '.$reminder['firstName'].' pour '.$reminder['name'], 'Phone1', true);
+                $msg .= '<br /> reminder (sms) sent to '.$reminder['usmail'].': '.$reminder['firstName'].' '.$reminder['firstName'].' pour '.$reminder['name'].' ==> '.$this->notifyReminderSent($reminder['usmail'], $reminder['firstName'].' '.$reminder['firstName'].' pour '.$reminder['name'], 'Phone1', true);
             }else{
-                $msg .= '<br />'.$this->notifyReminderSent($reminder['usmail'], $reminder['firstName'].' '.$reminder['firstName'].' pour '.$reminder['name'], 'Phone1', false);
+                $msg .= '<br /> reminder (sms) sent to '.$reminder['usmail'].': '.$reminder['firstName'].' '.$reminder['firstName'].' pour '.$reminder['name'].' ==> '.$this->notifyReminderSent($reminder['usmail'], $reminder['firstName'].' '.$reminder['firstName'].' pour '.$reminder['name'], 'Phone1', false);
             }
             if($sms2Result != '' && $sms2Result){
-                $msg .= '<br />'.$this->notifyReminderSent($reminder['usmail'], $reminder['firstName'].' '.$reminder['firstName'].' pour '.$reminder['name'], 'Phone2', true);
+                $msg .= '<br /> reminder (sms2) sent to '.$reminder['usmail'].': '.$reminder['firstName'].' '.$reminder['firstName'].' pour '.$reminder['name'].' ==> '.$this->notifyReminderSent($reminder['usmail'], $reminder['firstName'].' '.$reminder['firstName'].' pour '.$reminder['name'], 'Phone2', true);
             }else{
-                $msg .= '<br />'.$this->notifyReminderSent($reminder['usmail'], $reminder['firstName'].' '.$reminder['firstName'].' pour '.$reminder['name'], 'Phone2', false);
+                $msg .= '<br /> reminder (sms2) sent to '.$reminder['usmail'].': '.$reminder['firstName'].' '.$reminder['firstName'].' pour '.$reminder['name'].' ==> '.$this->notifyReminderSent($reminder['usmail'], $reminder['firstName'].' '.$reminder['firstName'].' pour '.$reminder['name'], 'Phone2', false);
             }
 
         }
