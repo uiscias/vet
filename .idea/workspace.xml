@@ -8,7 +8,6 @@
     <list id="47167221-4a92-468a-91ff-31dc500eb92f" name="GUI" comment="GUI&#10;Correction of some minors issues like label under button, redirection post deletion, and debt default value" />
     <list default="true" id="502ee5ac-70f1-467e-8e31-126c738e2470" name="Updates asked by Dr Thiellens" comment="Updates asked by Dr Thiellens&#10;&#10;&#10;Add gender option">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/VetController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/VetController.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -920,13 +919,6 @@
       <workItem from="1493128086587" />
       <workItem from="1493274291477" duration="89000" />
     </task>
-    <task id="LOCAL-00007" summary="Implementing Picture Upload&#10;consultation edit and basic structure&#10;&#10;Upload is done for the consultation edit_form ! At least !&#10;(to be adapted for a new consultation)&#10;">
-      <created>1493735650683</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1493735650683</updated>
-    </task>
     <task id="LOCAL-00008" summary="Implementing Picture Upload&#10;consultation edit and basic structure&#10;&#10;Photo upload and Light Box have been implemented">
       <created>1493749467018</created>
       <option name="number" value="00008" />
@@ -1156,7 +1148,7 @@
       <workItem from="1511775195897" duration="41194000" />
       <workItem from="1512030267121" duration="25941000" />
       <workItem from="1512481920365" duration="2553000" />
-      <workItem from="1512545823109" duration="2514000" />
+      <workItem from="1512545823109" duration="2522000" />
     </task>
     <task id="LOCAL-00034" summary="Updates asked by Dr Thiellens&#10;Ajout de la case permettant de dire si l'animal sort ou pas&#10;Ajout des fonctions permettant de modifier les rappels&#10;Correction de la gestion des photos depuis l'hurl public&#10;ajout d'un racourcis permettant d'éditer le client et les animaux depuis la liste des consultations">
       <created>1510947497315</created>
@@ -1298,7 +1290,14 @@
       <option name="project" value="LOCAL" />
       <updated>1512547847780</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="Updates asked by Dr Thiellens&#10;&#10;&#10;Add gender option">
+      <created>1512548351466</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1512548351466</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <option name="clearContext" value="false" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
@@ -1323,7 +1322,7 @@
   </component>
   <component name="TimeTrackingManager">
     <option name="enabled" value="true" />
-    <option name="totallyTimeSpent" value="488170000" />
+    <option name="totallyTimeSpent" value="488178000" />
     <option name="showClosedTasks" value="false" />
     <option name="showSpentTimeFromLastPost" value="true" />
   </component>
