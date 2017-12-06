@@ -360,6 +360,7 @@ $products = $query->getResult();
         $message = $mailer->createMessage()
             ->setSubject($subject)
             ->setTo($mail)
+            ->setFrom('rappel.dr.thielens@gmail.com')
             ->setBody(
             //                 $this->renderView(
                 // app/Resources/views/Emails/registration.html.twig
