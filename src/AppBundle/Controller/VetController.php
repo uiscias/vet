@@ -373,7 +373,7 @@ $products = $query->getResult();
             /*
              * If you also want to include a plaintext version of the message
             ->addPart(
-                $this->renderView(
+                $this->renderView(S
                     'Emails/registration.txt.twig',
                     array('name' => $name)
                 ),
