@@ -409,7 +409,7 @@ class Client
      */
     public function getPhone()
     {
-        return $this->phone;
+        return preg_replace("/[^0-9]/", "", $this->phone); //clean phone number and standardise it
     }
 
     /**
