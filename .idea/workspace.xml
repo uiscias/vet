@@ -8,6 +8,7 @@
     <list id="47167221-4a92-468a-91ff-31dc500eb92f" name="GUI" comment="GUI&#10;Correction of some minors issues like label under button, redirection post deletion, and debt default value" />
     <list default="true" id="502ee5ac-70f1-467e-8e31-126c738e2470" name="Updates asked by Dr Thiellens" comment="Updates asked by Dr Thiellens&#10;&#10;&#10;Add gender option">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/VetController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/VetController.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -47,11 +48,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name="VetController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="VetController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/VetController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="334">
-              <caret line="363" column="22" lean-forward="false" selection-start-line="363" selection-start-column="22" selection-end-line="363" selection-end-column="22" />
+            <state relative-caret-position="433">
+              <caret line="411" column="53" lean-forward="false" selection-start-line="411" selection-start-column="53" selection-end-line="411" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -87,11 +88,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="parameters.yml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="parameters.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state relative-caret-position="264">
+              <caret line="8" column="22" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -266,8 +267,8 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/User.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/UserSettings.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/home.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/VetController.php" />
         <option value="$PROJECT_DIR$/app/config/parameters.yml" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/VetController.php" />
       </list>
     </option>
   </component>
@@ -894,18 +895,6 @@
       <workItem from="1489051992694" duration="747000" />
       <workItem from="1490194305612" duration="109772000" />
     </task>
-    <task id="LOCAL-00001" summary="Implementing Picture Upload">
-      <branch name="master" repository="C:\wamp64\www\vet" />
-      <branch name="master" repository="C:\wamp64\www\vet" original="true" />
-      <created>1489053823196</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1493757597808</updated>
-      <workItem from="1489053851928" duration="6000" />
-      <workItem from="1490876260650" />
-      <workItem from="1493757468054" duration="124000" />
-    </task>
     <task id="LOCAL-00009" summary="Implement Multi-User Application">
       <branch name="master" repository="C:\wamp64\www\vet" />
       <branch name="master" repository="C:\wamp64\www\vet" original="true" />
@@ -1128,7 +1117,7 @@
       <workItem from="1511775195897" duration="41194000" />
       <workItem from="1512030267121" duration="25941000" />
       <workItem from="1512481920365" duration="2553000" />
-      <workItem from="1512545823109" duration="3259000" />
+      <workItem from="1512545823109" duration="4384000" />
     </task>
     <task id="LOCAL-00034" summary="Updates asked by Dr Thiellens&#10;Ajout de la case permettant de dire si l'animal sort ou pas&#10;Ajout des fonctions permettant de modifier les rappels&#10;Correction de la gestion des photos depuis l'hurl public&#10;ajout d'un racourcis permettant d'éditer le client et les animaux depuis la liste des consultations">
       <created>1510947497315</created>
@@ -1291,7 +1280,14 @@
       <option name="project" value="LOCAL" />
       <updated>1512548426104</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="Updates asked by Dr Thiellens&#10;&#10;&#10;Add gender option">
+      <created>1512549098947</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1512549098947</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <option name="clearContext" value="false" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
@@ -1316,7 +1312,7 @@
   </component>
   <component name="TimeTrackingManager">
     <option name="enabled" value="true" />
-    <option name="totallyTimeSpent" value="488915000" />
+    <option name="totallyTimeSpent" value="490040000" />
     <option name="showClosedTasks" value="false" />
     <option name="showSpentTimeFromLastPost" value="true" />
   </component>
@@ -1800,18 +1796,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/VetController.php">
+    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="363" column="22" lean-forward="false" selection-start-line="363" selection-start-column="22" selection-end-line="363" selection-end-column="22" />
+        <state relative-caret-position="264">
+          <caret line="8" column="22" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/VetController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state relative-caret-position="433">
+          <caret line="411" column="53" lean-forward="false" selection-start-line="411" selection-start-column="53" selection-end-line="411" selection-end-column="53" />
           <folding />
         </state>
       </provider>
