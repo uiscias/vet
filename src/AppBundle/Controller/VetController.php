@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Client;
+use AppBundle\Entity\Reminder;
 use AppBundle\Entity\Consultation;
 use AppBundle\Form\CsvImportType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -12,6 +13,9 @@ use AppBundle\Entity\CsvImport;
 use Symfony\Component\Serializer\Serializer;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Encoder\CsvEncoder;
+use Nexmo\Client as NexmoClient;
+use Nexmo\Client\Credentials\Basic as NexmoClientCredentialsBasic;
+use Nexmo\Message\Text as NexmoMessageText;
 
 
 class VetController extends Controller
@@ -351,11 +355,14 @@ $products = $query->getResult();
 
 
     protected  function sendSms($number, $content){
-        echo ("sms sent to ".$number);
+        $client = new NexmoClient(new NexmoClientCredentialsBasic('c6ef9c85', '9961df892795dd28'));
+        $text = new NexmoMessageText($number, 'NEXMO' , $content);
+
+        return $client->message()->send($text);
+
     }
 
     protected  function sendReminderMail($mail, $subject, $content){
-        echo ("mail sent to ".$mail);
         $mailer = $this->get('mailer');
         $message = $mailer->createMessage()
             ->setSubject($subject)
@@ -433,7 +440,18 @@ $products = $query->getResult();
         return $mailer->send($message);
     }
 
-    /**
+    protected  function tagReminderAsSent($reminderID)
+    {
+        $reminder = $this->getDoctrine()
+            ->getRepository(Reminder::class)
+            ->find($reminderID)
+        ;
+        $reminder->setSent(true);
+        $em = $this->getDoctrine()->getManager();
+        $em->flush($reminder);
+    }
+
+        /**
      * @Route("/reminderJob", name="reminderJob")
      */
     public function reminderJobAction(Request $request)
@@ -443,12 +461,12 @@ $products = $query->getResult();
         $querySumDebts = $em->createQueryBuilder('remindersOfTheDay')
             ->from('AppBundle\Entity\Reminder', 'r')
             ->addselect('IDENTITY(r.client)')
+            ->addselect('r.id')
             ->addselect('r.media')
             ->addselect('IDENTITY(r.consultation)')
             ->addselect('IDENTITY(r.animal)')
             ->addselect('r.title')
             ->addselect('r.note')
-            ->addselect('us.reminderMessage')
             ->addselect('c.firstName')
             ->addselect('c.lastName')
             ->addselect('a.name')
@@ -456,6 +474,7 @@ $products = $query->getResult();
             ->addselect('c.phone')
             ->addselect('c.phone2')
             ->addselect('u.email as usmail')
+            ->addselect('us.reminderMessage as reminderMessage')
             ->leftJoin('r.client', 'c')
             ->leftJoin('r.animal', 'a')
             ->leftJoin(
@@ -471,9 +490,6 @@ $products = $query->getResult();
             ->leftJoin('r.consultation', 'cons')
             ->where('DATE_DIFF(r.reminderDateTime, CURRENT_DATE()) <= 0  and r.enabled = 1 and r.sent = 0 and us.username = \'auron\'')
 
-//            ->setParameter('user', $user)
-
-
             ->getQuery();
 
         $reminders = $querySumDebts->getResult();
@@ -482,7 +498,22 @@ $products = $query->getResult();
         $sms2Result = '';
 
         foreach ($reminders as $reminder){
-            $content = $reminder['reminderMessage'] . ' ' . $reminder['name'];
+            $content = str_replace( array(
+                                            '[CLIENT_NAME]',
+                                            '[CLIENT_FIRESTNAME]',
+                                            '[REMINDER_NOTE]',
+                                            '[ANIMAL_NAME]',
+            ),
+                array(
+                    $reminder['lastName'],
+                    $reminder['firstName'],
+                    $reminder['note'],
+                    $reminder['name'],
+                ), $reminder['reminderMessage'] );
+
+            $reminder['phone'] = preg_replace('/^0/', '+32', preg_replace("/[^0-9]/", "", $reminder['phone']));
+            $reminder['phone2'] = preg_replace('/^0/', '+32', preg_replace("/[^0-9]/", "", $reminder['phone2']));
+
             switch ($reminder['media']) {
                 case 'ALL':
                     if (isset($reminder['eMail']) and $reminder['eMail'] != ''){
@@ -494,20 +525,37 @@ $products = $query->getResult();
                     if (isset($reminder['phone2']) and $reminder['phone2'] != ''){
                         $sms2Result = $this->sendSms($reminder['phone2'], $content);
                     }
+                    if($mailResult || $smsResult || $sms2Result){
+                        $this->tagReminderAsSent($reminder['id']);
+                    }
                     break;
                 case 'eMail':
                     if (isset($reminder['eMail']) and $reminder['eMail'] != '') {
                         $mailResult = $this->sendReminderMail($reminder['eMail'], $reminder['title'], $content);
                     }
+                    if($mailResult){
+                        $this->tagReminderAsSent($reminder['id']);
+                    }
                     break;
                 case 'Phone1':
-                    if (isset($reminder['phone']) and $reminder['phone'] != ''){
-                        $smsResult = $this->sendSms($reminder['phone'], $content);
+                    if (isset($reminder['phone']) and $reminder['phone'] != '') {
+                        try {
+                            $smsResult = $this->sendSms($reminder['phone'], $content);
+                        } catch (NexmoClient\Exception\Exception $e) {
+                            $msg .= $e->getMessage();
+                            $smsResult = false;
+                        }
+                    }
+                    if($smsResult){
+                        $this->tagReminderAsSent($reminder['id']);
                     }
                     break;
                 case 'Phone2':
                     if (isset($reminder['phone2']) and $reminder['phone2'] != '') {
                         $sms2Result = $this->sendSms($reminder['phone2'], $content);
+                    }
+                    if($sms2Result){
+                        $this->tagReminderAsSent($reminder['id']);
                     }
                     break;
                 case 'Phone1AndEMail':
@@ -517,22 +565,22 @@ $products = $query->getResult();
                     if(isset($reminder['phone']) and $reminder['phone'] != '') {
                         $smsResult = $this->sendSms($reminder['phone'], $content);
                     }
+                    if($mailResult || $smsResult){
+                        $this->tagReminderAsSent($reminder['id']);
+                    }
                     break;
             }
-            if($mailResult != '' && $mailResult){
-                $msg .= '<br /> reminder (mail) sent to '.$reminder['usmail'].': '.$reminder['firstName'].' '.$reminder['firstName'].' pour '.$reminder['name'].' ==> '.$this->notifyReminderSent($reminder['usmail'], $reminder['firstName'].' '.$reminder['firstName'].' pour '.$reminder['name'], 'eMail', true);
+            if($mailResult != ''){
+                $msg .= '<br /> reminder (mail) sent to '.$reminder['usmail'].': '.$reminder['firstName'].' '.$reminder['firstName'].' pour '.$reminder['name'].' ==> '.$this->notifyReminderSent($reminder['usmail'], $reminder['firstName'].' '.$reminder['firstName'].' pour '.$reminder['name'], 'eMail', $mailResult );
             }else{
-                $msg .= '<br /> reminder (mail) sent to '.$reminder['usmail'].': '.$reminder['firstName'].' '.$reminder['firstName'].' pour '.$reminder['name'].' ==> '.$this->notifyReminderSent($reminder['usmail'], $reminder['firstName'].' '.$reminder['firstName'].' pour '.$reminder['name'], 'eMail', false);
             }
-            if($smsResult != '' && $smsResult){
-                $msg .= '<br /> reminder (sms) sent to '.$reminder['usmail'].': '.$reminder['firstName'].' '.$reminder['firstName'].' pour '.$reminder['name'].' ==> '.$this->notifyReminderSent($reminder['usmail'], $reminder['firstName'].' '.$reminder['firstName'].' pour '.$reminder['name'], 'Phone1', true);
+            if($smsResult != ''){
+                $msg .= '<br /> reminder (sms) sent to '.$reminder['phone'].': '.$reminder['firstName'].' '.$reminder['firstName'].' pour '.$reminder['name'].' ==> '.$this->notifyReminderSent($reminder['usmail'], $reminder['firstName'].' '.$reminder['firstName'].' pour '.$reminder['name'], 'Phone1', $smsResult);
             }else{
-                $msg .= '<br /> reminder (sms) sent to '.$reminder['usmail'].': '.$reminder['firstName'].' '.$reminder['firstName'].' pour '.$reminder['name'].' ==> '.$this->notifyReminderSent($reminder['usmail'], $reminder['firstName'].' '.$reminder['firstName'].' pour '.$reminder['name'], 'Phone1', false);
             }
-            if($sms2Result != '' && $sms2Result){
-                $msg .= '<br /> reminder (sms2) sent to '.$reminder['usmail'].': '.$reminder['firstName'].' '.$reminder['firstName'].' pour '.$reminder['name'].' ==> '.$this->notifyReminderSent($reminder['usmail'], $reminder['firstName'].' '.$reminder['firstName'].' pour '.$reminder['name'], 'Phone2', true);
+            if($sms2Result != '' ){
+                $msg .= '<br /> reminder (sms2) sent to '.$reminder['phone2'].': '.$reminder['firstName'].' '.$reminder['firstName'].' pour '.$reminder['name'].' ==> '.$this->notifyReminderSent($reminder['usmail'], $reminder['firstName'].' '.$reminder['firstName'].' pour '.$reminder['name'], 'Phone2', $sms2Result);
             }else{
-                $msg .= '<br /> reminder (sms2) sent to '.$reminder['usmail'].': '.$reminder['firstName'].' '.$reminder['firstName'].' pour '.$reminder['name'].' ==> '.$this->notifyReminderSent($reminder['usmail'], $reminder['firstName'].' '.$reminder['firstName'].' pour '.$reminder['name'], 'Phone2', false);
             }
 
         }
@@ -541,33 +589,6 @@ $products = $query->getResult();
             'reminders' => $reminders,
             'output' => $msg,
         ));
-
-
-
-
-        /*
-
-9
-down vote
-It is also possible to use built-in function DATE_DIFF(date1, date2) which returns difference in days. Check docs
-
-$result = $this->createQueryBuilder('l')
-    ->where('DATE_DIFF(l.startDate, CURRENT_DATE()) = 0')
-
-
-        $qb->select('p')
-   ->where('YEAR(p.postDate) = :year')
-   ->andWhere('MONTH(p.postDate) = :month')
-   ->andWhere('DAY(p.postDate) = :day');
-
-$qb->setParameter('year', $year)
-   ->setParameter('month', $month)
-   ->setParameter('day', $day);
-
-
-        $today_startdatetime = \DateTime::createFromFormat( "Y-m-d H:i:s", date("Y-m-d 00:00:00") );
-
-        */
     }
 
 }

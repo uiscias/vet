@@ -32,7 +32,8 @@
         "stof/doctrine-extensions-bundle": "^1.2",
         "symfony/assetic-bundle": "^2.8",
         "vich/uploader-bundle": "^1.5",
-        "egeloen/ckeditor-bundle": "^6.0"
+        "egeloen/ckeditor-bundle": "^6.0",
+        "nexmo/client": "^1.1"
 
     },
     "require-dev": {
