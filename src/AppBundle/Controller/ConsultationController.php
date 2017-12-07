@@ -87,7 +87,7 @@ class ConsultationController extends Controller
             $em->persist($consultation);
             $em->flush();
 
-            $request->getSession()->getFlashBag()->add('oprationEmail', " votre email a été bien envoyé");
+//            $request->getSession()->getFlashBag()->add('oprationEmail', " votre email a été bien envoyé");
 
 //            return $this->redirectToRoute('consultation_show', array('id' => $consultation->getId()));
             return $this->redirectToRoute('client_consultations', array('id' => $client->getId()));

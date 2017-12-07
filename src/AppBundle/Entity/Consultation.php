@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -282,7 +283,7 @@ class Consultation
         $this->photosConsultation->removeElement($photosConsultation);
     }
 
-    public function setPhotosConsultation(Array $photosConsultation){
+    public function setPhotosConsultation(\Doctrine\Common\Collections\ArrayCollection $photosConsultation){
         $this->photosConsultation = $photosConsultation;
 
     }
@@ -297,7 +298,7 @@ class Consultation
         $this->photosManualConsultation->removeElement($photosManualConsultation);
     }
 
-    public function setPhotosManualConsultation(Array $photosManualConsultation){
+    public function setPhotosManualConsultation(\Doctrine\Common\Collections\Collection $photosManualConsultation){
         $this->photosManualConsultation = $photosManualConsultation;
 
     }
@@ -311,9 +312,8 @@ class Consultation
         $this->attachmentConsultation->removeElement($attachmentConsultation);
     }
 
-    public function setAttachmentConsultation(ORMPersistentCollection $attachmentConsultation){
+    public function setAttachmentConsultation(\Doctrine\Common\Collections\Collection $attachmentConsultation){
         $this->attachmentConsultation = $attachmentConsultation;
-
     }
 
     /**
