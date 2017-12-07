@@ -1,0 +1,139 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<h2>Editoin d'une consultation</h2>
+
+<div>
+    {% form_theme edit_form _self %}
+    {{ form_start(edit_form) }}
+
+    {{ form_label(edit_form.titre) }}
+    {{ form_errors(edit_form.titre) }}
+    {{ form_widget(edit_form.titre) }}
+
+    {{ form_label(edit_form.debtValueForThisConsultation) }}
+    {{ form_errors(edit_form.debtValueForThisConsultation) }}
+    {{ form_widget(edit_form.debtValueForThisConsultation) }}
+
+    {{ form_label(edit_form.notes) }}
+    {{ form_errors(edit_form.notes) }}
+    {{ form_widget(edit_form.notes) }}
+
+    <br />
+
+    <h3>Photos</h3>
+
+    <div class="actions">
+        <a class="add-photo" href='#'>Ajouter une nouvelle photo</a><br /><br />
+    </div>
+
+    <ul>
+        <div id="SSSSdiv-photos" data-prototype="">
+            <div id="div-photos" data-prototype="
+                {% filter escape %}
+                    {% include 'consultation/photoPrototype.html.twig' with {form : edit_form} %}
+                {% endfilter %}">
+
+
+
+                {# iterate over each existing tag and render its only field: name #}
+                {% for photo in edit_form.photosConsultation %}
+                    <div>
+
+                        {#
+                        {{ form_row(photo.titre) }}
+                        {{ form_row(photo.description) }}
+                        {{ form_row(photo.file) }}
+                        #}
+                        <a class="image-link" href="{{ photos_consultation_directory }}/{{ photo.vars.value.link }}" data-lightbox="{{ photo.vars.value.link }}"><img class="example-image" src="{{ photos_consultation_directory }}/{{ photo.vars.value.link }}" alt="{{ photo.vars.value.link }}" height="130"/></a>
+                       &nbsp;
+                        {{ form_row(photo.datafile) }}
+                        <br/><a class="remove-photo" href="#">Supprimer cette photo</a>
+
+                    </div>
+                {% endfor %}
+
+            </div>
+
+    </ul>
+
+
+    {{ form_widget(edit_form.save, { 'label': 'Sauvegarder'}) }}
+
+    {{ form_end(edit_form) }}
+
+
+
+    <br /><br />
+    <ul>
+        <li>
+            <a href="{{ path('client_consultations', { 'id': consultation.client.id } ) }}">Retour à la liste des consultations</a>
+        </li>
+        <li>
+            <a href="{{ path('photosconsultation_new', { 'consultation': consultation.id} ) }}">Ajouter une photo</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+            <input type="submit" value="Supprimer la consultation">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+
+
+    <script type="text/javascript">
+
+        // keep track of how many email fields have been rendered
+        var photoCount = '{{ edit_form.photosConsultation|length }}';
+
+        $(document).ready(function(){
+
+            $('.remove-photo').click(function(e) {
+                e.preventDefault();
+                var p = $(this).parent();
+                $(p).remove();
+                return false;
+            });
+
+            $('.add-photo').click(function(e){
+                e.preventDefault();
+                var photosList = jQuery('#div-photos');
+
+                // grab the prototype template
+                var newWidget = photosList.attr('data-prototype');
+                // replace the "__name__" used in the id and name of the prototype
+                // with a number that's unique to your emails
+                // end name attribute looks like name="contact[emails][2]"
+                newWidget = newWidget.replace(/__name__/g, photoCount);
+                photoCount++;
+
+                // create a new list element and add it to the list
+                var newLi = jQuery('<div></div>').html(newWidget);
+                newLi.appendTo(photosList);
+
+                $('.remove-photo').click(function(e) {
+                    e.preventDefault();
+                    var p = $(this).parent();
+                    $(p).remove();
+                    return false;
+                });
+
+
+                // Get the ul that holds the collection of tags
+                var $collectionHolder = $('div.div-photos');
+
+                // add a delete link to all of the existing tag form li elements
+                $collectionHolder.find('<div></div>').each(function() {
+                    addTagFormDeleteLink($(this));
+                });
+
+
+                return false;
+            });
+
+        });
+
+
+    </script>
+
+
+    {% endblock %}

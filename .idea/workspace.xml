@@ -6,29 +6,13 @@
   <component name="ChangeListManager">
     <list id="ae0ac6dd-a173-4df4-b806-c7427fb5ec56" name="Add Notification Zone" comment="" />
     <list id="47167221-4a92-468a-91ff-31dc500eb92f" name="GUI" comment="GUI&#10;Correction of some minors issues like label under button, redirection post deletion, and debt default value" />
-    <list default="true" id="502ee5ac-70f1-467e-8e31-126c738e2470" name="Updates asked by Dr Thiellens" comment="Updates asked by Dr Thiellens&#10;&#10;&#10;Add gender option">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/AttachmentConsultationController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/PhotosManualConsultationController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/AttachmentConsultation.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/PhotosManualConsultation.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Form/AttachmentConsultationInputFileType.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Form/PhotosConsultationInputFileType.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/AttachmentConsultationRepository.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/PhotosManualConsultationRepository.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/media/attachments/36e5fb9cc81c25242ad1fd12f3833fe2.png" afterPath="" />
+    <list default="true" id="502ee5ac-70f1-467e-8e31-126c738e2470" name="Updates asked by Dr Thiellens" comment="Updates asked by Dr Thiellens&#10;&#10;&#10;Add File Upload and correct reminder job">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/media/attachments/bd34b8a1ed0d11814bef6f31e5d40114.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/registration/edit.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/security/login.html.twig.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/client/consultations.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/client/consultations.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/consultation/edit.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/consultation/edit.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/consultation/new.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/consultation/new.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/consultation/photoPrototype.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/consultation/photoPrototype.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/reminder/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/reminder/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/ConsultationController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/ConsultationController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/ReminderController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/ReminderController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Consultation.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Consultation.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/PhotosConsultation.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/PhotosConsultation.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Form/ConsultationType.php" afterPath="$PROJECT_DIR$/src/AppBundle/Form/ConsultationType.php" />
     </list>
+    <ignored path="web/assets/media/attachments/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,6 +20,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ChangesViewManager" show_ignored="true" />
   <component name="ComposerSettings" phpInterpreterId="fe431f39-e2c6-439f-901f-f4a8f51f2679">
     <pharConfigPath>C:\wamp64\www\vet\composer.json</pharConfigPath>
     <pharPath>C:\wamp64\www\vet\composer.phar</pharPath>
@@ -80,8 +65,8 @@
       <file leaf-file-name="consultations.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/client/consultations.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="611">
-              <caret line="81" column="65" lean-forward="false" selection-start-line="81" selection-start-column="65" selection-end-line="81" selection-end-column="65" />
+            <state relative-caret-position="545">
+              <caret line="82" column="24" lean-forward="true" selection-start-line="82" selection-start-column="24" selection-end-line="82" selection-end-column="24" />
               <folding>
                 <element signature="n#style#0;n#b#0;n#li#0;n#ul#0;n#div#0;n#section#0;n#!!top" expanded="true" />
                 <element signature="e#3472#3478#0#HTML" expanded="true" />
@@ -970,7 +955,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
-    <property name="last_opened_file_path" value="$USER_HOME$/AppData/Local/GitHub/PortableGit_f02737a78695063deace08e96d5042710d3e32db/cmd/git.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/assets/media/attachments" />
     <property name="js.eslint.eslintPackage" value="" />
     <property name="JavaScriptPreferStrict" value="true" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
@@ -1147,21 +1132,6 @@
       <workItem from="1489051169907" duration="795000" />
       <workItem from="1489051992694" duration="747000" />
       <workItem from="1490194305612" duration="109772000" />
-    </task>
-    <task id="LOCAL-00009" summary="Implement Multi-User Application">
-      <branch name="master" repository="C:\wamp64\www\vet" />
-      <branch name="master" repository="C:\wamp64\www\vet" original="true" />
-      <branch name="master" repository="C:\wamp64\www\vet" original="true" />
-      <created>1493757252328</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1494274012494</updated>
-      <workItem from="1493757263821" duration="31000" />
-      <workItem from="1493757317897" duration="41000" />
-      <workItem from="1493757617129" duration="631000" />
-      <workItem from="1494009343051" duration="694000" />
-      <workItem from="1494013838224" duration="17869000" />
     </task>
     <task id="LOCAL-00010" summary="Add &quot;Animal&quot; entity (an management)">
       <branch name="master" repository="C:\wamp64\www\vet" />
@@ -1353,7 +1323,7 @@
       <workItem from="1511775195897" duration="41194000" />
       <workItem from="1512030267121" duration="25941000" />
       <workItem from="1512481920365" duration="2553000" />
-      <workItem from="1512545823109" duration="32880000" />
+      <workItem from="1512545823109" duration="33361000" />
     </task>
     <task id="LOCAL-00034" summary="Updates asked by Dr Thiellens&#10;Ajout de la case permettant de dire si l'animal sort ou pas&#10;Ajout des fonctions permettant de modifier les rappels&#10;Correction de la gestion des photos depuis l'hurl public&#10;ajout d'un racourcis permettant d'éditer le client et les animaux depuis la liste des consultations">
       <created>1510947497315</created>
@@ -1537,7 +1507,14 @@
       <option name="project" value="LOCAL" />
       <updated>1512597764653</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="Updates asked by Dr Thiellens&#10;&#10;&#10;Add File Upload and correct reminder job">
+      <created>1512653699801</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1512653699801</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <option name="clearContext" value="false" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
@@ -1562,7 +1539,7 @@
   </component>
   <component name="TimeTrackingManager">
     <option name="enabled" value="true" />
-    <option name="totallyTimeSpent" value="518536000" />
+    <option name="totallyTimeSpent" value="519017000" />
     <option name="showClosedTasks" value="false" />
     <option name="showSpentTimeFromLastPost" value="true" />
   </component>
@@ -1584,7 +1561,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3281037" sideWeight="0.52389985" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967836" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25034106" sideWeight="0.49415204" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3281037" sideWeight="0.47610015" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3281037" sideWeight="0.47610015" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Time Tracking" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18128654" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1654,7 +1631,8 @@
     <MESSAGE value="Updates asked by Dr Thiellens&#10;&#10;&#10;select rear cam; tentative !" />
     <MESSAGE value="Updates asked by Dr Thiellens&#10;&#10;&#10;link home on the logo" />
     <MESSAGE value="Updates asked by Dr Thiellens&#10;&#10;&#10;Add gender option" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updates asked by Dr Thiellens&#10;&#10;&#10;Add gender option" />
+    <MESSAGE value="Updates asked by Dr Thiellens&#10;&#10;&#10;Add File Upload and correct reminder job" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updates asked by Dr Thiellens&#10;&#10;&#10;Add File Upload and correct reminder job" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2138,8 +2116,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/client/consultations.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="611">
-          <caret line="81" column="65" lean-forward="false" selection-start-line="81" selection-start-column="65" selection-end-line="81" selection-end-column="65" />
+        <state relative-caret-position="545">
+          <caret line="82" column="24" lean-forward="true" selection-start-line="82" selection-start-column="24" selection-end-line="82" selection-end-column="24" />
           <folding>
             <element signature="n#style#0;n#b#0;n#li#0;n#ul#0;n#div#0;n#section#0;n#!!top" expanded="true" />
             <element signature="e#3472#3478#0#HTML" expanded="true" />
