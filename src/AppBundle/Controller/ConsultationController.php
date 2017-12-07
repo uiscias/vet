@@ -76,6 +76,12 @@ class ConsultationController extends Controller
                 }
                 $consultation->getClient()->setLastConsultationToNow();
             }
+
+            foreach ($consultation->getAttachmentConsultation() as $attachment){
+                $attachment->setConsultation($consultation);
+                $this->getDoctrine()->getManager()->persist($attachment);
+
+            }
             if($consultation->getDebtValueForThisConsultation() > 0){
                 $consultation->setHasDebts(true);
             }else{

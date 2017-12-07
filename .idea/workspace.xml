@@ -8,8 +8,8 @@
     <list id="47167221-4a92-468a-91ff-31dc500eb92f" name="GUI" comment="GUI&#10;Correction of some minors issues like label under button, redirection post deletion, and debt default value" />
     <list default="true" id="502ee5ac-70f1-467e-8e31-126c738e2470" name="Updates asked by Dr Thiellens" comment="Updates asked by Dr Thiellens&#10;&#10;&#10;Add File Upload and correct reminder job">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/consultation/edit.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/consultation/edit.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/ConsultationController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/ConsultationController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Consultation.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Consultation.php" />
     </list>
     <ignored path="web/assets/media/attachments/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -54,9 +54,21 @@
       <file leaf-file-name="edit.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/consultation/edit.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2442">
-              <caret line="74" column="26" lean-forward="false" selection-start-line="74" selection-start-column="26" selection-end-line="74" selection-end-column="26" />
+            <state relative-caret-position="337">
+              <caret line="31" column="96" lean-forward="false" selection-start-line="31" selection-start-column="96" selection-end-line="31" selection-end-column="96" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="new.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/consultation/new.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-156">
+              <caret line="71" column="59" lean-forward="false" selection-start-line="71" selection-start-column="59" selection-end-line="71" selection-end-column="59" />
+              <folding>
+                <element signature="e#12#30#0#Twig" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -96,17 +108,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConsultationController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ConsultationController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ConsultationController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
-              <caret line="179" column="50" lean-forward="false" selection-start-line="179" selection-start-column="50" selection-end-line="179" selection-end-column="50" />
-              <folding />
+            <state relative-caret-position="-1173">
+              <caret line="207" column="49" lean-forward="true" selection-start-line="207" selection-start-column="49" selection-end-line="207" selection-end-column="49" />
+              <folding>
+                <element signature="e#820#844#1#PHP" expanded="true" />
+                <element signature="e#5777#5801#1#PHP" expanded="true" />
+                <element signature="e#10483#10502#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Consultation.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Consultation.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Consultation.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="114">
@@ -129,9 +145,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>editA</find>
-      <find>aja</find>
-      <find>setS</find>
       <find>reminderMe</find>
       <find>curl</find>
       <find>nexmo_F</find>
@@ -139,7 +152,6 @@
       <find>nexmo</find>
       <find>send</find>
       <find>phone32</find>
-      <find>edit</find>
       <find>photo</find>
       <find>setti</find>
       <find>PhotosConsultation</find>
@@ -159,6 +171,10 @@
       <find>ORM</find>
       <find>set</find>
       <find>Array</find>
+      <find>ajouter</find>
+      <find>Ajouter</find>
+      <find>edit</find>
+      <find>new</find>
     </findStrings>
     <replaceStrings>
       <replace>edit_form</replace>
@@ -236,11 +252,11 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Form/ConsultationType.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Form/AttachmentConsultationInputFileType.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/consultation/photoPrototype.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/consultation/edit.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/consultation/new.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/client/consultations.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/ConsultationController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Consultation.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/consultation/edit.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/ConsultationController.php" />
       </list>
     </option>
   </component>
@@ -521,6 +537,32 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vet" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="consultation" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches">
@@ -742,13 +784,6 @@
       <workItem from="1501653838723" duration="30186000" />
       <workItem from="1502826887862" duration="64659000" />
     </task>
-    <task id="LOCAL-00016" summary="Add and manage Reminder for Vaccination">
-      <created>1496181103264</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1496181103264</updated>
-    </task>
     <task id="LOCAL-00017" summary="Add and manage Reminder for Vaccination">
       <created>1502899332630</created>
       <option name="number" value="00017" />
@@ -883,7 +918,7 @@
       <workItem from="1512030267121" duration="25941000" />
       <workItem from="1512481920365" duration="2553000" />
       <workItem from="1512545823109" duration="34821000" />
-      <workItem from="1512655678998" duration="1387000" />
+      <workItem from="1512655678998" duration="1700000" />
     </task>
     <task id="LOCAL-00034" summary="Updates asked by Dr Thiellens&#10;Ajout de la case permettant de dire si l'animal sort ou pas&#10;Ajout des fonctions permettant de modifier les rappels&#10;Correction de la gestion des photos depuis l'hurl public&#10;ajout d'un racourcis permettant d'éditer le client et les animaux depuis la liste des consultations">
       <created>1510947497315</created>
@@ -1095,7 +1130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1512654519120</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="Updates asked by Dr Thiellens&#10;&#10;&#10;Add File Upload and correct reminder job">
+      <created>1512657076315</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1512657076315</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <option name="clearContext" value="false" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
@@ -1120,7 +1162,7 @@
   </component>
   <component name="TimeTrackingManager">
     <option name="enabled" value="true" />
-    <option name="totallyTimeSpent" value="521864000" />
+    <option name="totallyTimeSpent" value="522177000" />
     <option name="showClosedTasks" value="false" />
     <option name="showSpentTimeFromLastPost" value="true" />
   </component>
@@ -1289,6 +1331,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1683">
           <caret line="51" column="28" lean-forward="false" selection-start-line="51" selection-start-column="28" selection-end-line="51" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1389,7 +1432,7 @@
         <state relative-caret-position="165">
           <caret line="32" column="71" lean-forward="false" selection-start-line="32" selection-start-column="71" selection-end-line="32" selection-end-column="71" />
           <folding>
-            <element signature="e#852#872#1#PHP" expanded="true" />
+            <element signature="e#852#872#1#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1524,7 +1567,7 @@
         <state relative-caret-position="330">
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
-            <element signature="e#34#64#0#PHP" expanded="true" />
+            <element signature="e#34#64#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1578,13 +1621,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/consultation/new.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-528">
-          <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/client/consultations.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="545">
@@ -1597,16 +1633,8 @@
         <state relative-caret-position="-25">
           <caret line="15" column="3" lean-forward="false" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
           <folding>
-            <element signature="e#36#68#0#PHP" expanded="true" />
+            <element signature="e#36#68#0#PHP" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/consultation/edit.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2442">
-          <caret line="74" column="26" lean-forward="false" selection-start-line="74" selection-start-column="26" selection-end-line="74" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1631,14 +1659,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ConsultationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="179" column="50" lean-forward="false" selection-start-line="179" selection-start-column="50" selection-end-line="179" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/ConsultationType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-165">
@@ -1653,6 +1673,36 @@
           <caret line="300" column="49" lean-forward="false" selection-start-line="300" selection-start-column="49" selection-end-line="300" selection-end-column="49" />
           <folding>
             <element signature="e#36#84#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/consultation/edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="31" column="96" lean-forward="false" selection-start-line="31" selection-start-column="96" selection-end-line="31" selection-end-column="96" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/consultation/new.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-156">
+          <caret line="71" column="59" lean-forward="false" selection-start-line="71" selection-start-column="59" selection-end-line="71" selection-end-column="59" />
+          <folding>
+            <element signature="e#12#30#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ConsultationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1173">
+          <caret line="207" column="49" lean-forward="true" selection-start-line="207" selection-start-column="49" selection-end-line="207" selection-end-column="49" />
+          <folding>
+            <element signature="e#820#844#1#PHP" expanded="true" />
+            <element signature="e#5777#5801#1#PHP" expanded="true" />
+            <element signature="e#10483#10502#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
