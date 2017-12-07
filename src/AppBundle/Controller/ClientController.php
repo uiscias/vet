@@ -257,7 +257,7 @@ class ClientController extends Controller
 
             $this->getDoctrine()->getManager()->persist($client);
             $this->getDoctrine()->getManager()->flush();
-            return $this->redirectToRoute('client_edit', array('id' => $client->getId()));
+            return $this->redirectToRoute('client_consultations', array('id' => $client->getId()));
         }
 
         return $this->render('client/edit.html.twig', array(
