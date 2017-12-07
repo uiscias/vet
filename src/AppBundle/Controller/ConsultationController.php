@@ -95,14 +95,14 @@ class ConsultationController extends Controller
 
 
 
-/*            $em = $this->getDoctrine()->getManager();
-            $em->persist($consultation);
-            $em->flush($consultation);
+        /*            $em = $this->getDoctrine()->getManager();
+                    $em->persist($consultation);
+                    $em->flush($consultation);
 
-            return $this->redirectToRoute('consultation_show', array('id' => $consultation->getId()));
+                    return $this->redirectToRoute('consultation_show', array('id' => $consultation->getId()));
 
-        }
-*/
+                }
+        */
         return $this->render('consultation/new.html.twig', array(
             'consultation' => $consultation,
             'edit_form' => $editForm->createView(),
@@ -154,10 +154,22 @@ class ConsultationController extends Controller
         $consultationOriginale = $this->getDoctrine()->getManager()->getRepository('AppBundle:Consultation')->find($consultation);
 
         $originalPhotos = new \Doctrine\Common\Collections\ArrayCollection();
+        $originalPhotosManual = new \Doctrine\Common\Collections\ArrayCollection();
+        $originalAttachment = new \Doctrine\Common\Collections\ArrayCollection();
+
         // Create an ArrayCollection of the current PhotoConsultation objects in the database
         foreach ($consultationOriginale ->getPhotosConsultation() as $photo) {
             $originalPhotos->add($photo);
         }
+        // Create an ArrayCollection of the current PhotoConsultation objects in the database
+        foreach ($consultationOriginale ->getPhotosManualConsultation() as $photo) {
+            $originalPhotosManual->add($photo);
+        }
+        // Create an ArrayCollection of the current PhotoConsultation objects in the database
+        foreach ($consultationOriginale ->getAttachmentConsultation() as $attachment) {
+            $originalAttachment->add($attachment);
+        }
+
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
@@ -166,8 +178,8 @@ class ConsultationController extends Controller
 
             foreach ($consultation->getPhotosConsultation() as $photo){
                 $datafile = $photo->getDatafile();
-
                 if (isset($datafile)){
+
                     $filteredData=substr($datafile, strpos($datafile, ",")+1);
                     $unencodedData=base64_decode($filteredData);
                     $name = str_replace(" ", "", md5(uniqid()) . $photo . '.png');
@@ -180,6 +192,11 @@ class ConsultationController extends Controller
 
                 }
             }
+            foreach ($consultation->getAttachmentConsultation() as $attachment){
+                    $attachment->setConsultation($consultation);
+                    $this->getDoctrine()->getManager()->persist($attachment);
+
+                }
 
             // remove the relationship between the tag and the Task
             foreach ($originalPhotos as $photo) {
@@ -189,24 +206,52 @@ class ConsultationController extends Controller
                     $photo->setConsultation(null);
                     $this->getDoctrine()->getManager()->persist($photo);
                     // if you wanted to delete the Tag entirely, you can also do that
+                    $this->getDoctrine()->getManager()->remove($photo);
+                }else{
+
+                }
+            }
+            foreach ($originalPhotosManual as $photo) {
+                if (false === $consultation->getPhotosManualConsultation()->contains($photo)) {
+                    $consultation->removePhotosManualConsultation($photo);
+                    $photo->setConsultation(null);
+                    $this->getDoctrine()->getManager()->persist($photo);
+                    // if you wanted to delete the Tag entirely, you can also do that
                     // $em->remove($tag); TBC
+                    $this->getDoctrine()->getManager()->remove($photo);
+
+                }else{
+
+                }
+            }
+            foreach ($originalAttachment as $photo) {
+                if (false === $consultation->getAttachmentConsultation()->contains($photo)) {
+                    // remove the PhotosConsultation from the Consultation
+                    $consultation->removeAttachmentConsultation($photo);
+                    $photo->setConsultation(null);
+                    $this->getDoctrine()->getManager()->persist($photo);
+                    // if you wanted to delete the Tag entirely, you can also do that
+                    // $em->remove($tag); TBC
+                    $this->getDoctrine()->getManager()->remove($photo);
+
                 }else{
 
                 }
             }
 
-       /*
-        * $data = $_POST['data'];
-        * $file = md5(uniqid()) . '.png';
-        * $uri =  substr($data,strpos($data,",") 1);
 
-        // save to file
-        file_put_contents($file, base64_decode($uri));
+            /*
+             * $data = $_POST['data'];
+             * $file = md5(uniqid()) . '.png';
+             * $uri =  substr($data,strpos($data,",") 1);
 
-        // return the filename
-        echo json_encode($file);
+             // save to file
+             file_put_contents($file, base64_decode($uri));
 
-        */
+             // return the filename
+             echo json_encode($file);
+
+             */
 
 
 
@@ -269,6 +314,6 @@ class ConsultationController extends Controller
                     'class' => 'btn btn-del'
                 )))
             ->getForm()
-        ;
+            ;
     }
 }

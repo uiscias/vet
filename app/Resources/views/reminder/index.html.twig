@@ -11,6 +11,7 @@
                 <th>Date du rappel </th>
                 <th>Client </th>
                 <th>Actif</th>
+                <th>Envoyé</th>
                 <th>Media</th>
                 <th>titre</th>
             </tr>
@@ -23,7 +24,8 @@
                 <td>{% if reminder.created %}{{ reminder.created|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{% if reminder.reminderDateTime %}{{ reminder.reminderDateTime|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>{{ reminder.client }}</td>
-                <td>{% if reminder.enabled %}Yes{% else %}No{% endif %}</td>
+                <td>{% if reminder.enabled %}Oui{% else %}Non{% endif %}</td>
+                <td>{% if reminder.sent %}Oui{% else %}Non{% endif %}</td>
                 <td>{{ reminder.media }}</td>
                 <td>{{ reminder.title }}</td>
 <!--                <td>

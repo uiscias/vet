@@ -8,13 +8,13 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * PhotosConsultation
+ * AttachmentConsultation
  *
- * @ORM\Table(name="photos_consultation")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\PhotosConsultationRepository")
+ * @ORM\Table(name="attachment_consultation")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\AttachmentRepository")
  * @Vich\Uploadable
  */
-class PhotosConsultation
+class AttachmentConsultation
 {
     /**
      * @var int
@@ -26,8 +26,8 @@ class PhotosConsultation
     private $id;
 
     /**
-     * Many Photos for One Consultation.
-     * @ORM\ManyToOne(targetEntity="Consultation", inversedBy="photosConsultation")
+     * Many Attachment for One Consultation.
+     * @ORM\ManyToOne(targetEntity="Consultation", inversedBy="attachmentConsultation")
      * @ORM\JoinColumn(name="consultation_id", referencedColumnName="id")
      */
     private $consultation;
@@ -43,7 +43,7 @@ class PhotosConsultation
      * @var File
      *
      * @Vich\UploadableField(mapping="file", fileNameProperty="link")
-     * @Assert\File(maxSize = "5M", mimeTypes={"image/png", "image/jpeg", "image/pjpeg"} )
+     * @Assert\File(maxSize = "5M", mimeTypes={"image/png", "image/jpeg", "image/pjpeg", "application/pdf", "application/msword"} )
      */
     private $file;
 
@@ -81,7 +81,7 @@ class PhotosConsultation
      *
      * @param string $datafile
      *
-     * @return PhotosConsultation
+     * @return AttachmentConsultation
      */
     public function setDatafile($datafile)
     {
@@ -106,7 +106,7 @@ class PhotosConsultation
      *
      * @param string $titre
      *
-     * @return PhotosConsultation
+     * @return AttachmentConsultation
      */
     public function setTitre($titre)
     {
@@ -130,7 +130,7 @@ class PhotosConsultation
      *
      * @param string $description
      *
-     * @return PhotosConsultation
+     * @return AttachmentConsultation
      */
     public function setDescription($description)
     {
@@ -154,7 +154,7 @@ class PhotosConsultation
      *
      * @param \AppBundle\Entity\Consultation $consultation
      *
-     * @return PhotosConsultation
+     * @return AttachmentConsultation
      */
     public function setConsultation(\AppBundle\Entity\Consultation $consultation = null)
     {
@@ -203,7 +203,7 @@ class PhotosConsultation
      *
      * @param string $link
      *
-     * @return PhotosConsultation
+     * @return AttachmentConsultation
      */
     public function setLink($link)
     {

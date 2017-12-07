@@ -8,13 +8,13 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * PhotosConsultation
+ * PhotosManualConsultation
  *
- * @ORM\Table(name="photos_consultation")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\PhotosConsultationRepository")
+ * @ORM\Table(name="photos_manual_consultation")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\PhotosManualConsultationRepository")
  * @Vich\Uploadable
  */
-class PhotosConsultation
+class PhotosManualConsultation
 {
     /**
      * @var int
@@ -27,7 +27,7 @@ class PhotosConsultation
 
     /**
      * Many Photos for One Consultation.
-     * @ORM\ManyToOne(targetEntity="Consultation", inversedBy="photosConsultation")
+     * @ORM\ManyToOne(targetEntity="Consultation", inversedBy="PhotosManualConsultation")
      * @ORM\JoinColumn(name="consultation_id", referencedColumnName="id")
      */
     private $consultation;
@@ -81,7 +81,7 @@ class PhotosConsultation
      *
      * @param string $datafile
      *
-     * @return PhotosConsultation
+     * @return PhotosManualConsultation
      */
     public function setDatafile($datafile)
     {
@@ -106,7 +106,7 @@ class PhotosConsultation
      *
      * @param string $titre
      *
-     * @return PhotosConsultation
+     * @return PhotosManualConsultation
      */
     public function setTitre($titre)
     {
@@ -130,7 +130,7 @@ class PhotosConsultation
      *
      * @param string $description
      *
-     * @return PhotosConsultation
+     * @return PhotosManualConsultation
      */
     public function setDescription($description)
     {
@@ -154,7 +154,7 @@ class PhotosConsultation
      *
      * @param \AppBundle\Entity\Consultation $consultation
      *
-     * @return PhotosConsultation
+     * @return PhotosManualConsultation
      */
     public function setConsultation(\AppBundle\Entity\Consultation $consultation = null)
     {
@@ -203,7 +203,7 @@ class PhotosConsultation
      *
      * @param string $link
      *
-     * @return PhotosConsultation
+     * @return PhotosManualConsultation
      */
     public function setLink($link)
     {

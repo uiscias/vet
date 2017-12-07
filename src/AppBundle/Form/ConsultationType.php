@@ -7,6 +7,8 @@ namespace AppBundle\Form;
 //use Symfony\Component\Form\FormBuilderInterface;
 //use Symfony\Component\OptionsResolver\OptionsResolver;
 
+use AppBundle\Entity\AttachmentConsultation;
+use AppBundle\Entity\PhotosManualConsultation;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -40,6 +42,26 @@ class ConsultationType extends AbstractType
             ))
             ->add('photosConsultation', CollectionType::class, array(
                 'entry_type' => PhotosConsultationType::class,
+                'allow_add' => true,
+                'allow_delete' => true,
+                'delete_empty' => true,
+                'by_reference' => false,
+                'prototype' => true,
+                'required' => false,
+                'auto_initialize' => true,
+            ))
+            ->add('photosManualConsultation', CollectionType::class, array(
+                'entry_type' => PhotosConsultationInputFileType::class,
+                'allow_add' => true,
+                'allow_delete' => true,
+                'delete_empty' => true,
+                'by_reference' => false,
+                'prototype' => true,
+                'required' => false,
+                'auto_initialize' => true,
+            ))
+            ->add('attachmentConsultation', CollectionType::class, array(
+                'entry_type' => AttachmentConsultationInputFileType::class,
                 'allow_add' => true,
                 'allow_delete' => true,
                 'delete_empty' => true,

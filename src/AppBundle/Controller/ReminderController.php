@@ -30,7 +30,7 @@ class ReminderController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $reminders = $em->getRepository('AppBundle:Reminder')->findBy();
+        $reminders = $em->getRepository('AppBundle:Reminder')->findAll();
 
         return $this->render('reminder/index.html.twig', array(
             'reminders' => $reminders,

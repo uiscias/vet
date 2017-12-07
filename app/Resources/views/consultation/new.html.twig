@@ -42,18 +42,15 @@
     <h3>Photos</h3>
 
     <div class="actions">
-        <a class="add-photo btn-appoints" href='#'>Ajouter une nouvelle photo</a>
+        <a class="add-photo btn-appoints" href='#'>Ajouter une nouvelle photo ou un document PDF</a>
     </div>
 
     <ul>
-        <div id="SSSSdiv-photos" data-prototype="">
+<!--        <div id="SSSSdiv-photos" data-prototype="">  -->
             <div id="div-photos" data-prototype="
                 {% filter escape %}
                     {% include 'consultation/photoPrototype.html.twig' with {form : edit_form} %}
                 {% endfilter %}">
-
-
-
 
             </div>
 

@@ -52,7 +52,7 @@ vich_uploader:
     mappings:
         file:
             uri_prefix:         assets/media/attachments
-            upload_destination: '%kernel.root_dir%/../web/assets/media/attachments'
+            upload_destination: "%upload_destination%"
             namer:              vich_uploader.namer_uniqid
             inject_on_load:     true
             delete_on_update:   false
@@ -65,7 +65,7 @@ twig:
     form_themes:
         - bootstrap_3_layout.html.twig
     globals:
-        photos_consultation_directory: 'https://crm.aminuki.com/assets/media/attachments/'
+        photos_consultation_directory: "%upload_destination_url%"
 #assets/media/attachments/
 # Doctrine Configuration
 doctrine:

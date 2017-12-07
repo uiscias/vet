@@ -51,9 +51,38 @@
                         {{ form_row(photo.file) }}
                         #}
                         <a class="image-link" href="{{ photos_consultation_directory }}/{{ photo.vars.value.link }}" data-lightbox="{{ photo.vars.value.link }}"><img class="example-image" src="{{ photos_consultation_directory }}/{{ photo.vars.value.link }}" alt="{{ photo.vars.value.link }}" height="130"/></a>
-                       &nbsp;
+                        &nbsp;
                         {{ form_row(photo.datafile) }}
                         <br/><br/><a class="remove-photo btn-dels" href="#" style="align=center;">Supprimer cette photo</a><br/><br/>
+
+                    </div>
+                {% endfor %}
+
+                {# iterate over each existing tag and render its only field: name #}
+                {% for photo in edit_form.photosManualConsultation %}
+                    <div>
+
+                        {#
+                        {{ form_row(photo.titre) }}
+                        {{ form_row(photo.description) }}
+                        {{ form_row(photo.file) }}
+                        #}
+                        <a class="image-link" href="{{ photos_consultation_directory }}/{{ photo.vars.value.link }}" data-lightbox="{{ photo.vars.value.link }}"><img class="example-image" src="{{ photos_consultation_directory }}/{{ photo.vars.value.link }}" alt="{{ photo.vars.value.link }}" height="130"/></a>&nbsp;
+                        {{ form_row(photo.titre) }}
+                        <div style="display: none;">{{ form_row(photo.file) }}</div>
+                        <br/><br/><a class="remove-photo btn-dels" href="#" style="align=center;">Supprimer cette photo</a><br/><br/>
+
+                    </div>
+                {% endfor %}
+
+                {# iterate over each existing tag and render its only field: name #}
+                {% for photo in edit_form.attachmentConsultation %}
+                    <div>
+                        {{ form_row(photo.titre) }}
+                        <a class="" href="{{ photos_consultation_directory }}/{{ photo.vars.value.link }}" target="PDF" >Télécharger le document PDF</a>
+                        <div style="display: none;">{{ form_row(photo.file) }}</div>
+
+                        <br/><br/><a class="remove-photo btn-dels" href="#" style="align=center;">Supprimer ce document PDF</a><br/><br/>
 
                     </div>
                 {% endfor %}

@@ -6,6 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Symfony\Component\Validator\Constraints as Assert;
 use AppBundle\Entity\Client;
+use Doctrine\ORM\PersistentCollection as ORMPersistentCollection;
 
 /**
  * Consultation
@@ -89,6 +90,18 @@ class Consultation
      */
     private $photosConsultation;
 
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\PhotosManualConsultation", mappedBy="consultation", cascade={"all"},orphanRemoval=true)
+     * @Assert\Valid()
+     */
+    private $photosManualConsultation;
+
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\AttachmentConsultation", mappedBy="consultation", cascade={"all"},orphanRemoval=true)
+     * @Assert\Valid()
+     */
+    private $attachmentConsultation;
+
 
     /**
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Reminder", mappedBy="consultation", cascade={"all"},orphanRemoval=true)
@@ -139,6 +152,8 @@ class Consultation
     public function __construct()
     {
         $this->photosConsultation = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->photosManualConsultation= new \Doctrine\Common\Collections\ArrayCollection();
+        $this->attachmentConsultation = new \Doctrine\Common\Collections\ArrayCollection();
         $this->reminders = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
@@ -203,6 +218,42 @@ class Consultation
     }
 
     /**
+     * Add photo
+     *
+     * @param PhotosManualConsultation $photoManualConsultation
+     *
+     * @return Consultation
+     */
+    public function addPhotosManualConsultation(\AppBundle\Entity\PhotosManualConsultation $photosManualConsultation)
+    {
+        $this->photosManualConsultation->add($photosManualConsultation);
+
+        $photosManualConsultation->setConsultation($this);
+
+        // $this->attachments[] = $attachment;
+
+        return $this;
+    }
+
+    /**
+     * Add attachment
+     *
+     * @param AttachmentConsultation $attachmentConsultation
+     *
+     * @return Consultation
+     */
+    public function addAttachment(\AppBundle\Entity\AttachmentConsultation $attachmentConsultation)
+    {
+        $this->attachmentConsultation->add($attachmentConsultation);
+
+        $attachmentConsultation->setConsultation($this);
+
+        // $this->attachments[] = $attachment;
+
+        return $this;
+    }
+
+    /**
      * Get Animal
      *
      * @return \Animal
@@ -237,6 +288,35 @@ class Consultation
     }
 
     /**
+     * Remove photoManual
+     *
+     * @param PhotosManualConsultation $photoManualConsultation
+     */
+    public function removePhotosManualConsultation(\AppBundle\Entity\PhotosManualConsultation $photosManualConsultation)
+    {
+        $this->photosManualConsultation->removeElement($photosManualConsultation);
+    }
+
+    public function setPhotosManualConsultation(Array $photosManualConsultation){
+        $this->photosManualConsultation = $photosManualConsultation;
+
+    }
+    /**
+     * Remove attachment
+     *
+     * @param AttachmentConsultation $AttachmentConsultation
+     */
+    public function removeAttachmentConsultation(\AppBundle\Entity\AttachmentConsultation $attachmentConsultation)
+    {
+        $this->attachmentConsultation->removeElement($attachmentConsultation);
+    }
+
+    public function setAttachmentConsultation(ORMPersistentCollection $attachmentConsultation){
+        $this->attachmentConsultation = $attachmentConsultation;
+
+    }
+
+    /**
      * Get PhotosConsultation
      *
      * @return \Doctrine\Common\Collections\ArrayCollection()
@@ -244,6 +324,24 @@ class Consultation
     public function getPhotosConsultation()
     {
         return $this->photosConsultation;
+    }
+    /**
+     * Get PhotosManualConsultation
+     *
+     * @return \Doctrine\Common\Collections\ArrayCollection()
+     */
+    public function getPhotosManualConsultation()
+    {
+        return $this->photosManualConsultation;
+    }
+    /**
+     * Get AttachmentConsultation
+     *
+     * @return \Doctrine\Common\Collections\ArrayCollection()
+     */
+    public function getAttachmentConsultation()
+    {
+        return $this->attachmentConsultation;
     }
 
 

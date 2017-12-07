@@ -72,6 +72,15 @@
             <a class="image-link" href="{{ photos_consultation_directory }}/{{ photo.link }}" data-lightbox="{{ consultation.created|date('d/m/Y')  }}&nbsp;-&nbsp;{{ consultation.titre|e }}">
                 <img class="example-image" src="{{ photos_consultation_directory }}/{{ photo.link }}" alt="{{ photo.link }}" height="130"/></a>
         {% endfor %}
+
+            {%  for photo in consultation.photosManualConsultation %}
+                <a class="image-link" href="{{ photos_consultation_directory }}/{{ photo.link }}" data-lightbox="{{ consultation.created|date('d/m/Y')  }}&nbsp;-&nbsp;{{ consultation.titre|e }}">
+                    <img class="example-image" src="{{ photos_consultation_directory }}/{{ photo.link }}" alt="{{ photo.link }}" height="130"/></a>
+            {% endfor %}
+
+            {%  for photo in consultation.attachmentConsultation %}
+                <br /><i class="fa fa-file-text"></i>&nbsp;&nbsp;<a href="{{ photos_consultation_directory }}/{{ photo.link }}" target="pdf">{{ photo.titre }} - Télécharger le document</a>
+            {% endfor %}
         </p>
         <a href="{{ path('consultation_edit', {'id': consultation.id}) }}" class="btn btn-appoint"><i class="fa fa-pencil-square-o"></i>&nbsp;Editer cette consultation</a>
         <br /><br />
