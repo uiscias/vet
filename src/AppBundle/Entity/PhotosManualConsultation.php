@@ -27,7 +27,7 @@ class PhotosManualConsultation
 
     /**
      * Many Photos for One Consultation.
-     * @ORM\ManyToOne(targetEntity="Consultation", inversedBy="PhotosManualConsultation")
+     * @ORM\ManyToOne(targetEntity="Consultation", inversedBy="photosManualConsultation")
      * @ORM\JoinColumn(name="consultation_id", referencedColumnName="id")
      */
     private $consultation;

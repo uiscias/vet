@@ -9,6 +9,8 @@
     <list default="true" id="502ee5ac-70f1-467e-8e31-126c738e2470" name="Updates asked by Dr Thiellens" comment="Updates asked by Dr Thiellens&#10;&#10;&#10;Add File Upload and correct reminder job">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/Command/ReminderJob.php" afterPath="$PROJECT_DIR$/app/Resources/Command/ReminderJob.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/VetController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/VetController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/PhotosManualConsultation.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/PhotosManualConsultation.php" />
     </list>
     <ignored path="web/assets/media/attachments/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,18 +52,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name="ClientType.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/ClientType.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
-              <caret line="20" column="98" lean-forward="false" selection-start-line="20" selection-start-column="98" selection-end-line="20" selection-end-column="98" />
-              <folding>
-                <element signature="e#34#74#0#PHP" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="edit.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/client/edit.html.twig">
           <provider selected="true" editor-type-id="text-editor">
@@ -86,23 +76,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConsultationController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ConsultationController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6600">
-              <caret line="207" column="49" lean-forward="false" selection-start-line="207" selection-start-column="49" selection-end-line="207" selection-end-column="49" />
-              <folding>
-                <element signature="e#40#68#0#PHP" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="VetController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/VetController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="2" column="30" lean-forward="false" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="30" />
+            <state relative-caret-position="279">
+              <caret line="502" column="57" lean-forward="false" selection-start-line="502" selection-start-column="57" selection-end-line="502" selection-end-column="57" />
               <folding>
                 <element signature="e#40#68#0#PHP" expanded="true" />
               </folding>
@@ -110,13 +88,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReminderJob.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PhotosManualConsultation.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/PhotosManualConsultation.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="363">
+              <caret line="29" column="87" lean-forward="false" selection-start-line="29" selection-start-column="87" selection-end-line="29" selection-end-column="87" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PhotosConsultation.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/PhotosConsultation.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="561">
+              <caret line="31" column="7" lean-forward="true" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReminderJob.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/Command/ReminderJob.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="33">
-              <caret line="1" column="19" lean-forward="false" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
+            <state relative-caret-position="528">
+              <caret line="16" column="21" lean-forward="false" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
               <folding>
-                <element signature="e#28#93#0#PHP" expanded="true" />
+                <element signature="e#36#101#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -152,14 +150,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ClientController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ClientController.php">
+      <file leaf-file-name="Consultation.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Consultation.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8283">
-              <caret line="259" column="63" lean-forward="false" selection-start-line="259" selection-start-column="43" selection-end-line="259" selection-end-column="63" />
-              <folding>
-                <element signature="e#40#68#0#PHP" expanded="false" />
-              </folding>
+            <state relative-caret-position="363">
+              <caret line="97" column="13" lean-forward="false" selection-start-line="97" selection-start-column="13" selection-end-line="97" selection-end-column="37" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -175,7 +171,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>nexmo</find>
       <find>send</find>
       <find>phone32</find>
       <find>photo</find>
@@ -205,6 +200,7 @@
       <find>Nexmo</find>
       <find>Client</find>
       <find>Nex</find>
+      <find>CLIENT_FIRESTNAME</find>
     </findStrings>
     <replaceStrings>
       <replace>edit_form</replace>
@@ -268,7 +264,6 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/AttachmentConsultationRepository.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/PhotosManualConsultationController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/AttachmentConsultationController.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Entity/PhotosManualConsultation.php" />
         <option value="$PROJECT_DIR$/app/config/config.yml" />
         <option value="$PROJECT_DIR$/app/config/parameters.yml" />
         <option value="$PROJECT_DIR$/src/AppBundle/Form/PhotosConsultationInputFileType.php" />
@@ -284,9 +279,10 @@
         <option value="$PROJECT_DIR$/app/Resources/views/client/edit.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/client/new.html.twig" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/VetController.php" />
         <option value="$PROJECT_DIR$/app/Resources/Command/MyCommand.php" />
         <option value="$PROJECT_DIR$/app/Resources/Command/ReminderJob.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/VetController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/PhotosManualConsultation.php" />
       </list>
     </option>
   </component>
@@ -860,13 +856,6 @@
       <workItem from="1509801373574" duration="3960000" />
       <workItem from="1510151348070" duration="767000" />
     </task>
-    <task id="LOCAL-00024" summary="GUI">
-      <created>1503853826829</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1503853826829</updated>
-    </task>
     <task id="LOCAL-00025" summary="Add and manage Reminder for Vaccination">
       <created>1503853841789</created>
       <option name="number" value="00025" />
@@ -938,7 +927,7 @@
       <workItem from="1512481920365" duration="2553000" />
       <workItem from="1512545823109" duration="34821000" />
       <workItem from="1512655678998" duration="3184000" />
-      <workItem from="1512717783661" duration="4273000" />
+      <workItem from="1512717783661" duration="6194000" />
     </task>
     <task id="LOCAL-00034" summary="Updates asked by Dr Thiellens&#10;Ajout de la case permettant de dire si l'animal sort ou pas&#10;Ajout des fonctions permettant de modifier les rappels&#10;Correction de la gestion des photos depuis l'hurl public&#10;ajout d'un racourcis permettant d'éditer le client et les animaux depuis la liste des consultations">
       <created>1510947497315</created>
@@ -1206,7 +1195,14 @@
       <option name="project" value="LOCAL" />
       <updated>1512722258315</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="Updates asked by Dr Thiellens&#10;&#10;&#10;Add File Upload and correct reminder job">
+      <created>1512722388075</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1512722388075</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <option name="clearContext" value="false" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
@@ -1231,7 +1227,7 @@
   </component>
   <component name="TimeTrackingManager">
     <option name="enabled" value="true" />
-    <option name="totallyTimeSpent" value="527934000" />
+    <option name="totallyTimeSpent" value="529855000" />
     <option name="showClosedTasks" value="false" />
     <option name="showSpentTimeFromLastPost" value="true" />
   </component>
@@ -1566,14 +1562,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/PhotosManualConsultation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-615">
-          <caret line="187" column="3" lean-forward="false" selection-start-line="187" selection-start-column="3" selection-end-line="187" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/AnimalType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="627">
@@ -1611,6 +1599,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="313">
           <caret line="138" column="20" lean-forward="false" selection-start-line="138" selection-start-column="20" selection-end-line="138" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1633,16 +1622,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/PhotosConsultation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-25">
-          <caret line="15" column="3" lean-forward="false" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
-          <folding>
-            <element signature="e#36#68#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/CsvImportType.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1658,14 +1637,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="429">
           <caret line="13" column="54" lean-forward="false" selection-start-line="13" selection-start-column="54" selection-end-line="13" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Consultation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9735">
-          <caret line="300" column="49" lean-forward="false" selection-start-line="300" selection-start-column="49" selection-end-line="300" selection-end-column="49" />
           <folding />
         </state>
       </provider>
@@ -1736,14 +1707,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml.dist">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
@@ -1760,23 +1723,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml.dist">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/PhotosConsultation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="31" column="7" lean-forward="true" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/VetController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="2" column="30" lean-forward="false" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="30" />
+        <state relative-caret-position="279">
+          <caret line="502" column="57" lean-forward="false" selection-start-line="502" selection-start-column="57" selection-end-line="502" selection-end-column="57" />
           <folding>
             <element signature="e#40#68#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Consultation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="97" column="13" lean-forward="false" selection-start-line="97" selection-start-column="13" selection-end-line="97" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/Command/ReminderJob.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="1" column="19" lean-forward="false" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
+        <state relative-caret-position="528">
+          <caret line="16" column="21" lean-forward="false" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
           <folding>
-            <element signature="e#28#93#0#PHP" expanded="true" />
+            <element signature="e#36#101#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/PhotosManualConsultation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="29" column="87" lean-forward="false" selection-start-line="29" selection-start-column="87" selection-end-line="29" selection-end-column="87" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -500,7 +500,7 @@ $products = $query->getResult();
         foreach ($reminders as $reminder){
             $content = str_replace( array(
                                             '[CLIENT_NAME]',
-                                            '[CLIENT_FIRESTNAME]',
+                                            '[CLIENT_FIRSTNAME]',
                                             '[REMINDER_NOTE]',
                                             '[ANIMAL_NAME]',
             ),
