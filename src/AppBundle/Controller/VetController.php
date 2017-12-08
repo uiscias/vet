@@ -488,7 +488,7 @@ $products = $query->getResult();
                 \Doctrine\ORM\Query\Expr\Join::WITH,
                 'u.username= us.username')
             ->leftJoin('r.consultation', 'cons')
-            ->where('DATE_DIFF(r.reminderDateTime, CURRENT_DATE()) <= 0  and r.enabled = 1 and r.sent = 0 and us.username = \'auron\'')
+            ->where('DATE_DIFF(r.reminderDateTime, CURRENT_DATE()) <= 0  and r.enabled = 1 and r.sent = 0')
 
             ->getQuery();
 
