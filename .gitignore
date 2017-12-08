@@ -15,3 +15,4 @@
 /vendor/
 /web/bundles/
 /web/assets/media/attachments
+/app/config/parameters.yml
