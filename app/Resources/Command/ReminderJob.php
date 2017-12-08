@@ -1,5 +1,5 @@
 <?php
-namespace AppBundle\Controller;
+namespace AppBundle;
 
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputArgument;
@@ -9,7 +9,6 @@ use AppBundle\Controller\VetController;
 
 class ReminderJob extends ContainerAwareCommand
 {
-
 
     protected function configure()
     {
