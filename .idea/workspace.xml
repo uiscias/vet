@@ -7,12 +7,10 @@
     <list id="ae0ac6dd-a173-4df4-b806-c7427fb5ec56" name="Add Notification Zone" comment="" />
     <list id="47167221-4a92-468a-91ff-31dc500eb92f" name="GUI" comment="GUI&#10;Correction of some minors issues like label under button, redirection post deletion, and debt default value" />
     <list default="true" id="502ee5ac-70f1-467e-8e31-126c738e2470" name="Updates asked by Dr Thiellens" comment="Updates asked by Dr Thiellens&#10;&#10;&#10;Add File Upload and correct reminder job">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/favicon.ico.bak" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../DomDomViv/.idea/DomDomViv.iml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../DomDomViv/.idea/modules.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../DomDomViv/.idea/vcs.xml" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../DomDomViv/pub_html/C:/inetpub/wwwroot/log.log" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/favicon.ico" afterPath="$PROJECT_DIR$/web/favicon.ico" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DomDomViv/pub_html/assets/images/cd-icon-controller.svg" afterPath="$PROJECT_DIR$/../DomDomViv/pub_html/assets/images/cd-icon-controller.svg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DomDomViv/pub_html/assets/images/cd-icon-location.svg" afterPath="$PROJECT_DIR$/../DomDomViv/pub_html/assets/images/cd-icon-location.svg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DomDomViv/pub_html/assets/images/logo.svg" afterPath="$PROJECT_DIR$/../DomDomViv/pub_html/assets/images/logo.svg" />
@@ -55,9 +53,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DomDomViv/resources/model/Trigger.php" afterPath="$PROJECT_DIR$/../DomDomViv/resources/model/Trigger.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DomDomViv/resources/model/test" afterPath="$PROJECT_DIR$/../DomDomViv/resources/model/test" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DomDomViv/resources/model/test.php" afterPath="$PROJECT_DIR$/../DomDomViv/resources/model/test.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vet.iml" afterPath="$PROJECT_DIR$/.idea/vet.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/ClientController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/ClientController.php" />
     </list>
@@ -193,7 +188,7 @@
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ClientController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="231">
-              <caret line="60" column="94" lean-forward="false" selection-start-line="60" selection-start-column="94" selection-end-line="60" selection-end-column="94" />
+              <caret line="60" column="198" lean-forward="false" selection-start-line="60" selection-start-column="198" selection-end-line="60" selection-end-column="198" />
               <folding />
             </state>
           </provider>
@@ -945,13 +940,6 @@
       <workItem from="1509801373574" duration="3960000" />
       <workItem from="1510151348070" duration="767000" />
     </task>
-    <task id="LOCAL-00027" summary="Add user Search and pagination">
-      <created>1503853875602</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1503853875602</updated>
-    </task>
     <task id="LOCAL-00028" summary="GUI">
       <created>1503853897107</created>
       <option name="number" value="00028" />
@@ -1004,7 +992,7 @@
       <workItem from="1512655678998" duration="3184000" />
       <workItem from="1512717783661" duration="7449000" />
       <workItem from="1512811352655" duration="641000" />
-      <workItem from="1513105542370" duration="1424000" />
+      <workItem from="1513105542370" duration="1661000" />
     </task>
     <task id="LOCAL-00034" summary="Updates asked by Dr Thiellens&#10;Ajout de la case permettant de dire si l'animal sort ou pas&#10;Ajout des fonctions permettant de modifier les rappels&#10;Correction de la gestion des photos depuis l'hurl public&#10;ajout d'un racourcis permettant d'éditer le client et les animaux depuis la liste des consultations">
       <created>1510947497315</created>
@@ -1293,7 +1281,14 @@
       <option name="project" value="LOCAL" />
       <updated>1512726970139</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="Updates asked by Dr Thiellens&#10;&#10;&#10;Add File Upload and correct reminder job">
+      <created>1513106978293</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1513106978293</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <option name="clearContext" value="false" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
@@ -1318,7 +1313,7 @@
   </component>
   <component name="TimeTrackingManager">
     <option name="enabled" value="true" />
-    <option name="totallyTimeSpent" value="533175000" />
+    <option name="totallyTimeSpent" value="533412000" />
     <option name="showClosedTasks" value="false" />
     <option name="showSpentTimeFromLastPost" value="true" />
   </component>
@@ -1809,7 +1804,7 @@
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ClientController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
-          <caret line="60" column="94" lean-forward="false" selection-start-line="60" selection-start-column="94" selection-end-line="60" selection-end-column="94" />
+          <caret line="60" column="198" lean-forward="false" selection-start-line="60" selection-start-column="198" selection-end-line="60" selection-end-column="198" />
           <folding />
         </state>
       </provider>
