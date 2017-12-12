@@ -145,8 +145,8 @@
       <file leaf-file-name="baseTmpl.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/baseTmpl.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="627">
-              <caret line="38" column="13" lean-forward="false" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
+            <state relative-caret-position="400">
+              <caret line="35" column="52" lean-forward="false" selection-start-line="35" selection-start-column="52" selection-end-line="35" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -940,13 +940,6 @@
       <workItem from="1509801373574" duration="3960000" />
       <workItem from="1510151348070" duration="767000" />
     </task>
-    <task id="LOCAL-00029" summary="GUI">
-      <created>1503853911007</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1503853911007</updated>
-    </task>
     <task id="LOCAL-00030" summary="GUI">
       <created>1503923319748</created>
       <option name="number" value="00030" />
@@ -985,7 +978,7 @@
       <workItem from="1512655678998" duration="3184000" />
       <workItem from="1512717783661" duration="7449000" />
       <workItem from="1512811352655" duration="641000" />
-      <workItem from="1513105542370" duration="2772000" />
+      <workItem from="1513105542370" duration="3299000" />
     </task>
     <task id="LOCAL-00034" summary="Updates asked by Dr Thiellens&#10;Ajout de la case permettant de dire si l'animal sort ou pas&#10;Ajout des fonctions permettant de modifier les rappels&#10;Correction de la gestion des photos depuis l'hurl public&#10;ajout d'un racourcis permettant d'éditer le client et les animaux depuis la liste des consultations">
       <created>1510947497315</created>
@@ -1288,7 +1281,14 @@
       <option name="project" value="LOCAL" />
       <updated>1513107215772</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="Updates asked by Dr Thiellens&#10;&#10;&#10;Add File Upload and correct reminder job">
+      <created>1513108416116</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1513108416116</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <option name="clearContext" value="false" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
@@ -1313,7 +1313,7 @@
   </component>
   <component name="TimeTrackingManager">
     <option name="enabled" value="true" />
-    <option name="totallyTimeSpent" value="534523000" />
+    <option name="totallyTimeSpent" value="535050000" />
     <option name="showClosedTasks" value="false" />
     <option name="showSpentTimeFromLastPost" value="true" />
   </component>
@@ -1803,8 +1803,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/baseTmpl.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="627">
-          <caret line="38" column="13" lean-forward="false" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
+        <state relative-caret-position="400">
+          <caret line="35" column="52" lean-forward="false" selection-start-line="35" selection-start-column="52" selection-end-line="35" selection-end-column="52" />
           <folding />
         </state>
       </provider>

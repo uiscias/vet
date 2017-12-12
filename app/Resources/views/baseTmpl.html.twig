@@ -28,9 +28,13 @@
         });
 
         $(window).load(function() {
-            if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-                // some code..
-            }else {
+            testExp = new RegExp('Android|webOS|iPhone|iPad|' +
+                'BlackBerry|Windows Phone|'  +
+                'Opera Mini|IEMobile|Mobile' ,
+                'i');
+
+            if (testExp.test(navigator.userAgent)){}
+            else{
 
                 // Animate loader off screen
                 $(".se-pre-con").fadeOut("slow");
