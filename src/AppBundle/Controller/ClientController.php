@@ -58,7 +58,7 @@ class ClientController extends Controller
             $clientSearch = $clientSearch->getSearchField();
             $query = $repository->createQueryBuilder('c')
                 ->where('c.associatedUsername = :username')
-                ->andWhere('c.firstName LIKE :searchElem OR c.lastName LIKE :searchElem OR c.phone LIKE :searchElem OR c.phone2 LIKE :searchElem OR c.eMail LIKE :searchElem')
+                ->andWhere('(c.firstName LIKE :searchElem OR c.lastName LIKE :searchElem OR c.phone LIKE :searchElem OR c.phone2 LIKE :searchElem OR c.eMail LIKE :searchElem) and c.deletedAt IS NOT NULL')
                 ->setParameter('username', $user)
                 ->setParameter('searchElem', '%'.$clientSearch.'%')
                 ->orderBy('c.lastConsultation', 'DESC')

@@ -200,5 +200,6 @@
         </SOURCES>
       </library>
     </orderEntry>
+    <orderEntry type="module" module-name="DomDomViv" />
   </component>
 </module>

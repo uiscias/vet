@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../DomDomViv/.idea/DomDomViv.iml" filepath="$PROJECT_DIR$/../DomDomViv/.idea/DomDomViv.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/vet.iml" filepath="$PROJECT_DIR$/.idea/vet.iml" />
     </modules>
   </component>
