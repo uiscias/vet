@@ -54,7 +54,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DomDomViv/resources/model/test" afterPath="$PROJECT_DIR$/../DomDomViv/resources/model/test" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DomDomViv/resources/model/test.php" afterPath="$PROJECT_DIR$/../DomDomViv/resources/model/test.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/ClientController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/ClientController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/baseTmpl.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/baseTmpl.html.twig" />
     </list>
     <ignored path="web/assets/media/attachments/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -142,11 +142,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="baseTmpl.html.twig" pinned="false" current-in-tab="false">
+      <file leaf-file-name="baseTmpl.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/baseTmpl.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="8" column="23" lean-forward="false" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+            <state relative-caret-position="627">
+              <caret line="38" column="13" lean-forward="false" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -184,11 +184,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ClientController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ClientController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ClientController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="231">
-              <caret line="60" column="198" lean-forward="false" selection-start-line="60" selection-start-column="198" selection-end-line="60" selection-end-column="198" />
+              <caret line="60" column="100" lean-forward="true" selection-start-line="60" selection-start-column="100" selection-end-line="60" selection-end-column="100" />
               <folding />
             </state>
           </provider>
@@ -215,7 +215,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>setti</find>
       <find>PhotosConsultation</find>
       <find>photosmanualconsultation</find>
       <find>photo_</find>
@@ -245,6 +244,7 @@
       <find>delete</find>
       <find>deleteAction</find>
       <find>deleteA</find>
+      <find>deleteActoin</find>
     </findStrings>
     <replaceStrings>
       <replace>edit_form</replace>
@@ -289,7 +289,6 @@
         <option value="$PROJECT_DIR$/app/config/services.yml" />
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/DeletedFilter.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Form/ClientType.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/baseTmpl.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/client/animalPrototype.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Animal.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Form/AnimalType.php" />
@@ -327,6 +326,7 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/PhotosManualConsultation.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/home.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/ClientController.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/baseTmpl.html.twig" />
       </list>
     </option>
   </component>
@@ -940,13 +940,6 @@
       <workItem from="1509801373574" duration="3960000" />
       <workItem from="1510151348070" duration="767000" />
     </task>
-    <task id="LOCAL-00028" summary="GUI">
-      <created>1503853897107</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1503853897107</updated>
-    </task>
     <task id="LOCAL-00029" summary="GUI">
       <created>1503853911007</created>
       <option name="number" value="00029" />
@@ -992,7 +985,7 @@
       <workItem from="1512655678998" duration="3184000" />
       <workItem from="1512717783661" duration="7449000" />
       <workItem from="1512811352655" duration="641000" />
-      <workItem from="1513105542370" duration="1661000" />
+      <workItem from="1513105542370" duration="2772000" />
     </task>
     <task id="LOCAL-00034" summary="Updates asked by Dr Thiellens&#10;Ajout de la case permettant de dire si l'animal sort ou pas&#10;Ajout des fonctions permettant de modifier les rappels&#10;Correction de la gestion des photos depuis l'hurl public&#10;ajout d'un racourcis permettant d'éditer le client et les animaux depuis la liste des consultations">
       <created>1510947497315</created>
@@ -1288,7 +1281,14 @@
       <option name="project" value="LOCAL" />
       <updated>1513106978293</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="Updates asked by Dr Thiellens&#10;&#10;&#10;Add File Upload and correct reminder job">
+      <created>1513107215772</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1513107215772</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <option name="clearContext" value="false" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
@@ -1313,7 +1313,7 @@
   </component>
   <component name="TimeTrackingManager">
     <option name="enabled" value="true" />
-    <option name="totallyTimeSpent" value="533412000" />
+    <option name="totallyTimeSpent" value="534523000" />
     <option name="showClosedTasks" value="false" />
     <option name="showSpentTimeFromLastPost" value="true" />
   </component>
@@ -1769,14 +1769,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/baseTmpl.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="8" column="23" lean-forward="false" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Consultation.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-216">
@@ -1804,7 +1796,15 @@
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ClientController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
-          <caret line="60" column="198" lean-forward="false" selection-start-line="60" selection-start-column="198" selection-end-line="60" selection-end-column="198" />
+          <caret line="60" column="100" lean-forward="true" selection-start-line="60" selection-start-column="100" selection-end-line="60" selection-end-column="100" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/baseTmpl.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="627">
+          <caret line="38" column="13" lean-forward="false" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
           <folding />
         </state>
       </provider>
