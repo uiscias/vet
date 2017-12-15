@@ -28,13 +28,21 @@ class ReminderController extends Controller
      */
     public function indexAction()
     {
+        if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
+            throw $this->createAccessDeniedException();
+        }
+        if ($this->getUser()) {
+            $user = $this->getUser()->getUsername();
+        }
+
         $em = $this->getDoctrine()->getManager();
 
-        $reminders = $em->getRepository('AppBundle:Reminder')->findAll();
+        $reminders = $em->getRepository('AppBundle:Reminder')->findByAssociatedUsername($user);
 
         return $this->render('reminder/index.html.twig', array(
             'reminders' => $reminders,
-        ));
+        ))
+
     }
 
     /**
