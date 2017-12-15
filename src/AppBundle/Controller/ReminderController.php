@@ -41,7 +41,7 @@ class ReminderController extends Controller
 
         return $this->render('reminder/index.html.twig', array(
             'reminders' => $reminders,
-        ))
+        ));
 
     }
 
