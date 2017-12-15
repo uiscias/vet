@@ -37,7 +37,14 @@ class ReminderController extends Controller
 
         $em = $this->getDoctrine()->getManager();
 
-        $reminders = $em->getRepository('AppBundle:Reminder')->findByAssociatedUsername($user);
+        $reminders = $em->getRepository('AppBundle:Reminder')->findAll();
+        $rem = new \Doctrine\Common\Collections\ArrayCollection();
+        foreach ($reminders as $reminder){
+            if ($reminder->getClient()->getAssociatedUsername() == $user){
+                $rem->add($reminder);
+            }
+        }
+        $reminders = $rem;
 
         return $this->render('reminder/index.html.twig', array(
             'reminders' => $reminders,
