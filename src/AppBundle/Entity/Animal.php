@@ -488,13 +488,6 @@ class Animal
 
     public function nameToString(){
         $tostring = $this->name;
-        $tostring .= ' (';
-        $tostring .= $this->species;
-        if ($this->getGender() == 'Femelle'){
-            $tostring .= ' F';
-        }else{
-            $tostring .= ' M';
-        }
         return (string) $tostring;
     }
 

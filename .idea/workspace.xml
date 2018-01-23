@@ -8,7 +8,7 @@
     <list id="47167221-4a92-468a-91ff-31dc500eb92f" name="GUI" comment="GUI&#10;Correction of some minors issues like label under button, redirection post deletion, and debt default value" />
     <list default="true" id="502ee5ac-70f1-467e-8e31-126c738e2470" name="Updates asked by Dr Thiellens" comment="Updates asked by Dr Thiellens&#10;&#10;&#10;Add File Upload and correct reminder job">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Form/ClientType.php" afterPath="$PROJECT_DIR$/src/AppBundle/Form/ClientType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Animal.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Animal.php" />
     </list>
     <list id="1431460f-34f4-4d67-b33b-6847ea821084" name="raspiViv Transfer to raspberry3" comment="raspiViv Transfer to raspberry3">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
@@ -86,7 +86,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ClientType.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ClientType.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/ClientType.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="279">
@@ -133,11 +133,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Animal.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Animal.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Animal.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="488" column="20" lean-forward="false" selection-start-line="488" selection-start-column="20" selection-end-line="488" selection-end-column="20" />
+            <state relative-caret-position="334">
+              <caret line="482" column="36" lean-forward="true" selection-start-line="482" selection-start-column="36" selection-end-line="482" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -284,9 +284,9 @@
         <option value="$PROJECT_DIR$/app/Resources/views/home.html.twig" />
         <option value="$PROJECT_DIR$/../DomDomViv/pub_html/test.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/VetController.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Animal.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/ReminderController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Form/ClientType.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Animal.php" />
       </list>
     </option>
   </component>
@@ -724,14 +724,7 @@
       <workItem from="1513105542370" duration="3710000" />
       <workItem from="1513328837073" duration="816000" />
       <workItem from="1513329776433" duration="579000" />
-      <workItem from="1516727880411" duration="1341000" />
-    </task>
-    <task id="LOCAL-00037" summary="Updates asked by Dr Thiellens&#10;Ajout de la case permettant de dire si l'animal sort ou pas&#10;Ajout des fonctions permettant de modifier les rappels&#10;Correction de la gestion des photos depuis l'hurl public&#10;ajout d'un racourcis permettant d'éditer le client et les animaux depuis la liste des consultations&#10;&#10;Ajout de la fonction logout">
-      <created>1511947156120</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1511947156120</updated>
+      <workItem from="1516727880411" duration="2691000" />
     </task>
     <task id="LOCAL-00038" summary="Updates asked by Dr Thiellens&#10;Ajout de la case permettant de dire si l'animal sort ou pas&#10;Ajout des fonctions permettant de modifier les rappels&#10;Correction de la gestion des photos depuis l'hurl public&#10;ajout d'un racourcis permettant d'éditer le client et les animaux depuis la liste des consultations&#10;&#10;Ajout de la fonction logout">
       <created>1511949221946</created>
@@ -1067,7 +1060,14 @@
       <option name="project" value="LOCAL" />
       <updated>1516728439351</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="Updates asked by Dr Thiellens&#10;&#10;&#10;Add File Upload and correct reminder job">
+      <created>1516729227890</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1516729227890</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <option name="clearContext" value="false" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
@@ -1092,7 +1092,7 @@
   </component>
   <component name="TimeTrackingManager">
     <option name="enabled" value="true" />
-    <option name="totallyTimeSpent" value="541615000" />
+    <option name="totallyTimeSpent" value="542965000" />
     <option name="showClosedTasks" value="false" />
     <option name="showSpentTimeFromLastPost" value="true" />
   </component>
@@ -1544,14 +1544,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Animal.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="488" column="20" lean-forward="false" selection-start-line="488" selection-start-column="20" selection-end-line="488" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ConsultationController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="829">
@@ -1594,6 +1586,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="279">
           <caret line="34" column="40" lean-forward="false" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Animal.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="482" column="36" lean-forward="true" selection-start-line="482" selection-start-column="36" selection-end-line="482" selection-end-column="36" />
           <folding />
         </state>
       </provider>
