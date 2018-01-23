@@ -8,9 +8,7 @@
     <list id="47167221-4a92-468a-91ff-31dc500eb92f" name="GUI" comment="GUI&#10;Correction of some minors issues like label under button, redirection post deletion, and debt default value" />
     <list default="true" id="502ee5ac-70f1-467e-8e31-126c738e2470" name="Updates asked by Dr Thiellens" comment="Updates asked by Dr Thiellens&#10;&#10;&#10;Add File Upload and correct reminder job">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/ReminderController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/ReminderController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/VetController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/VetController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Animal.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Animal.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Form/ClientType.php" afterPath="$PROJECT_DIR$/src/AppBundle/Form/ClientType.php" />
     </list>
     <list id="1431460f-34f4-4d67-b33b-6847ea821084" name="raspiViv Transfer to raspberry3" comment="raspiViv Transfer to raspberry3">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
@@ -61,8 +59,8 @@
       <file leaf-file-name="Reminder.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Reminder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1353">
-              <caret line="15" column="1" lean-forward="false" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+            <state relative-caret-position="279">
+              <caret line="49" column="67" lean-forward="false" selection-start-line="49" selection-start-column="67" selection-end-line="49" selection-end-column="67" />
               <folding />
             </state>
           </provider>
@@ -81,11 +79,19 @@
       <file leaf-file-name="Client.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Client.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4455">
-              <caret line="141" column="28" lean-forward="false" selection-start-line="141" selection-start-column="22" selection-end-line="141" selection-end-column="28" />
-              <folding>
-                <element signature="e#36#68#0#PHP" expanded="false" />
-              </folding>
+            <state relative-caret-position="279">
+              <caret line="38" column="94" lean-forward="false" selection-start-line="38" selection-start-column="91" selection-end-line="38" selection-end-column="94" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ClientType.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/ClientType.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="279">
+              <caret line="34" column="40" lean-forward="false" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="40" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -111,11 +117,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReminderController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ReminderController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ReminderController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="193" column="33" lean-forward="false" selection-start-line="193" selection-start-column="33" selection-end-line="193" selection-end-column="33" />
+            <state relative-caret-position="279">
+              <caret line="206" column="32" lean-forward="false" selection-start-line="206" selection-start-column="29" selection-end-line="206" selection-end-column="32" />
               <folding>
                 <element signature="e#1112#1132#1#PHP" expanded="true" />
                 <element signature="e#2113#2128#0#PHP" expanded="true" />
@@ -168,8 +174,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Colle</find>
-      <find>setAtt</find>
       <find>PersistentCollection</find>
       <find>Persi</find>
       <find>Doctrine\ORM\PersistentCollection</find>
@@ -198,6 +202,8 @@
       <find>array</find>
       <find>$content</find>
       <find>title</find>
+      <find>+33</find>
+      <find>all</find>
     </findStrings>
     <replaceStrings>
       <replace>edit_form</replace>
@@ -241,7 +247,6 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/DoctrineListener.php" />
         <option value="$PROJECT_DIR$/app/config/services.yml" />
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/DeletedFilter.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Form/ClientType.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/client/animalPrototype.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Form/AnimalType.php" />
         <option value="$PROJECT_DIR$/web/app_dev.php" />
@@ -281,6 +286,7 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/VetController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Animal.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/ReminderController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Form/ClientType.php" />
       </list>
     </option>
   </component>
@@ -442,6 +448,50 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="AppBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vet" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AppBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Form" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vet" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AppBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Entity" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -674,14 +724,7 @@
       <workItem from="1513105542370" duration="3710000" />
       <workItem from="1513328837073" duration="816000" />
       <workItem from="1513329776433" duration="579000" />
-      <workItem from="1516727880411" duration="550000" />
-    </task>
-    <task id="LOCAL-00036" summary="Updates asked by Dr Thiellens&#10;Ajout de la case permettant de dire si l'animal sort ou pas&#10;Ajout des fonctions permettant de modifier les rappels&#10;Correction de la gestion des photos depuis l'hurl public&#10;ajout d'un racourcis permettant d'éditer le client et les animaux depuis la liste des consultations&#10;&#10;Ajout du num d'identification ; correction mineures des templates">
-      <created>1511945005596</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1511945005596</updated>
+      <workItem from="1516727880411" duration="1341000" />
     </task>
     <task id="LOCAL-00037" summary="Updates asked by Dr Thiellens&#10;Ajout de la case permettant de dire si l'animal sort ou pas&#10;Ajout des fonctions permettant de modifier les rappels&#10;Correction de la gestion des photos depuis l'hurl public&#10;ajout d'un racourcis permettant d'éditer le client et les animaux depuis la liste des consultations&#10;&#10;Ajout de la fonction logout">
       <created>1511947156120</created>
@@ -1017,7 +1060,14 @@
       <option name="project" value="LOCAL" />
       <updated>1513441769618</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="Updates asked by Dr Thiellens&#10;&#10;&#10;Add File Upload and correct reminder job">
+      <created>1516728439351</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1516728439351</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <option name="clearContext" value="false" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
@@ -1042,7 +1092,7 @@
   </component>
   <component name="TimeTrackingManager">
     <option name="enabled" value="true" />
-    <option name="totallyTimeSpent" value="540824000" />
+    <option name="totallyTimeSpent" value="541615000" />
     <option name="showClosedTasks" value="false" />
     <option name="showSpentTimeFromLastPost" value="true" />
   </component>
@@ -1134,9 +1184,9 @@
     <MESSAGE value="Updates asked by Dr Thiellens&#10;&#10;&#10;select rear cam; tentative !" />
     <MESSAGE value="Updates asked by Dr Thiellens&#10;&#10;&#10;link home on the logo" />
     <MESSAGE value="Updates asked by Dr Thiellens&#10;&#10;&#10;Add gender option" />
-    <MESSAGE value="Updates asked by Dr Thiellens&#10;&#10;&#10;Add File Upload and correct reminder job" />
     <MESSAGE value="raspiViv Transfer to raspberry3" />
-    <option name="LAST_COMMIT_MESSAGE" value="raspiViv Transfer to raspberry3" />
+    <MESSAGE value="Updates asked by Dr Thiellens&#10;&#10;&#10;Add File Upload and correct reminder job" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updates asked by Dr Thiellens&#10;&#10;&#10;Add File Upload and correct reminder job" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1365,13 +1415,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/ClientType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="20" column="98" lean-forward="false" selection-start-line="20" selection-start-column="98" selection-end-line="20" selection-end-column="98" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/client/new.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="792">
@@ -1442,16 +1485,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Client.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4455">
-          <caret line="141" column="28" lean-forward="false" selection-start-line="141" selection-start-column="22" selection-end-line="141" selection-end-column="28" />
-          <folding>
-            <element signature="e#36#68#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ClientController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1221">
@@ -1511,14 +1544,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Reminder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1353">
-          <caret line="15" column="1" lean-forward="false" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Animal.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="298">
@@ -1537,8 +1562,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ReminderController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="193" column="33" lean-forward="false" selection-start-line="193" selection-start-column="33" selection-end-line="193" selection-end-column="33" />
+        <state relative-caret-position="279">
+          <caret line="206" column="32" lean-forward="false" selection-start-line="206" selection-start-column="29" selection-end-line="206" selection-end-column="32" />
           <folding>
             <element signature="e#1112#1132#1#PHP" expanded="true" />
             <element signature="e#2113#2128#0#PHP" expanded="true" />
@@ -1546,6 +1571,30 @@
             <element signature="e#9006#9022#1#PHP" expanded="true" />
             <element signature="e#9368#9385#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Reminder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="49" column="67" lean-forward="false" selection-start-line="49" selection-start-column="67" selection-end-line="49" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Client.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="38" column="94" lean-forward="false" selection-start-line="38" selection-start-column="91" selection-end-line="38" selection-end-column="94" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/ClientType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="34" column="40" lean-forward="false" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>
