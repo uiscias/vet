@@ -34,7 +34,7 @@ class ReminderType extends AbstractType
                 'Telephone 1' => 'Phone1',
                 'Telephone 2'   => 'Phone2',
                 'Telephone 1 et eMail' => 'Phone1AndEMail',
-                'Tout' =>   'All'),
+                'Tout' =>   'ALL'),
             'preferred_choices' => array('eMail', 'eMail'),
             'label' => 'Préférences de contact'))
         ->add('note')

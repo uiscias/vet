@@ -8,6 +8,7 @@
     <list id="47167221-4a92-468a-91ff-31dc500eb92f" name="GUI" comment="GUI&#10;Correction of some minors issues like label under button, redirection post deletion, and debt default value" />
     <list default="true" id="502ee5ac-70f1-467e-8e31-126c738e2470" name="Updates asked by Dr Thiellens" comment="Updates asked by Dr Thiellens&#10;&#10;&#10;Add File Upload and correct reminder job">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Form/ReminderType.php" afterPath="$PROJECT_DIR$/src/AppBundle/Form/ReminderType.php" />
     </list>
     <list id="1431460f-34f4-4d67-b33b-6847ea821084" name="raspiViv Transfer to raspberry3" comment="raspiViv Transfer to raspberry3">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
@@ -119,8 +120,8 @@
       <file leaf-file-name="ReminderController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ReminderController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="206" column="32" lean-forward="false" selection-start-line="206" selection-start-column="29" selection-end-line="206" selection-end-column="32" />
+            <state relative-caret-position="543">
+              <caret line="259" column="19" lean-forward="false" selection-start-line="259" selection-start-column="19" selection-end-line="259" selection-end-column="19" />
               <folding>
                 <element signature="e#1112#1132#1#PHP" expanded="true" />
                 <element signature="e#2113#2128#0#PHP" expanded="true" />
@@ -132,7 +133,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Animal.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ReminderType.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/ReminderType.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="433">
+              <caret line="36" column="21" lean-forward="true" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Animal.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Animal.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="334">
@@ -184,7 +195,6 @@
       <find>ajouter</find>
       <find>Ajouter</find>
       <find>new</find>
-      <find>edit</find>
       <find>client</find>
       <find>Nexmo</find>
       <find>Client</find>
@@ -203,6 +213,7 @@
       <find>title</find>
       <find>+33</find>
       <find>all</find>
+      <find>edit</find>
     </findStrings>
     <replaceStrings>
       <replace>edit_form</replace>
@@ -235,7 +246,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/AppBundle/Entity/csvImport.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/importCSV.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Form/CsvImportType.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/CsvImport.php" />
@@ -286,6 +296,7 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/ReminderController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Form/ClientType.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Animal.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Form/ReminderType.php" />
       </list>
     </option>
   </component>
@@ -723,14 +734,7 @@
       <workItem from="1513105542370" duration="3710000" />
       <workItem from="1513328837073" duration="816000" />
       <workItem from="1513329776433" duration="579000" />
-      <workItem from="1516727880411" duration="2700000" />
-    </task>
-    <task id="LOCAL-00039" summary="Updates asked by Dr Thiellens&#10;Ajout de la case permettant de dire si l'animal sort ou pas&#10;Ajout des fonctions permettant de modifier les rappels&#10;Correction de la gestion des photos depuis l'hurl public&#10;ajout d'un racourcis permettant d'éditer le client et les animaux depuis la liste des consultations&#10;&#10;Ajout de la fonction logout">
-      <created>1511949507664</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1511949507664</updated>
+      <workItem from="1516727880411" duration="3133000" />
     </task>
     <task id="LOCAL-00040" summary="Updates asked by Dr Thiellens&#10;Ajout de la case permettant de dire si l'animal sort ou pas&#10;Ajout des fonctions permettant de modifier les rappels&#10;Correction de la gestion des photos depuis l'hurl public&#10;ajout d'un racourcis permettant d'éditer le client et les animaux depuis la liste des consultations&#10;&#10;Ajout de la fonction logout">
       <created>1511950467516</created>
@@ -1066,7 +1070,14 @@
       <option name="project" value="LOCAL" />
       <updated>1516730580542</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <task id="LOCAL-00087" summary="Updates asked by Dr Thiellens&#10;&#10;&#10;Add File Upload and correct reminder job">
+      <created>1516730589479</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1516730589479</updated>
+    </task>
+    <option name="localTasksCounter" value="88" />
     <option name="clearContext" value="false" />
     <option name="createBranch" value="false" />
     <option name="useBranch" value="true" />
@@ -1091,7 +1102,7 @@
   </component>
   <component name="TimeTrackingManager">
     <option name="enabled" value="true" />
-    <option name="totallyTimeSpent" value="542974000" />
+    <option name="totallyTimeSpent" value="543407000" />
     <option name="showClosedTasks" value="false" />
     <option name="showSpentTimeFromLastPost" value="true" />
   </component>
@@ -1206,13 +1217,6 @@
     </PATH>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/animal/edit.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/baselogin.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="317">
@@ -1551,20 +1555,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ReminderController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="206" column="32" lean-forward="false" selection-start-line="206" selection-start-column="29" selection-end-line="206" selection-end-column="32" />
-          <folding>
-            <element signature="e#1112#1132#1#PHP" expanded="true" />
-            <element signature="e#2113#2128#0#PHP" expanded="true" />
-            <element signature="e#8186#8201#0#PHP" expanded="true" />
-            <element signature="e#9006#9022#1#PHP" expanded="true" />
-            <element signature="e#9368#9385#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Reminder.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="279">
@@ -1593,6 +1583,28 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="334">
           <caret line="482" column="36" lean-forward="true" selection-start-line="482" selection-start-column="36" selection-end-line="482" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ReminderController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="543">
+          <caret line="259" column="19" lean-forward="false" selection-start-line="259" selection-start-column="19" selection-end-line="259" selection-end-column="19" />
+          <folding>
+            <element signature="e#1112#1132#1#PHP" expanded="true" />
+            <element signature="e#2113#2128#0#PHP" expanded="true" />
+            <element signature="e#8186#8201#0#PHP" expanded="true" />
+            <element signature="e#9006#9022#1#PHP" expanded="true" />
+            <element signature="e#9368#9385#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/ReminderType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="36" column="21" lean-forward="true" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
           <folding />
         </state>
       </provider>
