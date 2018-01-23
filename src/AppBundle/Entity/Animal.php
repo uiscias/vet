@@ -486,6 +486,18 @@ class Animal
         return (string) $tostring;
     }
 
+    public function nameToString(){
+        $tostring = $this->name;
+        $tostring .= ' (';
+        $tostring .= $this->species;
+        if ($this->getGender() == 'Femelle'){
+            $tostring .= ' F';
+        }else{
+            $tostring .= ' M';
+        }
+        return (string) $tostring;
+    }
+
     public function getString(){
         return (string) ($this->getName() . ' (' . $this->getSpecies() . ')') ?: '?';
     }

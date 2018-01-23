@@ -197,7 +197,7 @@ S     * Creates a new reminder entity (Vaccin) using AjaxCall.
 
 
         $title = 'Rappel vaccination ';
-        $title .= $animal->__toString();
+        $title .= $animal->nameToString();
         $reminder->setTitle($title);
 
         $reminderDate = $consultation->getDateOfConsultation();

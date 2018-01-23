@@ -498,6 +498,8 @@ $products = $query->getResult();
         $sms2Result = '';
 
         foreach ($reminders as $reminder){
+            $contentSMS = "Bonjour, la vaccination annuelle de rappel de votre animal de compagnie est a effectuer. Presentez-vous
+avec lui et son carnet des que possible. Cordiales salutations. Dr veterinaire Thielens.";
             $content = str_replace( array(
                                             '[CLIENT_NAME]',
                                             '[CLIENT_FIRSTNAME]',
@@ -521,7 +523,7 @@ $products = $query->getResult();
                     }
                     try {
                         if (isset($reminder['phone']) and $reminder['phone'] != ''){
-                            $smsResult = $this->sendSms($reminder['phone'], $content);
+                            $smsResult = $this->sendSms($reminder['phone'], $contentSMS);
                         }
                     } catch (NexmoClient\Exception\Exception $e) {
                         $msg .= $e->getMessage();
@@ -529,7 +531,7 @@ $products = $query->getResult();
                     }
                     try {
                         if (isset($reminder['phone2']) and $reminder['phone2'] != ''){
-                            $sms2Result = $this->sendSms($reminder['phone2'], $content);
+                            $sms2Result = $this->sendSms($reminder['phone2'], $contentSMS);
                         }
                     } catch (NexmoClient\Exception\Exception $e) {
                         $msg .= $e->getMessage();
@@ -552,7 +554,7 @@ $products = $query->getResult();
                 case 'Phone1':
                     if (isset($reminder['phone']) and $reminder['phone'] != '') {
                         try {
-                            $smsResult = $this->sendSms($reminder['phone'], $content);
+                            $smsResult = $this->sendSms($reminder['phone'], $contentSMS);
                         } catch (NexmoClient\Exception\Exception $e) {
                             $msg .= $e->getMessage();
                             $smsResult = false;
@@ -566,7 +568,7 @@ $products = $query->getResult();
                     if (isset($reminder['phone2']) and $reminder['phone2'] != '') {
                         try {
                             if (isset($reminder['phone']) and $reminder['phone'] != ''){
-                                $sms2Result = $this->sendSms($reminder['phone2'], $content);
+                                $sms2Result = $this->sendSms($reminder['phone2'], $contentSMS);
                             }
                         } catch (NexmoClient\Exception\Exception $e) {
                             $msg .= $e->getMessage();
@@ -584,7 +586,7 @@ $products = $query->getResult();
                     if(isset($reminder['phone']) and $reminder['phone'] != '') {
                         try {
                             if (isset($reminder['phone']) and $reminder['phone'] != ''){
-                                $smsResult = $this->sendSms($reminder['phone'], $content);
+                                $smsResult = $this->sendSms($reminder['phone'], $contentSMS);
                             }
                         } catch (NexmoClient\Exception\Exception $e) {
                             $msg .= $e->getMessage();
