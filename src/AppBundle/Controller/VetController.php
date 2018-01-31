@@ -14,8 +14,8 @@ use Symfony\Component\Serializer\Serializer;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Encoder\CsvEncoder;
 use Nexmo\Client as NexmoClient;
-use Nexmo\Client\Credentials\Basic as NexmoClientCredentialsBasic;
-use Nexmo\Message\Text as NexmoMessageText;
+//use Nexmo\Client\Credentials\Basic as NexmoClientCredentialsBasic;
+//use Nexmo\Message\Text as NexmoMessageText;
 
 
 class VetController extends Controller
@@ -355,11 +355,13 @@ $products = $query->getResult();
 
 
     protected  function sendSms($number, $content){
-        $client = new NexmoClient(new NexmoClientCredentialsBasic('c6ef9c85', '9961df892795dd28'));
-        $text = new NexmoMessageText($number, 'NEXMO' , $content);
+//        $client = new NexmoClient(new NexmoClientCredentialsBasic('c6ef9c85', '9961df892795dd28'));
+//        $text = new NexmoMessageText($number, 'NEXMO' , $content);
 
-        return $client->message()->send($text);
-
+        $content = urlencode($content);
+        $response = http_get("https://api.budgetsms.net/sendsms/?username=semias&handle=ae844ce49f8f34fe3ea79c7980ead561&userid=13882&msg=".$content."&from=BudgetSMS&to=$number", array("timeout"=>1), $info);
+        print_r($info);
+        return $info;
     }
 
     protected  function sendReminderMail($mail, $subject, $content){
