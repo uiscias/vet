@@ -361,7 +361,7 @@ $products = $query->getResult();
         $content = urlencode($content);
         $response = http_get("https://api.budgetsms.net/sendsms/?username=semias&handle=ae844ce49f8f34fe3ea79c7980ead561&userid=13882&msg=".$content."&from=BudgetSMS&to=$number", array("timeout"=>1), $info);
         print_r($info);
-        return $info;
+        return $response;
     }
 
     protected  function sendReminderMail($mail, $subject, $content){
