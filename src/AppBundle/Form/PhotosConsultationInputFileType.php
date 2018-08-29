@@ -6,9 +6,9 @@ use Gedmo\Mapping\Driver\File;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Vich\UploaderBundle\Form\Type\VichFileType;
+//use Vich\UploaderBundle\Form\Type\VichFileType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
-
 
 
 class PhotosConsultationInputFileType extends AbstractType
@@ -22,7 +22,7 @@ class PhotosConsultationInputFileType extends AbstractType
         $builder
             ->add('titre', TextType::class, array('label' => 'Titre de la Photo manuelle'))
 //            ->add('description')
-            ->add('file', VichFileType::class, array('label' => 'Photo consultation manuelle'))
+            ->add('file', FileType::class, array('label' => 'Photo consultation manuelle'))
 //            ->add('datafile',HiddenType::class)
         ;
     }

@@ -5,8 +5,8 @@ namespace AppBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Vich\UploaderBundle\Form\Type\VichFileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 
 class AttachmentConsultationInputFileType extends AbstractType
@@ -19,7 +19,7 @@ class AttachmentConsultationInputFileType extends AbstractType
         $builder
             ->add('titre', TextType::class, array('label' => 'Titre du PDF'))
 //            ->add('description')
-            ->add('file', VichFileType::class, array('label' => 'Document PDF'))
+            ->add('file', FileType::class, array('label' => 'Document PDF'))
 //            ->add('datafile',HiddenType::class)
         ;
     }

@@ -23,11 +23,10 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new AppBundle\AppBundle(),
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
-            new Symfony\Bundle\AsseticBundle\AsseticBundle(),
-            new Vich\UploaderBundle\VichUploaderBundle(),
+//            new Symfony\Bundle\AsseticBundle\AsseticBundle(),
+//            new Vich\UploaderBundle\VichUploaderBundle(),
 //            new KMS\FroalaEditorBundle\KMSFroalaEditorBundle(),
-            new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
-
+//            new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
 
 
 

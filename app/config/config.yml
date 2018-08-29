@@ -9,6 +9,8 @@ imports:
 parameters:
     locale: en
     photos_consultation_directory: '%kernel.root_dir%/../web/assets/media/attachments'
+    upload_destination_url: /assets/media/attachments
+    upload_destination: C:\Users\fabien.delhaye\PhpstormProjects\vet\web\assets\media\attachments
 
 framework:
     translator: { fallbacks: ["%locale%"] }
@@ -26,7 +28,6 @@ framework:
         engines: ['twig']
     default_locale:  "%locale%"
     trusted_hosts:   ~
-    trusted_proxies: ~
     session:
         # http://symfony.com/doc/current/reference/configuration/framework.html#handler-id
         handler_id:  session.handler.native_file
@@ -45,18 +46,6 @@ framework:
         # enable the SonataAdminBundle block
 #        sonata.admin.block.admin_list:
 #            contexts:   [admin]
-
-vich_uploader:
-    db_driver: orm
-    twig: true
-    mappings:
-        file:
-            uri_prefix:         assets/media/attachments
-            upload_destination: "%upload_destination%"
-            namer:              vich_uploader.namer_uniqid
-            inject_on_load:     true
-            delete_on_update:   false
-            delete_on_remove:   true
 
 # Twig Configuration
 twig:
@@ -103,11 +92,6 @@ swiftmailer:
     spool:     { type: memory }
 
 
-assetic:
-    debug:          '%kernel.debug%'
-    use_controller: '%kernel.debug%'
-    filters:
-        cssrewrite: ~
 stof_doctrine_extensions:
     default_locale: en_US
     orm:
@@ -118,9 +102,3 @@ sensio_framework_extra:
     request:
         converters: true
         auto_convert: true
-ivory_ck_editor:
-    default_config: "my_custom_config"
-    configs:
-        my_custom_config:
-            uiColor:                    "#FCFCFC"
-            toolbar:                    [ [ 'Preview' ], [ 'Cut','Copy','Paste','-','Undo','Redo' ], [ 'Bold','Italic','Underline','Strike', 'Blockquote','Subscript','Superscript','-','RemoveFormat' ], [ 'NumberedList','BulletedList','-','Outdent','Indent','-','-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock' ], [ 'Link' ], [ 'TextColor','BGColor' ], [ 'RemoveFormat' ] ]

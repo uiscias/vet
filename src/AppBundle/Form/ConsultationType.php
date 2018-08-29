@@ -17,7 +17,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
-use Ivory\CKEditorBundle\Form\Type\CKEditorType;
+//use Ivory\CKEditorBundle\Form\Type\CKEditorType;
 
 class ConsultationType extends AbstractType
 {
@@ -35,11 +35,7 @@ class ConsultationType extends AbstractType
                 'required'  => false,
            ))
             ->add('debtValueForThisConsultation', TextType::class, array('label' => 'Créance pour la consultation'))
-            ->add('notes', CKEditorType::class, Array(
-                'attr' => array(
-                    'rows' => '7',
-                )
-            ))
+            ->add('notes', TextareaType::class, array('attr' => array('class' => 'ckeditor')))
             ->add('photosConsultation', CollectionType::class, array(
                 'entry_type' => PhotosConsultationType::class,
                 'allow_add' => true,

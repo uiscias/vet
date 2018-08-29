@@ -4,7 +4,6 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
-use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -12,7 +11,6 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * @ORM\Table(name="attachment_consultation")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\AttachmentRepository")
- * @Vich\Uploadable
  */
 class AttachmentConsultation
 {
@@ -42,7 +40,6 @@ class AttachmentConsultation
     /**
      * @var File
      *
-     * @Vich\UploadableField(mapping="file", fileNameProperty="link")
      * @Assert\File(maxSize = "5M", mimeTypes={"image/png", "image/jpeg", "image/pjpeg", "application/pdf", "application/msword"} )
      */
     private $file;

@@ -20,6 +20,7 @@ security:
             pattern:    ^/
 #            http_basic: ~
             provider: our_db_provider
+            logout_on_user_change: true
             form_login:
                 # ...
                 login_path: login
@@ -45,7 +46,7 @@ security:
         default:
             anonymous: ~
             http_basic: ~
-
+            logout_on_user_change: true
     access_control:
         # require ROLE_ADMIN for /admin*
         - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
